@@ -1,18 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SwiperSlidesComponent } from '../swiper-slides/swiper-slides.component';
-import { HomePage } from './home.page';
+import { SwiperSlidesComponent } from './swiper-slides.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomePage,
+    component: SwiperSlidesComponent,
   },
- 
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class HomePageRoutingModule {}
+export class SwiperSlidesRoutingModule { }
