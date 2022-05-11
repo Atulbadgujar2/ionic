@@ -1,0 +1,7 @@
+{
+  "name": "veggi",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
