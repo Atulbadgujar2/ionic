@@ -1,3 +1,11 @@
+/*
+
+  Authors :  (Atul Badgujar)  
+  Created : 14-March-2022
+ 
+
+*/
+
 import { Component, OnInit } from '@angular/core';
 
 import SwiperCore, { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper';
