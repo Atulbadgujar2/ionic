@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "veggi",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
