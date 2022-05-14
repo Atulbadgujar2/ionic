@@ -3,8 +3,8 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  templateUrl: 'home2.page.html',
+  styleUrls: ['home2.page.scss'],
 })
 export class Home2Page {
 
