@@ -33,3 +33,43 @@
 @import '~swiper/scss/scrollbar';
 @import '~swiper/scss/zoom';
 @import '~@ionic/angular/css/ionic-swiper';
+
+
+
+
+
+@font-face{
+    font-family: 'abel';
+    src: url(assets/fonts/abel.ttf);   
+}
+@font-face{
+    font-family: 'afta';
+    src: url(assets/fonts/afta.otf);   
+}
+@font-face{
+    font-family: 'mont';
+    src: url(assets/fonts/mont.ttf);   
+}
+* {
+    font-family: mont;
+}
+.item_app{
+    width: 100%;
+    padding: 10px;
+    .menu_icon{
+       height: 20px;
+       width: 20px;
+    }
+    .lbl_app{
+        font-size: 15px;
+        margin-left: 10px;
+        font-weight: bold;
+    }
+}
+.header_icons{
+    font-size: 20px;
+    padding: 10px;
+}
+ .modal-wrapper, .inner-scroll{
+    background: transparent !important;
+  }

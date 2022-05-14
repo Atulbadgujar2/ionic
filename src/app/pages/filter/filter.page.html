@@ -1,0 +1,41 @@
+<ion-content>
+  <div class="group">
+    
+    <div class="size-filter">
+      <div class="slid-container">
+        <span (click)="sizeChange(1)" [class.active]="size == 1">2XS</span>
+        <span (click)="sizeChange(2)" [class.active]="size == 2">XS</span>
+        <span (click)="sizeChange(3)" [class.active]="size == 3">S</span>
+        <span (click)="sizeChange(4)" [class.active]="size == 4">M</span>
+        <span (click)="sizeChange(5)" [class.active]="size == 5">L</span>
+        <span (click)="sizeChange(6)" [class.active]="size == 6">XL</span>
+        <span (click)="sizeChange(7)" [class.active]="size == 7">XX</span>
+        <span (click)="sizeChange(8)" [class.active]="size == 8">XXX</span>
+      </div>
+    </div>
+
+    <div class="type-filter">
+      <div class="slid-container">
+        <span (click)="variationChange(1)" [class.active]="variation == 1">Brand</span>
+        <span (click)="variationChange(2)" [class.active]="variation == 2">Size</span>
+        <span (click)="variationChange(3)" [class.active]="variation == 3">Color</span>
+        <span (click)="variationChange(4)" [class.active]="variation == 4">Wear</span>
+        <span (click)="variationChange(5)" [class.active]="variation == 5">Outfit</span>
+      </div>
+    </div>
+
+    <ion-row text-center class="action">
+      <ion-col size="6" (click)="dismiss()">
+        <ion-button (click)="dismiss()" expand="block" fill="clear" size="small">
+          Reset <ion-icon name="close-circle"></ion-icon>
+        </ion-button>
+      </ion-col>
+
+      <ion-col size="6" (click)="dismiss()">
+        <ion-button (click)="dismiss()" expand="block" fill="clear" size="small">
+          Apply
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

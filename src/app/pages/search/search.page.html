@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="custom">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-searchbar placeholder="Search." mode="ios"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="4" *ngFor="let item of forYou">
+        <div class="main_frame" (click)="onCategorySelect(item)">
+          <div [style.backgroundImage]="'url('+item.img+')'" class="product_img"></div>
+          <p class="header_title">{{item.header}}</p>
+          <p class="footer_title">{{item.footer}}</p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

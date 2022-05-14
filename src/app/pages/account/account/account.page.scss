@@ -1,0 +1,20 @@
+.prod_main{
+    box-shadow: 9px 3px 16px 9px rgba(126, 126, 171, 0.2);
+    padding: 15px;
+    margin-bottom: 20px;
+
+    .title{
+        font-weight: bolder;
+        font-size: 20px;
+        padding: 0px;
+        color: black;
+        margin: 0px !important;
+    }
+}
+
+ion-icon{
+    font-size: 18px;
+}
+ion-button{
+    --border-radius: 5px;
+}

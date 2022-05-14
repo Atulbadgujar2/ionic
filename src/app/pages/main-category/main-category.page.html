@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="custom">
+    <ion-buttons slot="start">
+      <ion-back-button mode="md"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      ShopApp
+    </ion-title>
+    <ion-icon slot="end" (click)="onSearch()" class="header_icons" name="search"></ion-icon>
+    <ion-icon slot="end" (click)="onBookmark()" class="header_icons" name="bookmark"></ion-icon>
+    <ion-icon slot="end" (click)="onCart()" class="header_icons" name="basket"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="banner_slides" [style.backgroundImage]="'url(assets/header/sale.jpg)'">
+  </div>
+  <p class="every_text">There is Something For Everyone.</p>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="4" *ngFor="let item of products">
+        <div class="main_frame" (click)="onCategorySelect(item)">
+          <!-- <img [src]="item.img" alt="" class="product_img"> -->
+          <div class="pro_image" [style.backgroundImage]="'url(' + item.img + ')'"></div>
+          <p class="header_title">{{item.off}}</p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

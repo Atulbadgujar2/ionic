@@ -1,0 +1,181 @@
+.header_icons{
+    font-size: 20px;
+    padding: 10px;
+}
+
+.main_slider{
+    width: 100%;
+    height: 200px;
+    position: relative;
+
+    .banner_slides{
+        background-position: top;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 200px;
+        width: 100%;
+    }
+    .overlay{
+        position: absolute;
+        left: 0;
+        right: 0;
+        padding: 2px;
+        bottom: 0;
+        min-height: 45px;
+        border-bottom: 1px solid transparent !important;
+        overflow: hidden;
+        background-image: linear-gradient(-230deg, rgba(76, 30, 30, 0.4), #4c2828);
+        .name{
+            font-size: 10px;
+            text-align: right;
+            color: white;
+            margin: 2px;
+         }
+         .explore_btn{
+            margin: 2px;
+            font-size: 10px;
+            text-align: right;
+            color: white;
+        }
+    }
+    .leftArrow{
+        width: 20px;
+        position: absolute;
+        top: 50%;
+        z-index: 999;
+        left: 10px;
+    }
+    .rightArrow{
+        width: 20px;
+        position: absolute;
+        top: 50%;
+        z-index: 999;
+        right: 10px !important;
+    }
+}
+
+.slider_div{
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    ion-label{
+        margin-top: 5px;
+        font-size: 11px;
+        font-weight: bolder;
+    }
+    .div_main{
+        height: 75px !important;
+        width: 95px !important;
+        position: relative;
+        border-bottom: 1px solid lightgray;
+        .cat_img{
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%)
+        }
+    }
+} 
+ #main_img {
+    width: 96%;
+    display: block;
+    margin: auto;   
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    position: relative;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.3);
+}
+
+  [gallery-title] {
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 2px;
+    bottom: 0;
+    min-height: 45px;
+    border-bottom: 1px solid transparent !important;
+    overflow: hidden;
+    background-image: linear-gradient(-230deg, rgba(0, 0, 0, 0.4), #040404);
+    [item-title],[item-subtitle] {
+        color: white !important;
+        font-weight: bold !important;
+        text-align: center;
+    }
+  }
+
+.product_section{
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+    border: 1px solid lightgray;
+
+    ion-label{
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .product_div{
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .info{
+        margin-left: 10px;
+        .line{
+                width: 20%;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                height:2px;
+                background-color: gray;
+                display: flex;
+                justify-content: left;
+            }
+            .header{
+                font-size: 10px;
+                text-align: left;
+                color: gray;
+            }
+            .desc{
+                font-size: 12px;
+                text-align: left;
+                font-weight: bold;
+            }
+            .explore_btn{
+                font-size: 10px;
+                text-align: left;
+                color: gray;
+            }
+    }
+}
+
+.every_text{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
+}
+.main_frame{
+    .product_img{
+        height: 100px;
+        width: 100%;
+        padding: 5px;
+        border: 1px solid lightgray;
+
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    .header_title{
+        font-size: 10px;
+        font-weight: bold;
+        color: black;
+    }
+    .footer_title{
+        font-size: 8px;
+        color: gray;
+    }
+}

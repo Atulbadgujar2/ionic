@@ -1,0 +1,35 @@
+.banner_slides{
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 200px;
+    width: 100%;
+}
+.every_text{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
+}
+.main_frame{
+    .product_img{
+        height: 100px;
+        width: 100%;
+        padding: 5px;
+        border: 1px solid;
+    }
+
+    .pro_image{
+        width: 100%;
+        height: 100px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        // border: 1px solid;
+    }
+    .header_title{
+        font-size: 10px;
+        font-weight: bold;
+        color: black;
+        text-align: center;
+    }
+}

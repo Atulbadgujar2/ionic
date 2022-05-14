@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="custom">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Profile
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="prod_main">
+    <ion-label class="title">General</ion-label>
+    <ion-item lines="none">
+      <ion-icon name='settings' slot="start"></ion-icon>
+      <ion-label>App Language</ion-label>
+      <ion-select value="brown" okText="Okay" cancelText="Dismiss">
+        <ion-select-option *ngFor="let language of languages" [value]="language">{{language}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label> Enable notifications </ion-label>
+      <ion-toggle></ion-toggle>
+      <ion-icon name='notifications' slot="start"></ion-icon>
+    </ion-item>
+  </div>
+
+  <div class="prod_main">
+    <ion-label class="title">Currency</ion-label>
+    <ion-item lines="none">
+      <ion-icon name='card' slot="start"></ion-icon>
+      <ion-label>Payment Method</ion-label>
+      <ion-select value="brown" okText="Okay" cancelText="Dismiss">
+        <ion-select-option *ngFor="let method of paymentMethods" [value]="method">{{method}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-icon name='logo-usd' slot="start"></ion-icon>
+      <ion-label>Currency</ion-label>
+      <ion-select value="brown" okText="Okay" cancelText="Dismiss">
+        <ion-select-option *ngFor="let currency of currencies" [value]="currency">{{currency}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </div>
+
+  <div class="prod_main">
+      <ion-button expand="block" (click)="logOut()">Logout</ion-button>
+  </div>
+
+</ion-content>

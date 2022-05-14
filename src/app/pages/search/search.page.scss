@@ -1,0 +1,21 @@
+.main_frame{
+    .product_img{
+        height: 100px;
+        width: 100%;
+        padding: 5px;
+        border: 1px solid lightgray;
+
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    .header_title{
+        font-size: 10px;
+        font-weight: bold;
+        color: black;
+    }
+    .footer_title{
+        font-size: 8px;
+        color: gray;
+    }
+}

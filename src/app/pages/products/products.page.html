@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar color="custom">
+    <ion-buttons slot="start">
+      <ion-back-button mode="md"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Addidas
+    </ion-title>
+    <ion-icon slot="end" (click)="onSearch()" class="header_icons" name="search"></ion-icon>
+    <ion-icon slot="end" (click)="onBookmark()" class="header_icons" name="bookmark"></ion-icon>
+    <ion-icon slot="end" (click)="onCart()" class="header_icons" name="basket"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid fixed class="ion-no-margin ion-no-padding">
+    <ion-row>
+      <ion-col size="6" class="border_col" *ngFor="let item of dummyData" (click)="product()">
+        <!-- <img src="assets/products/2.jpg" alt="" class="prod_img"> -->
+        <div class="pro_image" [style.backgroundImage]="'url(' + item.img + ')'"></div>
+        <ion-grid fixed class="ion-no-padding ion-no-margin">
+          <ion-row class="ion-no-padding ion-no-margin">
+            <ion-col size="10" class="ion-no-padding ion-no-margin">
+              <p class="prod_title">{{item.name}}</p>
+              <p class="prod_orgin">${{item.price}} </p>&nbsp; <span class="prod_sell">${{item.sale}}</span>
+            </ion-col>
+            <ion-col size="2" class="ion-no-padding ion-no-margin">
+              <ion-icon class="heart" name="heart-outline"></ion-icon>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-grid fixed style="padding-bottom: 10px !important;">
+    <ion-row>
+      <ion-col size="6" (click)="sorting()">
+        <fa-icon [icon]="['fas', 'sort']" style="color: gray !important;"></fa-icon>
+        SORT
+      </ion-col>
+      <ion-col size="6" (click)="filter()">
+        <fa-icon [icon]="['fas', 'filter']" style="color: gray !important;"></fa-icon>
+        FILTER
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

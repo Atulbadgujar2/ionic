@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="custom">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Orders</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg-light">
+
+  <div class="prod_main">
+    <ion-label class="title">Upcomming Orders</ion-label>
+  </div>
+
+  <ion-card style="position: relative;" (click)="goToOrderDetail()">
+    <ion-card-header>
+      <h4>Product 1</h4>
+      <ion-label class="price">300$</ion-label>
+      <ion-label class="order_lbl">2513254112</ion-label>
+      <ion-label>Placed on <span>28/12/2017</span></ion-label>
+      <ion-label class="gray_lbl">Deliverd On</ion-label>
+      <ion-label class="gray_lbl">Wed, March 21-03-2018</ion-label>  
+    </ion-card-header>
+  </ion-card>
+
+  <div class="prod_main">
+    <ion-label class="title">Old Orders</ion-label>
+  </div>
+
+  <ion-card style="position: relative;" (click)="goToOrderDetail()" *ngFor="let ites of [1,2,3]"> 
+    <ion-card-header>
+      <h4>Product 1</h4>
+      <ion-label class="price">300$</ion-label>
+      <ion-label class="order_lbl">2513254112</ion-label>
+      <ion-label>Placed on <span>28/12/2016</span></ion-label>
+      <ion-label class="gray_lbl">Deliverd On</ion-label>
+      <ion-label class="gray_lbl">Wed, March 21-03-2018</ion-label>  
+    </ion-card-header>
+  </ion-card>
+
+</ion-content>

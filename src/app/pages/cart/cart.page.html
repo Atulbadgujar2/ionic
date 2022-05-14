@@ -1,0 +1,319 @@
+<ion-header>
+  <ion-toolbar color="custom">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Cart
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <ion-card class="ion-no-margin">
+    <div class="container">
+      <ul class="progressbar">
+        <li [class.active]="activeNum >= 1">Cart</li>
+        <li [class.active]="activeNum >= 2">Address</li>
+        <li [class.active]="activeNum >= 3">Payment</li>
+      </ul>
+    </div>
+  </ion-card> -->
+
+  <div class="stepper_div">
+    <div class="div_step">
+      <div class="round_div" (click)="changeStepper(1)" [class.active_round]="activeNum >= 1">
+        <ion-icon name="checkmark" class="check_icn" [class.active_icn]="activeNum >= 1"></ion-icon>
+      </div>
+      <div class="line_div"></div>
+    </div>
+
+    <div class="div_step2">
+      <div class="round_div"  (click)="changeStepper(2)" [class.active_round]="activeNum >= 2">
+        <ion-icon name="checkmark" class="check_icn" [class.active_icn]="activeNum >= 2"></ion-icon>
+      </div>
+      <div class="line_div2"></div>
+      <div class="round_div"  (click)="changeStepper(3)" [class.active_round]="activeNum >= 3">
+        <ion-icon name="checkmark" class="check_icn" [class.active_icn]="activeNum >= 3"></ion-icon>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="details" *ngIf="activeNum ==1">
+    
+    <div class="specs">
+      <ion-label class="spec_title">Easy 30 days returns and exchanges</ion-label>
+      <ion-label class="spec_s_t">Choose to return or exchage for a different size within 30 days.</ion-label>
+    </div>
+
+      <ion-label class="title">Your Cart</ion-label>
+      
+      <div class="products_div" *ngFor="let item of [1,2]">
+        <div class="image_div" [style.backgroundImage]="'url(assets/products/1.jpg)'"></div>
+        <div class="desc_div">
+          <span class="line"></span>
+            <ion-label>Adidas</ion-label>
+            <ion-label>Light Gray</ion-label>
+            <ion-label>$25.90</ion-label>
+            <ion-label>30 days easy return</ion-label>
+          <span class="line"></span>
+
+          <div class="btn_div">
+            <ion-button (click)="plus()" fill="clear" size="small">
+              <ion-icon slot="icon-only" name="add-circle"></ion-icon>
+            </ion-button>
+            <ion-label>{{num}}</ion-label>
+            <ion-button (click)="minus()" fill="clear" size="small">
+              <ion-icon slot="icon-only" name="remove-circle"></ion-icon>
+            </ion-button>
+          </div>
+
+          <div class="action_div">
+            <ion-label>Remove</ion-label>
+            <ion-label>|</ion-label>
+            <ion-label>Add to Wishlist</ion-label>
+          </div>
+        </div>
+      </div>
+
+
+    <!-- </div> -->
+
+    <div class="specs">
+      <ion-label class="spec_title">COUPONS</ion-label>
+      <ion-label class="spec_s_t">Apply Coupons</ion-label>
+    </div>
+
+    <!-- <div class="specs">
+      <p class="spec_title">COUPONS</p>
+      <p class="spec_s_t">Apply Coupons</p>
+    </div> -->
+    <div>
+      <p class="title">PRICE DETAILS</p>
+
+      <ion-grid fixed>
+        <ion-row class="pricing">
+          <ion-col size="6" class="ion-no-margin ion-no-padding">
+            <ion-label class="name">Bag Total</ion-label>
+          </ion-col>
+          <ion-col size="6" class="ion-no-margin ion-no-padding">
+            <ion-label class="price">
+              $ 233.11
+            </ion-label>
+          </ion-col>
+          <ion-col size="6" class="ion-no-margin ion-no-padding">
+            <ion-label class="name">Coupon Discount</ion-label>
+          </ion-col>
+          <ion-col size="6" class="ion-no-margin ion-no-padding">
+            <ion-label class="price" style="color: darkred;">
+              Apply Coupon
+            </ion-label>
+          </ion-col>
+          <ion-col size="6" class="ion-no-margin ion-no-padding">
+            <ion-label class="name">Order Total</ion-label>
+          </ion-col>
+          <ion-col size="6" class="ion-no-margin ion-no-padding">
+            <ion-label class="price">
+              $233.00
+            </ion-label>
+          </ion-col>
+          <ion-col size="6" class="ion-no-margin ion-no-padding">
+            <ion-label class="name">Delivery Charge</ion-label>
+          </ion-col>
+          <ion-col size="6" class="ion-no-margin ion-no-padding">
+            <ion-label class="price" style="color:darkgreen">
+              Free
+            </ion-label>
+          </ion-col>
+          <ion-col size="6" class="ion-no-margin ion-no-padding">
+            <ion-label class="name" style="font-weight: bold;">Total</ion-label>
+          </ion-col>
+          <ion-col size="6" class="ion-no-margin ion-no-padding">
+            <ion-label class="price" style="color:darkgreen;">
+              $235.00
+            </ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      
+    </div>
+  </div>
+
+  <div class="address" *ngIf="activeNum ==2">
+    <div class="specs">
+      <ion-label class="spec_title" style="margin-bottom: 0px">ADD NEW ADDRESS</ion-label>
+    </div>
+
+    <div class="specs">
+      <ion-item>
+        <ion-label position="floating">Name *</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Mobile No *</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+
+    </div>
+    <div class="specs">
+      <ion-item>
+        <ion-label position="floating">Pin Code *</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Address(House no,building..) *</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Name *</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Locality / Town*</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">City / District</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">State</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+    </div>
+    <div class="specs">
+      <ion-list>
+        <ion-radio-group>
+          <!-- <ion-list-header style="padding: 0px;">
+            Type Of Address
+          </ion-list-header> -->
+
+          <p class="spec_title">Type Of Address</p>
+
+          <ion-item>
+            <ion-label>Home</ion-label>
+            <ion-radio value="home"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Office/Commercial</ion-label>
+            <ion-radio value="office"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-list>
+      <ion-list>
+        <ion-item>
+          <ion-label>Make this my default address</ion-label>
+          <ion-checkbox slot="end"></ion-checkbox>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+
+
+  <div class="payment" *ngIf="activeNum ==3">
+    <div>
+      <p class="title">PRICE DETAILS</p>
+      <ion-grid fixed>
+        <ion-row class="pricing">
+          <ion-col size="6" class="ion-no-margin ion-no-padding">
+            <p class="name">Bag Total</p>
+          </ion-col>
+          <ion-col size="6" class="ion-no-margin ion-no-padding">
+            <p class="price">
+              $ 233.11
+            </p>
+          </ion-col>
+          <ion-col size="6" class="ion-no-margin ion-no-padding">
+            <p class="name">Coupon Discount</p>
+          </ion-col>
+          <ion-col size="6" class="ion-no-margin ion-no-padding">
+            <p class="price" style="color: darkred;">
+              Apply Coupon
+            </p>
+          </ion-col>
+          <ion-col size="6" class="ion-no-margin ion-no-padding">
+            <p class="name">Order Total</p>
+          </ion-col>
+          <ion-col size="6" class="ion-no-margin ion-no-padding">
+            <p class="price">
+              $233.00
+            </p>
+          </ion-col>
+          <ion-col size="6" class="ion-no-margin ion-no-padding">
+            <p class="name">Delivery Charge</p>
+          </ion-col>
+          <ion-col size="6" class="ion-no-margin ion-no-padding">
+            <p class="price" style="color:darkgreen">
+              Free
+            </p>
+          </ion-col>
+          <ion-col size="6" class="ion-no-margin ion-no-padding">
+            <p class="name" style="font-weight: bold;">Total</p>
+          </ion-col>
+          <ion-col size="6" class="ion-no-margin ion-no-padding">
+            <p class="price" style="color:darkgreen;">
+              $235.00
+            </p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <div>
+      <p class="title">DELIVERY TO</p>
+      <div class="specs">
+        <p class="spec_title">Polo Alto 291 Caldwell Road</p>
+        <ion-label class="sub_address">Mooreland</ion-label>
+        <ion-label class="sub_address">OK</ion-label>
+        <ion-label class="sub_address">Oklahoma</ion-label>
+        <ion-label class="sub_address">73852 USA</ion-label>
+        <ion-label class="sub_address" style="color: blue;padding-bottom: 10px;">Change Address</ion-label>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-grid fixed style="padding-bottom: 10px !important;" *ngIf="activeNum==1">
+    <ion-row>
+      <ion-col size="6" (click)="viewMore()">
+        <p class="ion-no-margin" style="color: black;font-weight: 600;">$223.2</p>
+        <p class="ion-no-margin" style="color: gray;">View Details</p>
+      </ion-col>
+      <ion-col size="6" class="right_col" (click)="activeNum =2">
+        <ion-button class="place_order_btn" style="color:white;">
+          PLACE ORDER
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid fixed style="padding-bottom: 10px !important;" *ngIf="activeNum==2">
+    <ion-row>
+      <ion-col size="6" text-center (click)="viewMore()">
+        <br>
+        <p class="ion-no-margin" style="color: gray;">CANCLE</p>
+      </ion-col>
+      <ion-col size="6" class="right_col" text-center (click)="activeNum =3">
+        <ion-button style="color:white;" class="place_order_btn">
+          SAVE
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid fixed style="padding-bottom: 10px !important;" *ngIf="activeNum==3">
+   <ion-row>
+      <ion-col size="6" (click)="viewMore()">
+        <p class="ion-no-margin" style="color: black;font-weight: 600;">$223.2</p>
+        <p class="ion-no-margin" style="color: gray;">View Details</p>
+      </ion-col>
+      <ion-col size="6" class="right_col" (click)="goToPayment()">
+        <ion-button class="place_order_btn" style="color:white;">
+          PAY NOW
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

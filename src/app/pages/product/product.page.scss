@@ -1,0 +1,142 @@
+.div_img_back{
+    height: 40vh;
+    width: 100%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+ion-label {
+    display: block;
+}
+
+.details{
+ 
+    .prod_main{
+        box-shadow: 9px 3px 16px 9px rgba(126, 126, 171, 0.2);
+        padding: 15px;
+        margin-bottom: 20px;
+
+        .title{
+            font-weight: bolder;
+            font-size: 20px;
+            padding: 0px;
+            color: black;
+            margin: 0px !important;
+        }
+        .sub_t{
+            font-size: 15px;
+            color: black;
+            margin: 0px !important;
+        }
+        .feature{
+            font-size: 15px;
+            color: gray;
+            margin: 0px !important;
+        }
+        .prod_orgin{
+            font-size: 15px; 
+            margin: 0px;
+            text-decoration:line-through;
+            color: red;
+            display: inline !important;
+        }
+        .prod_sell{
+            font-size: 15px; 
+            margin: 0px;   
+            color: darkolivegreen;
+            font-weight: bold;
+        }
+        .dummy{
+            font-size: 12px;
+            font-weight: bolder;
+            color: gray;
+            padding: 0px 10px;
+            margin-bottom: 10px;   
+        }
+
+        .flex_div{
+            display: flex;
+            justify-content: space-around;
+
+            .inner_div{
+                height: 50px;
+                width: 50px;
+                border-radius: 50%;
+                border: 2px solid gray;
+                position: relative;
+                ion-label {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                    font-size: 20px;
+                    font-weight: 600;
+                    color: gray;
+                }
+            }
+            .active{
+                border-radius: 50%;
+                border: 2px solid #3b6098 !important;
+                background: #3b6098;
+
+                ion-label {
+                    color: white !important;
+                }
+            }
+        }
+    }
+
+    .product_section{
+        box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+        border: 1px solid lightgray;
+        
+        .product_div{
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .info{
+            margin-left: 10px;
+
+            ion-label {
+                margin-bottom: 10px;
+            }
+            .line{
+                    width: 20%;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    height:2px;
+                    background-color: gray;
+                    display: flex;
+                    justify-content: left;
+                }
+                .header{
+                    font-size: 10px;
+                    text-align: left;
+                    color: gray;
+                }
+                .desc{
+                    font-size: 12px;
+                    text-align: left;
+                    font-weight: bold;
+                }
+                .explore_btn{
+                    font-size: 10px;
+                    text-align: left;
+                    color: gray;
+                }
+        }
+    }
+}
+
+ion-footer{
+    ion-col{
+        text-align: center;
+
+        ion-button{
+            font-size: 15px;
+        }
+    }
+}

@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button mode="md" color="primary"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="primary">Order Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card style="position: relative;">
+    <ion-card-header>
+      <ion-label>Ordered ID <span>2513253423 </span></ion-label>
+
+      <ion-label>Placed on <span>28/12/2016</span></ion-label>
+
+      <ion-label> Return Product</ion-label>
+
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-row class="no-padding">
+        <ion-col size="7" class="first_col">
+          <h4>Product 2</h4>
+          <ion-label class="gray_lbl">Quantity : 1</ion-label>
+
+          <ion-label class="price">500$</ion-label>
+
+          <ion-label class="gray_lbl">via Credit Card</ion-label>
+          <ion-label class="gray_lbl">Tracking Status on</ion-label>
+          <ion-label class="gray_lbl">Delivered on <span style="font-weight: 600;">30/12/2017</span> </ion-label>
+
+          <ion-button (click)="onClick()" class="btn" style="color: white;">
+            <ion-icon slot="start" name="arrow-down"></ion-icon>Recieved
+          </ion-button>
+
+        </ion-col>
+        <ion-col size="5">
+          <div class="img-box">
+            <img src="assets/products/1.jpg">
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+
+  <div class="tracking_div">
+      
+    <div class="left">
+      <span *ngFor="let item of orderDetail">
+        <div class="line_div" [class.line_div_darkgray]="item.status == 1"></div>
+        <div class="round_div_gray" [class.round_div_red]="item.status == 2" [class.round_div_darkgray]="item.status == 1"></div>
+      </span>
+    </div>
+    
+    <div class="right">
+      <span *ngFor="let item of orderDetail">
+        <div class="line_div"></div>
+        <div class="round_div_gray" [class.round_div_red]="item.status == 2" [class.round_div_darkgray]="item.status == 1">
+          <ion-label>{{item.time}} - {{item.date}}</ion-label>
+          <ion-label>{{item.value}}</ion-label>
+        </div>
+      </span>
+    </div>
+
+  </div>
+
+</ion-content>

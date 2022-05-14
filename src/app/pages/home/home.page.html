@@ -1,0 +1,191 @@
+<ion-header>
+  <ion-toolbar color="custom">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      ShopApp
+    </ion-title>
+    <ion-icon slot="end" (click)="onSearch()" class="header_icons" name="search"></ion-icon>
+    <ion-icon slot="end" (click)="onNotification()" class="header_icons" name="notifications-outline"></ion-icon>
+    <ion-icon slot="end" (click)="onBookmark()" class="header_icons" name="bookmark"></ion-icon>
+    <ion-icon slot="end" (click)="onCart()" class="header_icons" name="basket"></ion-icon>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+  <div class="main_slider">
+    <ion-slides mode="ios" pager="ios" class="banner_slider" #mainSlider>
+      <ion-slide>
+        <div class="banner_slides" [style.backgroundImage]="'url(assets/shop/12.jpg)'">
+          <div class="overlay">
+            <p class="name">GET 50% Off</p>
+            <p class="explore_btn">+ EXPLORE</p>
+          </div>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="banner_slides" [style.backgroundImage]="'url(assets/shop/8.jpg)'">
+          <div class="overlay">
+            <p class="name">80% Cashback</p>
+            <p class="explore_btn">+ EXPLORE</p>
+          </div>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="banner_slides" [style.backgroundImage]="'url(assets/shop/7.jpg)'">
+          <div class="overlay">
+            <p class="name">Sale on 12:00</p>
+            <p class="explore_btn">+ EXPLORE</p>
+          </div>
+        </div>
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+  <ion-slides mode="ios" [options]="slidesOptsHeader" margin-bottom margin-top>
+    <ion-slide *ngFor="let item of mainSliders;let i = index" (click)="onCategorySelect(item)">
+      <div class="slider_div">
+        <div class="div_main">
+          <img class="cat_img" [src]="item.img">
+        </div>
+        <ion-label>{{item.name}}</ion-label>
+      </div>
+    </ion-slide>
+  </ion-slides>
+
+  <!-- <ion-card id='main_img' [style.backgroundImage]="'url('+img+')'">
+    <div gallery-title>
+      <p item-title text-wrap>Min. 30% Off <br>
+        ETHINIC STYLES FOR THE EXTRAODINARY</p>
+    </div>
+  </ion-card> -->
+
+  <div id='main_img' [style.backgroundImage]="'url('+img+')'">
+     <div gallery-title>
+      <p item-title text-wrap>Min. 30% Off <br>
+        ETHINIC STYLES FOR THE EXTRAODINARY</p>
+    </div>
+  </div>
+
+  <!-- <ion-slides mode="ios" [options]="slidesOptsProduct1" margin-bottom margin-top>
+    <ion-slide *ngFor="let item of productSliderOne;let i = index" (click)="onCategorySelect(item)">
+      <ion-grid fixed>
+        <ion-row class="product_section">
+          <ion-col size="6" no-padding no-margin>
+            <div class="product_div">
+              <img class="product_img" [src]="item.img">
+            </div>
+          </ion-col>
+          <ion-col size="6">
+            <div class="info">
+              <span class="line"></span>
+              <p class="header">{{item.header}}</p>
+              <p class="desc">{{item.desc}}</p>
+              <p class="explore_btn">+ EXPLORE</p>
+              <span class="line"></span>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+  </ion-slides> -->
+
+  <ion-slides mode="ios" [options]="slidesOptsProduct1" margin-bottom margin-top>
+    <ion-slide *ngFor="let item of productSliderOne;let i = index" (click)="onCategorySelect(item)">
+      <ion-grid fixed>
+        <ion-row class="product_section">
+          <ion-col size="6">
+            <div class="product_div" [style.backgroundImage]="'url( '+ item.img +' )'"></div>
+          </ion-col>
+          <ion-col size="6">
+            <div class="info">
+              <span class="line"></span>
+              <ion-label class="header">{{item.header}}</ion-label>
+              <ion-label class="desc">{{item.desc}}</ion-label>
+              <ion-label class="explore_btn">+ EXPLORE</ion-label>
+              <span class="line"></span>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+  </ion-slides>
+
+  <!-- <ion-card no-margin background-size id='main_img' [style.backgroundImage]="'url('+img2+')'">
+    <div gallery-title>
+      <p item-title text-wrap>FRESH ARRIVALS <br>
+        NEW STYLES YOU'LL LOVE</p>
+    </div>
+  </ion-card> -->
+
+  <div id='main_img' [style.backgroundImage]="'url('+img2+')'">
+    <div gallery-title>
+     <p item-title text-wrap>FRESH ARRIVALS <br>
+      NEW STYLES YOU'LL LOVE</p>
+   </div>
+ </div>
+
+  <p class="every_text">There is Something For Everyone.</p>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="4" *ngFor="let item of forYou">
+        <div class="main_frame" (click)="onCategorySelect(item)">
+          <div [style.backgroundImage]="'url('+item.img+')'" class="product_img"></div>
+          <p class="header_title">{{item.header}}</p>
+          <p class="footer_title">{{item.footer}}</p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-slides mode="ios" [options]="slidesOptsProduct1" margin-bottom margin-top>
+    <ion-slide *ngFor="let item of productSliderOne;let i = index" (click)="onCategorySelect(item)">
+      <ion-grid fixed>
+        <ion-row class="product_section">
+          <ion-col size="6">
+            <div class="product_div" [style.backgroundImage]="'url( '+ item.img +' )'"></div>
+          </ion-col>
+          <ion-col size="6">
+            <div class="info">
+              <span class="line"></span>
+              <ion-label class="header">{{item.header}}</ion-label>
+              <ion-label class="desc">{{item.desc}}</ion-label>
+              <ion-label class="explore_btn">+ EXPLORE</ion-label>
+              <span class="line"></span>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+  </ion-slides>
+
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="4" *ngFor="let item of forYou">
+        <div class="main_frame" (click)="onCategorySelect(item)">
+          <div [style.backgroundImage]="'url('+item.img+')'" class="product_img"></div>
+          <p class="header_title">{{item.header}}</p>
+          <p class="footer_title">{{item.footer}}</p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  <!-- <ion-card no-margin background-size id='main_img' [style.backgroundImage]="'url('+img+')'">
+    <div gallery-title>
+      <p item-title text-wrap>Min. 30% Off <br>
+        ETHINIC STYLES FOR THE EXTRAODINARY</p>
+    </div>
+  </ion-card> -->
+
+  <div id='main_img' [style.backgroundImage]="'url('+img+')'">
+    <div gallery-title>
+     <p item-title text-wrap>Min. 30% Off <br>
+      ETHINIC STYLES FOR THE EXTRAODINARY</p>
+   </div>
+ </div>
+
+</ion-content>

@@ -1,0 +1,50 @@
+.prod_main{
+    box-shadow: 9px 3px 16px 9px rgba(126, 126, 171, 0.2);
+    padding: 15px;
+    margin-bottom: 20px;
+
+    .title{
+        font-weight: bolder;
+        font-size: 20px;
+        padding: 0px;
+        color: black;
+        margin: 0px !important;
+    }
+}
+.main_content_div{
+    width: 100%;
+    padding: 10px;
+    ion-label {
+        display: block;
+    }
+
+    .header_lbl{
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+    ion-item{
+        margin-bottom: 15px;
+        margin-top: 15px;
+    }
+
+    ion-input, ion-datetime{
+        border: 1px solid lightgray;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        height: 45px;
+        --padding-start : 8px
+    }
+
+    .left{
+        padding-left: 0px;
+    }
+    .right{
+        padding-right: 0px;
+    }
+    ion-button{
+        --border-radius: 5px;
+    }
+}
+

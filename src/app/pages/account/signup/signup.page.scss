@@ -1,0 +1,101 @@
+ .div_main_text{
+     .div_logo{
+        width: 100%;
+        height: 15vh;
+        position: relative;
+
+        .img_logo{
+            width: 105px;
+            position: relative;
+            left: 50%;
+            top: 30%;
+            transform: translate(-50%,-50%);
+        }
+    }
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 40px;
+ 
+        .div_inner{
+            margin-top: 10px;
+            height: 40px;
+            width: 100%;
+            border-radius: 5px;
+            background-color: #eeeeef;
+            position: relative;
+
+            .img_user{
+                width: 15px;
+                position: absolute;
+                left: 5%;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            .in{
+                position: absolute;
+                width: 90%;
+                left: 15%;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 14px;
+            }
+        }
+        .lbl_forgot{
+            font-size: 14px;
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .div_btn{
+            width: 100%;
+            margin-top: 20px;
+            position: relative;
+
+            .btn_login{
+                color:white;
+                --background: var(--ion-color-custom);
+                --border-radius: 5px;
+            }
+        }
+        .div_or{
+            width: 100%;
+            margin-top: 20px;
+
+            .lbl_or{
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+                font-size: 15px;
+            }
+             .img_line{
+                width: 100%;
+                height: 1px;
+                margin-top: 7px;
+                background-color:var(--ion-color-dark) !important;
+            }
+        }
+        .div_social{
+            margin-top: 15px;
+            .img_fb{
+                width: 50px;
+                
+            }
+            .img_twit{
+                width: 50px;
+            }
+            .img_gplus{
+                width: 50px;
+            }
+        }
+
+        .lbl_create{
+            text-align: center;
+            display: block;
+            font-weight: bold;
+            color: var(--ion-color-darl);;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+    }

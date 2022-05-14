@@ -1,0 +1,126 @@
+<ion-header>
+  <ion-toolbar color="custom">
+    <ion-buttons slot="start">
+      <ion-back-button mode="md"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Product Page
+    </ion-title>
+    <ion-icon slot="end" (click)="onCart()" class="header_icons" name="basket"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides pager="true">
+    <ion-slide *ngFor="let slide of images" style="height: 100% !important; width: 100%;padding: 15px;">
+      <div class="div_img_back" [style.backgroundImage]="'url('+slide+')'">
+      </div>
+    </ion-slide>
+  </ion-slides>
+  <div class="details">
+
+    <div class="prod_main">
+      <ion-label class="title">Adidas</ion-label>
+      <ion-label class="sub_t">Men Navy Blue</ion-label>
+      <ion-label class="feature">Loafers</ion-label>
+      <ion-label class="prod_orgin">$22.2 </ion-label>&nbsp; <span class="prod_sell">$10.2</span>
+    </div>
+
+    <div class="prod_main">
+      <ion-label class="title">Easy 30 days returns and exchanges</ion-label>
+      <ion-label class="sub_t">Choose to return or exchage for a different size within 30 days.</ion-label>
+    </div>
+
+    <div class="prod_main">
+      <ion-label class="title">Size</ion-label>
+
+      <div class="flex_div">
+        <div class="inner_div" (click)="changeSize(item)" [class.active]="size == item"
+          *ngFor="let item of [6,7,8,9,10,11]">
+          <ion-label>{{item}}</ion-label>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="size">
+      <ion-label class="title">Size</ion-label>
+      <ion-row>
+        <ion-col size="2" *ngFor="let item of [6,7,8,9,10,11]" text-center>
+          <span (click)="size = item" [ngClass]="item ==size ? 'active':'normal'">{{item}}</span>
+        </ion-col>
+      </ion-row>
+    </div> -->
+
+    <div class="prod_main">
+      <ion-label class="title">Product Details</ion-label>
+      <ion-label class="sub_t" style="font-weight: 600;margin-top: 10px !important;margin-bottom: 10px !important;">What
+        it is</ion-label>
+
+      <ion-label class="dummy">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+        ut
+        labore et dolore magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat.</ion-label>
+      <ion-label class="dummy">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+        ut
+        labore et
+        dolore magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat.
+      </ion-label>
+      <ion-label class="dummy">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+        ut
+        labore et
+        dolore magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat.
+      </ion-label>
+    </div>
+
+
+    <div class="prod_main">
+      <ion-label class="title">Related Products</ion-label>
+    </div>
+
+    <div>
+      <!-- <ion-label class="title">Related Products</ion-label> -->
+      <ion-slides mode="ios" [options]="slidesOptsProduct1" margin-bottom margin-top>
+        <ion-slide *ngFor="let item of productSliderOne;let i = index" (click)="onCategorySelect(item)">
+          <ion-grid fixed>
+            <ion-row class="product_section">
+              <ion-col size="6">
+                <div class="product_div" [style.backgroundImage]="'url( '+ item.img +' )'"></div>
+              </ion-col>
+              <ion-col size="6">
+                <div class="info">
+                  <span class="line"></span>
+                  <ion-label class="header">{{item.header}}</ion-label>
+                  <ion-label class="desc">{{item.desc}}</ion-label>
+                  <ion-label class="explore_btn">+ EXPLORE</ion-label>
+                  <span class="line"></span>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-slide>
+      </ion-slides>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-grid fixed style="padding-bottom: 10px !important;">
+    <ion-row>
+      <ion-col size="6" (click)="wishlist()">
+        <ion-button fill="clear">
+          <ion-icon name="bookmark"></ion-icon> WISHLIST
+        </ion-button>
+      </ion-col>
+      <ion-col size="6" (click)="cart()">
+        <ion-button fill="clear">
+          <ion-icon name="cart"></ion-icon> ADD TO CART
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>
