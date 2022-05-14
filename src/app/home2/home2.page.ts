@@ -22,7 +22,7 @@ export class Home2Page {
   }
 
   nextpage2() {
-    this.route.navigate(['/demotemplate']);
+    this.route.navigate(['/home']);
   }
 
 }

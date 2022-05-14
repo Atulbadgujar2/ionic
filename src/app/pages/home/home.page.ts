@@ -55,7 +55,8 @@ export class HomePage implements OnInit {
     console.log('bookmark page');
   }
   onCart() {
-    console.log('cart page');
+    this.router.navigate(['/home2']);
+  
   }
 
   onCategorySelect(item) {
