@@ -14,4 +14,8 @@ export class HomePage {
     this.route.navigate(['/swiper']);
   }
 
+  nextpage2() {
+    this.route.navigate(['/demotemplate']);
+  }
+
 }

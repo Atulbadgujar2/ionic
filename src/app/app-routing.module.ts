@@ -11,6 +11,10 @@ const routes: Routes = [
     loadChildren: () => import('./swiper-slides/swiper-slides.module').then( m => m.SwiperSlidesModule)
   },
   {
+    path: 'demotemplate',
+    loadChildren: () => import('./demotemplate/demotemplate.module').then( m => m.DemotemplateModule)
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'

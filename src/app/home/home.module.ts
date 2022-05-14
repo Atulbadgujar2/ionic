@@ -6,6 +6,7 @@ import { HomePage } from './home.page';
 import { SwiperModule } from 'swiper/angular';
 
 import { HomePageRoutingModule } from './home-routing.module';
+import { DemotemplateModule } from '../demotemplate/demotemplate.module';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { HomePageRoutingModule } from './home-routing.module';
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    SwiperModule
+    SwiperModule,
+    DemotemplateModule
   ],
   declarations: [HomePage]
 })
