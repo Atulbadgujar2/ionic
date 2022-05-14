@@ -27,8 +27,8 @@ export class HomePage implements OnInit {
     slidesPerView: 1.3,
   };
 
-  img: any = 'assets/shop/1.jpg';
-  img2: any = 'assets/shop/9.jpg';
+  img: any = 'assets/shop/home1.jpg';
+  img2: any = 'assets/shop/home3.jpg';
 
   mainSliders = [];
   productSliderOne = [];

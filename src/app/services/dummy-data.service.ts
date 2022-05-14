@@ -150,75 +150,75 @@ export class DummyDataService {
 
   productSlider = [
     {
-      img: 'assets/shop/7.jpg',
+      img: 'assets/shop/home1.jpg',
       header: 'HOT DEALS',
-      desc: 'Flat $2 Off On Your Favorite Styles'
+      desc: 'Flat 2 Off On Your Favorite Products'
     },
     {
-      img: 'assets/shop/12.jpg',
+      img: 'assets/shop/home2.jpg',
       header: 'HOT DEALS',
       desc: 'Extra 5% Off On your Order'
     },
     {
-      img: 'assets/shop/24.jpg',
+      img: 'assets/shop/home3.jpg',
       header: 'HOT DEALS',
-      desc: 'Flat $2 Off On Your Favorite Styles'
+      desc: 'Flat 2 Off On Your Favorite Products'
     },
     {
-      img: 'assets/shop/22.jpg',
+      img: 'assets/shop/home1.jpg',
       header: 'HOT DEALS',
-      desc: 'Flat $2 Off On Your Favorite Styles'
+      desc: 'Flat 2 Off On Your Favorite Products'
     },
     {
-      img: 'assets/shop/6.jpg',
+      img: 'assets/shop/home1.jpg',
       header: 'HOT DEALS',
-      desc: 'Flat $2 Off On Your Favorite Styles'
+      desc: 'Flat 2 Off On Your Favorite Products'
     },
   ];
 
   specialForYou = [
     {
-      img: 'assets/shop/1.jpg',
-      header: 'HANDBAGS',
+      img: 'assets/shop/home1.jpg',
+      header: 'Grocery',
       footer: '+ SHOP'
     },
     {
-      img: 'assets/shop/2.jpg',
-      header: 'FOOTWEAR',
-      footer: '+ FOR HER'
-    },
-    {
-      img: 'assets/shop/3.jpg',
-      header: 'SPORTSWEAR',
+      img: 'assets/shop/home1.jpg',
+      header: 'Daal',
       footer: '+ SHOP'
     },
     {
-      img: 'assets/shop/4.jpg',
-      header: 'FOOTWEAR',
-      footer: '+ FOR HIM'
-    },
-    {
-      img: 'assets/shop/22.jpg',
-      header: 'ETHIC WEAR',
+      img: 'assets/shop/home1.jpg',
+      header: 'Atta',
       footer: '+ SHOP'
     },
     {
-      img: 'assets/shop/6.jpg',
-      header: 'WESTERN WEAR',
-      footer: '+ FOR HER'
-    },
-    {
-      img: 'assets/shop/11.jpg',
-      header: 'KIDS WEAR',
+      img: 'assets/shop/home1.jpg',
+      header: 'Breads',
       footer: '+ SHOP'
     },
     {
-      img: 'assets/shop/12.jpg',
+      img: 'assets/shop/home1.jpg',
+      header: 'Milk',
+      footer: '+ SHOP'
+    },
+    {
+      img: 'assets/shop/home1.jpg',
+      header: 'Vegitables',
+      footer: '+ SHOP'
+    },
+    {
+      img: 'assets/shop/home1.jpg',
+      header: 'Fruits',
+      footer: '+ SHOP'
+    },
+    {
+      img: 'assets/shop/home1.jpg',
       header: 'HOME',
       footer: '+ SHOP'
     },
     {
-      img: 'assets/shop/23.jpg',
+      img: 'assets/shop/home1.jpg',
       header: 'More',
       footer: '+ SHOP'
     },

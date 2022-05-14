@@ -23,10 +23,10 @@ export class ProductPage implements OnInit {
 
   size: any = 6;
   images: any[] = [
-    'assets/products/1.jpg',
-    'assets/products/4.jpg',
-    'assets/products/5.jpeg',
-    'assets/products/6.jpg',
+    'assets/products/tomatoes.jpg',
+    'assets/products/Tomato1.jpg',
+    'assets/products/Tomato2.jpg',
+    'assets/products/Tomato3.jpg',
   ];
   constructor(
     public toastController: ToastController,
