@@ -18,7 +18,7 @@ export class AccountPage implements OnInit {
   currency: any;
   paymentMethod: any;
 
-  languages = ['English', 'Portuguese', 'French'];
+  languages = ['English', 'Hindi'];
   paymentMethods = ['Paypal', 'Credit Card'];
   currencies = ['USD', 'BRL', 'EUR'];
 
