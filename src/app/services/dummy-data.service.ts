@@ -77,7 +77,7 @@ export class DummyDataService {
       sale : '15.00'
     },
     {
-      img: 'assets/products/fruits&veggies3.png.jpg',
+      img: 'assets/products/fruits&veggies3.png',
       off: 'Min. 50% off.',
       name : 'Product 11',
       price : '34.00',
