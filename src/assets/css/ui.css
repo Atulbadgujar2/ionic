@@ -1415,11 +1415,31 @@ a[class*=card]:hover .title {
   display: block;
 }
 
+.cart-count {
+  position: absolute;
+  top: 4px !important;
+  right: 1px !important;
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  font-size: 10px !important;
+  line-height: 1;
+  text-align: center;
+  border-radius: 3rem;
+  color: #fff;
+  background-color: #fa3434;
+}
+
+.custom{
+  position: absolute;
+}
+
 ion-content{
   --ion-background-color:#fff5ee; 
   --ion-item-background :#faebd7;
   --ion-text-color :#000;
   --ion-tab-bar-background :#feeae6;
 }
+
+
 
 /*# sourceMappingURL=ui.css.map */
