@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { LoginRoutingModule } from './login-routing.module';
+import { Login2RoutingModule } from './login2-routing.module';
 import { FormsModule } from '@angular/forms';
 
 
@@ -9,8 +9,8 @@ import { FormsModule } from '@angular/forms';
   declarations: [],
   imports: [
     CommonModule,
-    LoginRoutingModule,
+    Login2RoutingModule,
     FormsModule 
   ]
 })
-export class LoginModule { }
+export class Login2Module { }

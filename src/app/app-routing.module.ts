@@ -19,8 +19,8 @@ const routes: Routes = [
     loadChildren: () => import('./demotemplate/demotemplate.module').then( m => m.DemotemplateModule)
   },
   {
-    path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginModule)
+    path: 'login2',
+    loadChildren: () => import('./login2/login2.module').then( m => m.Login2Module)
   },
 
   {
