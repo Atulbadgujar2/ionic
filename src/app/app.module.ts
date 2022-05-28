@@ -15,6 +15,9 @@ import { FilterPageModule } from './pages/filter/filter.module';
 import { HttpClientModule } from '@angular/common/http';
 import { SortPageModule } from './pages/sort/sort.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { OneSignal } from '@ionic-native/onesignal/ngx'
 library.add(fas, far, fab);
 @NgModule({
   declarations: [AppComponent],
@@ -24,7 +27,8 @@ library.add(fas, far, fab);
     SortPageModule,
     HttpClientModule,
     FontAwesomeModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [  StatusBar,
+    SplashScreen,{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },OneSignal],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
