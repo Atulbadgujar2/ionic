@@ -25,41 +25,41 @@ export class DataService {
       url: '/tabs/home',
       icon: 'home.png'
     },
-    {
-      title: 'Men',
-      url: '/tabs/home',
-      icon: 'polo.png'
-    },
-    {
-      title: 'Women',
-      url: '/tabs/home',
-      icon: 'dresses.png'
-    },
-    {
-      title: 'Kids',
-      url: '/tabs/home',
-      icon: 'baby-clothes.png'
-    },
-    {
-      title: 'Home & Living',
-      url: '/tabs/home',
-      icon: 'idea.png'
-    },
-    {
-      title: 'Gadgets',
-      url: '/tabs/home',
-      icon: 'gadget.png'
-    },
-    {
-      title: 'Theme Stores',
-      url: '/tabs/home',
-      icon: 'shop.png'
-    },
-    {
-      title: 'Gift Card',
-      url: '/tabs/home',
-      icon: 'gift-card.png'
-    },
+    // {
+    //   title: 'Men',
+    //   url: '/tabs/home',
+    //   icon: 'polo.png'
+    // },
+    // {
+    //   title: 'Women',
+    //   url: '/tabs/home',
+    //   icon: 'dresses.png'
+    // },
+    // {
+    //   title: 'Kids',
+    //   url: '/tabs/home',
+    //   icon: 'baby-clothes.png'
+    // },
+    // {
+    //   title: 'Home & Living',
+    //   url: '/tabs/home',
+    //   icon: 'idea.png'
+    // },
+    // {
+    //   title: 'Gadgets',
+    //   url: '/tabs/home',
+    //   icon: 'gadget.png'
+    // },
+    // {
+    //   title: 'Theme Stores',
+    //   url: '/tabs/home',
+    //   icon: 'shop.png'
+    // },
+    // {
+    //   title: 'Gift Card',
+    //   url: '/tabs/home',
+    //   icon: 'gift-card.png'
+    // },
     {
       title: 'Refer & Earn',
       url: '/tabs/home',
