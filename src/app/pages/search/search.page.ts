@@ -16,47 +16,47 @@ import { Router } from '@angular/router';
 export class SearchPage implements OnInit {
   forYou = [
     {
-      img: 'assets/shop/1.jpg',
-      header: 'HANDBAGS',
+      img: 'assets/shop/home1.jpg',
+      header: 'Veg',
       footer: '+ SHOP'
     },
     {
-      img: 'assets/shop/2.jpg',
-      header: 'FOOTWEAR',
-      footer: '+ FOR HER'
-    },
-    {
-      img: 'assets/shop/3.jpg',
-      header: 'SPORTSWEAR',
+      img: 'assets/shop/home1.jpg',
+      header: 'Fruits',
       footer: '+ SHOP'
     },
     {
-      img: 'assets/shop/4.jpg',
-      header: 'FOOTWEAR',
-      footer: '+ FOR HIM'
-    },
-    {
-      img: 'assets/shop/22.jpg',
-      header: 'ETHIC WEAR',
+      img: 'assets/shop/home1.jpg',
+      header: 'Bread',
       footer: '+ SHOP'
     },
     {
-      img: 'assets/shop/6.jpg',
-      header: 'WESTERN WEAR',
-      footer: '+ FOR HER'
+      img: 'assets/shop/home1.jpg',
+      header: 'Grocery',
+      footer: '+ FOR Everyone'
     },
     {
-      img: 'assets/shop/11.jpg',
-      header: 'KIDS WEAR',
+      img: 'assets/shop/home1.jpg',
+      header: 'Dairy',
       footer: '+ SHOP'
     },
     {
-      img: 'assets/shop/12.jpg',
+      img: 'assets/shop/home2.jpg',
+      header: 'Dairy',
+      footer: '+ FOR SHOP'
+    },
+    {
+      img: 'assets/shop/home3.jpg',
+      header: 'Dairy',
+      footer: '+ SHOP'
+    },
+    {
+      img: 'assets/shop/home1.jpg',
       header: 'HOME',
       footer: '+ SHOP'
     },
     {
-      img: 'assets/shop/23.jpg',
+      img: 'assets/shop/home2.jpg',
       header: 'More',
       footer: '+ SHOP'
     },
