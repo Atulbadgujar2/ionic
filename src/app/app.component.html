@@ -1,3 +1,27 @@
-<ion-app>
-  <ion-router-outlet></ion-router-outlet>
-</ion-app>
+<ion-split-pane contentId="main">
+  <!--  our side menu  -->
+  <ion-menu contentId="main">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Ionic4Shopping</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+
+        <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
+          <div [routerDirection]="'root'" [routerLink]="[p.url]" class="item_app" no-border>
+            <img class="menu_icon" src="assets/icon/{{p.icon}}">
+            <ion-label class="lbl_app">
+              {{p.title}}
+            </ion-label>
+          </div>
+        </ion-menu-toggle>
+      </ion-list>
+
+    </ion-content>
+  </ion-menu>
+
+  <!-- the main content -->
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-split-pane>
