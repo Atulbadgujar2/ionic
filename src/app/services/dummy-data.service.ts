@@ -238,13 +238,13 @@ export class DummyDataService {
 
     {
       slug: 'dairy',
-      name: 'Dairy Bread and Eggs',
+      name: 'Eggs',
       img: 'assets/header/Vegetables1.png'
     },
 
     {
       slug: 'atta',
-      name: 'Atta Dal and Oils',
+      name: 'Atta',
       img: 'assets/header/Vegetables1.png'
     },
 

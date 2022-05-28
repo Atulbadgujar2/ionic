@@ -1416,7 +1416,10 @@ a[class*=card]:hover .title {
 }
 
 ion-content{
-  --ion-background-color:#feeae6; 
+  --ion-background-color:#fff5ee; 
+  --ion-item-background :#faebd7;
+  --ion-text-color :#000;
+  --ion-tab-bar-background :#feeae6;
 }
 
 /*# sourceMappingURL=ui.css.map */
