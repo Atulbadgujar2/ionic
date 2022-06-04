@@ -1,0 +1,51 @@
+.headerSection {
+    display: flex;
+    justify-content: space-around;
+ }
+ .hydrated {
+    visibility: inherit;
+}
+.iconSection{
+    width: 100px;
+    border: 3px solid var(--ion-color-primary);
+    border-radius: 90px;
+    padding: 9px;
+}
+.cardSection{
+    background: #ffff;
+    min-width: 240px;
+    height: 150px;
+}
+.userTextRow{
+    margin-bottom: 25px;
+}
+.userTextSection{
+    padding-left: 16px;
+    display: flex;
+    flex-direction: column;
+   
+}
+.headingSection{
+    width: 60%;
+}
+ion-card-header .card-content-md {
+    padding-top: 0;
+}
+
+ion-label{
+    font-size: 26px;    
+}
+ion-card-subtitle{
+    font-size: 20px;
+}
+ion-card-title{
+    font-size: 24px;
+    padding-top: 3px;
+}
+
+
+
+
+ 
+
+   

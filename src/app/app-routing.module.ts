@@ -119,6 +119,10 @@ const routes: Routes = [
     path: 'payment',
     loadChildren: () => import('./pages/payment/payment.module').then(m => m.PaymentPageModule)
   },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardModule)
+  },
   // {
   //   path: '',
   //   redirectTo: 'home',

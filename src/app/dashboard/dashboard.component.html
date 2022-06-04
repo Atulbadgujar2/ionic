@@ -1,3 +1,163 @@
-<p>
-  dashboard works!
-</p>
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      TurantKar
+    </ion-title>
+    <ion-icon slot="end" (click)="onSearch()" class="header_icons" name="search"></ion-icon>
+    <ion-icon slot="end" (click)="onNotification()" class="header_icons" name="notifications-outline"></ion-icon>
+    <ion-icon slot="end" (click)="onBookmark()" class="header_icons" name="bookmark"></ion-icon>
+    <!-- <ion-icon slot="end" (click)="onCart()" class="header_icons" name="basket"></ion-icon> -->
+    <ion-icon slot="end" (click)="onCart()" class="icon-sm fa fa-shopping-cart" name="basket">      
+    </ion-icon>
+    <span class="cart-count">0</span>
+  </ion-toolbar>
+
+</ion-header>
+  <!-- <ion-grid>
+    <ion-row>
+      <div class="userTextSection"><ion-label class="sc-ion-label-md-h sc-ion-label-md-s md hydrated">Hi, Welcome back!</ion-label>
+        <span >For Admin Access Only</span></div>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card class="cardSection md hydrated">
+     
+            <ion-card-header>
+              <div  class="headingSection">
+                <ion-card-subtitle  role="heading" aria-level="3" class="ion-inherit-color md hydrated">Total Product</ion-card-subtitle>
+                <ion-card-title  color="primary" role="heading" aria-level="2" class="ion-color ion-color-primary ion-inherit-color md hydrated"><b>24</b></ion-card-title>
+              </div>           
+              <div class="iconSection"><img src="assets/images/dashboard/Total Product.png"></div> 
+        
+          </ion-card-header>
+        
+          <ion-card-content>
+           
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col>    
+          <ion-card class="cardSection md hydrated">
+            <ion-card-header>
+              <div  class="headingSection">
+                <ion-card-subtitle  role="heading" aria-level="3" class="ion-inherit-color md hydrated">Total Product</ion-card-subtitle>
+                <ion-card-title  color="primary" role="heading" aria-level="2" class="ion-color ion-color-primary ion-inherit-color md hydrated"><b>24</b></ion-card-title>
+              </div>           
+              <div class="iconSection"><img src="assets/images/dashboard/Total Product.png"></div> 
+            </ion-card-header>
+          
+            <ion-card-content>
+              
+            </ion-card-content>
+          </ion-card>
+      
+      </ion-col>
+    </ion-row>
+</ion-grid> -->
+
+<ion-content class="md hydrated" style="--offset-top: 0px; --offset-bottom: 0px;">
+  <div class="topContentSection">
+      <!-- <div class="topHeaderSection">
+          <ion-menu-button color="light" class="md ion-color ion-color-light button ion-activatable ion-focusable hydrated menu-button-hidden" aria-hidden="true"></ion-menu-button>
+          <ion-title class="titleText md title-default hydrated" color="">Dashboard</ion-title>
+          <ion-searchbar              
+              animated=""
+              class="searchBarInput sc-ion-searchbar-ios-h sc-ion-searchbar-ios-s ion-color ion-color-light ios searchbar-animated hydrated"
+              color="light"
+              debounce="500"
+              mode="ios"
+              round=""
+              showcancelbutton="never"
+              role="search"
+          >
+              <div class="searchbar-input-container sc-ion-searchbar-ios">
+                  <input aria-label="search text" class="searchbar-input sc-ion-searchbar-ios" placeholder="Search" type="search" autocomplete="off" autocorrect="off" style="padding-left: calc(50% - 21px);" />
+                  <ion-icon aria-hidden="true" class="searchbar-search-icon sc-ion-searchbar-ios ios hydrated" role="img" aria-label="search outline" style="margin-left: calc(50% - 51px);"></ion-icon>
+                  <button aria-label="reset" type="button" no-blur="" class="searchbar-clear-button sc-ion-searchbar-ios">
+                      <ion-icon aria-hidden="true" class="searchbar-clear-icon sc-ion-searchbar-ios ios hydrated" role="img" aria-label="close circle"></ion-icon>
+                  </button>
+              </div>
+          </ion-searchbar>
+          <div class="selectThemeSection">
+              <ion-label class="sc-ion-label-md-h sc-ion-label-md-s md hydrated">Select Theme</ion-label>
+              <ion-select
+                  
+                  class="selectTheme ng-untouched ng-pristine ng-valid ion-untouched ion-pristine ion-valid md hydrated"
+                  color="light"
+                  interface="popover"
+                  role="listbox"
+                  aria-haspopup="dialog"
+                  aria-expanded="false"
+                  aria-labelledby="ion-sel-0-lbl"
+              >
+                  
+                  <ion-select-option color="light" role="option" id="ion-selopt-0" class="md hydrated"> Default</ion-select-option>
+                  <ion-select-option color="light" role="option" id="ion-selopt-1" class="md hydrated"> Dark</ion-select-option>
+                  <ion-select-option color="light" role="option" id="ion-selopt-2" class="md hydrated"> Purple</ion-select-option>
+                  <ion-select-option color="light" role="option" id="ion-selopt-3" class="md hydrated"> Medium</ion-select-option><input type="hidden" class="aux-input" name="ion-sel-0" value="default" />
+              </ion-select>
+          </div>
+      </div> -->
+      <ion-grid class="md hydrated">
+          <ion-row class="userTextRow md hydrated">
+              <div class="userTextSection">
+                  <ion-label class="sc-ion-label-md-h sc-ion-label-md-s md hydrated">Hi, Welcome back!</ion-label><span >Your TurantKar Admin Now.</span>
+              </div>
+          </ion-row>
+          <ion-row class="md hydrated">
+              <ion-col class="md hydrated">
+                  <ion-card class="cardSection md hydrated">
+                      <ion-card-header class="headerSection hydrated ion-inherit-color md">
+                          <div class="headingSection">
+                              <ion-card-subtitle role="heading" aria-level="3" class="ion-inherit-color md hydrated">Total Product</ion-card-subtitle>
+                              <ion-card-title color="primary" role="heading" aria-level="2" class="ion-color ion-color-primary ion-inherit-color md hydrated"><b >24</b></ion-card-title>
+                          </div>
+                          <div class="iconSection"><img src="assets/images/dashboard/Total Products.png" /></div>
+                      </ion-card-header>
+                      <ion-card-content class="md card-content-md hydrated"></ion-card-content>
+                  </ion-card>
+              </ion-col>
+              <ion-col class="md hydrated">
+                  <ion-card class="cardSection md hydrated">
+                      <ion-card-header class="headerSection ion-inherit-color md hydrated">
+                          <div class="headingSection">
+                              <ion-card-subtitle role="heading" aria-level="3" class="ion-inherit-color md hydrated">Total Categories</ion-card-subtitle>
+                              <ion-card-title color="primary" role="heading" aria-level="2" class="ion-color ion-color-primary ion-inherit-color md hydrated"><b >5</b></ion-card-title>
+                          </div>
+                          <div class="iconSection"><img src="assets/images/dashboard/Total Categories.png" /></div>
+                      </ion-card-header>
+                      <ion-card-content class="md card-content-md hydrated"></ion-card-content>
+                  </ion-card>
+              </ion-col>
+              <ion-col class="md hydrated">
+                  <ion-card class="cardSection md hydrated">
+                      <ion-card-header class="headerSection ion-inherit-color md hydrated">
+                          <div class="headingSection">
+                              <ion-card-subtitle role="heading" aria-level="3" class="ion-inherit-color md hydrated">Total Orders</ion-card-subtitle>
+                              <ion-card-title color="primary" role="heading" aria-level="2" class="ion-color ion-color-primary ion-inherit-color md hydrated"><b >423</b></ion-card-title>
+                          </div>
+                          <div class="iconSection"><img src="assets/images/dashboard/Total Orders.png" /></div>
+                      </ion-card-header>
+                      <ion-card-content class="md card-content-md hydrated"></ion-card-content>
+                  </ion-card>
+              </ion-col>
+              <ion-col class="md hydrated">
+                  <ion-card class="cardSection md hydrated">
+                      <ion-card-header class="headerSection ion-inherit-color md hydrated">
+                          <div class="headingSection">
+                              <ion-card-subtitle role="heading" aria-level="3" class="ion-inherit-color md hydrated">Total Users</ion-card-subtitle>
+                              <ion-card-title color="primary" role="heading" aria-level="2" class="ion-color ion-color-primary ion-inherit-color md hydrated"><b >341</b></ion-card-title>
+                          </div>
+                          <div class="iconSection"><img src="assets/images/dashboard/Total Users.png" /></div>
+                      </ion-card-header>
+                      <ion-card-content class="md card-content-md hydrated"></ion-card-content>
+                  </ion-card>
+              </ion-col>
+          </ion-row>
+      </ion-grid>
+  </div>
+
+</ion-content>
