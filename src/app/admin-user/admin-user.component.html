@@ -1,3 +1,126 @@
-<p>
-  admin-user works!
-</p>
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      TurantKar
+    </ion-title>
+    <ion-icon slot="end" (click)="onSearch()" class="header_icons" name="search"></ion-icon>
+    <ion-icon slot="end" (click)="onNotification()" class="header_icons" name="notifications-outline"></ion-icon>
+    <ion-icon slot="end" (click)="onBookmark()" class="header_icons" name="bookmark"></ion-icon>
+    <!-- <ion-icon slot="end" (click)="onCart()" class="header_icons" name="basket"></ion-icon> -->
+    <ion-icon slot="end" (click)="onCart()" class="icon-sm fa fa-shopping-cart" name="basket">      
+    </ion-icon>
+    <span class="cart-count">0</span>
+  </ion-toolbar>
+
+</ion-header>
+<ion-content  class="md hydrated" style="--offset-top: 0px; --offset-bottom: 0px;">
+  <ion-list  class="md list-md hydrated">
+      <ion-list-header  class="medium md hydrated">
+          <ion-label  class="page-subtitle sc-ion-label-md-h sc-ion-label-md-s md hydrated">Check all your users' details here</ion-label>
+      </ion-list-header>
+      <div  class="topsearchBarSection">
+          <ion-item  class="item md in-list ion-activatable ion-focusable hydrated item-label item-interactive item-select">
+              <ion-label  class="filterSelect sc-ion-label-md-h sc-ion-label-md-s ion-color ion-color-dark md hydrated" color="dark" id="ion-sel-1-lbl">
+                  <ion-icon  name="funnel" role="img" class="md hydrated" aria-label="funnel"></ion-icon> Sort
+              </ion-label>
+              <ion-select  class="selectTheme md in-item hydrated" color="dark" interface="popover" role="listbox" aria-haspopup="dialog" aria-expanded="false" aria-labelledby="ion-sel-1-lbl">
+                  <!---->
+                  <ion-select-option  color="light" role="option" id="ion-selopt-4" class="md hydrated"> Name</ion-select-option>
+                  <ion-select-option  color="light" role="option" id="ion-selopt-5" class="md hydrated"> Date</ion-select-option><input type="hidden" class="aux-input" name="ion-sel-1" value="" />
+              </ion-select>
+          </ion-item>
+          <ion-searchbar placeholder="Search." mode="ios" class="searchBarInput"></ion-searchbar>
+          <!-- <ion-searchbar
+          class="searchBarInput sc-ion-searchbar-ios-h sc-ion-searchbar-ios-s ios searchbar-animated searchbar-should-show-cancel hydrated searchbar-left-aligned"
+          debounce="500"
+          mode="ios"
+          round=""
+          showcancelbutton="always"
+          role="search"
+      >
+          <div class="searchbar-input-container sc-ion-searchbar-ios">
+              <input aria-label="search text" class="searchbar-input sc-ion-searchbar-ios" placeholder="Search" type="search" autocomplete="off" autocorrect="off" style="padding-left: calc(50% - 21px);" />
+              <ion-icon aria-hidden="true" class="searchbar-search-icon sc-ion-searchbar-ios ios hydrated" role="img" aria-label="search outline" style="margin-left: calc(50% - 51px);"></ion-icon>
+              <button aria-label="reset" type="button" no-blur="" class="searchbar-clear-button sc-ion-searchbar-ios">
+                  <ion-icon aria-hidden="true" class="searchbar-clear-icon sc-ion-searchbar-ios ios hydrated" role="img" aria-label="close circle"></ion-icon>
+              </button>
+          </div>
+          <button aria-label="Cancel" type="button" class="searchbar-cancel-button sc-ion-searchbar-ios" style="margin-right: 0px;"><div aria-hidden="true" class="sc-ion-searchbar-ios">Cancel</div></button>
+      </ion-searchbar> -->
+          <!-- <ion-item  class="item md in-list ion-focusable hydrated">
+              <ion-button  class="heightButton ion-color ion-color-primary md button button-small button-solid ion-activatable ion-focusable hydrated" color="primary" slot="end" text-capitalize="">
+                  <ion-icon  name="add" slot="start" role="img" class="md hydrated" aria-label="add"></ion-icon> Add new product
+              </ion-button>
+          </ion-item> -->
+      </div>
+  </ion-list>
+  <ion-grid  class="paddingGrid md hydrated">
+      <ion-row  class="scrollRow md hydrated">
+          <ion-col              
+              size="12"
+              class="md hydrated"
+              style="flex: 0 0 calc(calc(12 / var(--ion-grid-columns, 12)) * 100%); width: calc(calc(12 / var(--ion-grid-columns, 12)) * 100%); max-width: calc(calc(12 / var(--ion-grid-columns, 12)) * 100%);"
+          >
+          <table  class="tableStyle">
+            <thead >
+                <tr >
+                    <!---->
+                    <th  text-capitalize="">id</th>
+                    <th  text-capitalize="">username</th>
+                    <th  text-capitalize="">gender</th>
+                    <th  text-capitalize="">email</th>
+                    <th  text-capitalize="">phoneNumber</th>
+                </tr>
+            </thead>
+            <tbody >
+                <!---->
+                <tr >
+                    <!---->
+                    <td >
+                        <!----><!---->
+                        <span >1</span>
+                        <!----><!---->
+                    </td>
+                    <td >
+                        <!----><!----><!---->
+                        <span >Romone183 </span>
+                        <!---->
+                    </td>
+                    <td ><!----><!----><!----><!----></td>
+                    <td >
+                        <!----><!----><!---->
+                        <span >rovincent@yahoo.fr</span>
+                        <!---->
+                    </td>
+                    <td ><!----><!----><!----><!----></td>
+                </tr>
+                <tr >
+                    <!---->
+                    <td >
+                        <!----><!---->
+                        <span >2</span>
+                        <!----><!---->
+                    </td>
+                    <td >
+                        <!----><!----><!---->
+                        <span >2000nayankhokhar@gmail.com</span>
+                        <!---->
+                    </td>
+                    <td ><!----><!----><!----><!----></td>
+                    <td >
+                        <!----><!----><!---->
+                        <span >2000nayankhokhar@gmail.com</span>
+                        <!---->
+                    </td>
+                    <td ><!----><!----><!----><!----></td>
+                </tr>                              
+            </tbody>
+        </table>
+        
+          </ion-col>
+      </ion-row>
+  </ion-grid>
+</ion-content>

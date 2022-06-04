@@ -131,6 +131,14 @@ const routes: Routes = [
     path: 'adminorder',
     loadChildren: () => import('./admin-order/admin-order.module').then( m => m.AdminOrderModule)
   },
+  {
+    path: 'adminuser',
+    loadChildren: () => import('./admin-user/admin-user.module').then( m => m.AdminUserModule)
+  },
+  {
+    path: 'admincategory',
+    loadChildren: () => import('./admin-category/admin-category.module').then( m => m.AdminCategoryModule)
+  },
   // {
   //   path: '',
   //   redirectTo: 'home',

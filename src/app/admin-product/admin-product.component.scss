@@ -11,6 +11,7 @@
 element.style {
     margin-right: 0px;
     position: relative;
+   
 }
 table {
     // border-collapse: separate;
@@ -20,13 +21,18 @@ table {
   } 
   th,
   td {
-    padding: 1px 16px!important;
+    padding: 8px 16px!important;
     overflow: hidden;
+    
   }
   tbody {
     display: table-row-group;
     vertical-align: middle;
     border-color: inherit;
+}
+tr {
+    color: var(--ion-color-dark);
+    border-bottom: 1px solid #d0cfcf;
 }
 .no-wrap{
     white-space: nowrap;
@@ -56,3 +62,17 @@ th {
     font-size: 17px;
     text-align: left;
 }
+.searchBarInput{
+    width: 25%;
+}
+.page-subtitle{
+    padding-left: 10px;
+    color: #666;
+    font-weight: lighter;
+}
+
+
+
+
+
+
