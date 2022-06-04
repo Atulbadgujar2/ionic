@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-admin-category-add',
   templateUrl: './admin-category-add.component.html',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminCategoryAddComponent implements OnInit {
 
-  constructor() { }
+
 
   ngOnInit() {}
 

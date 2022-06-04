@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-admin-category',
@@ -7,8 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminCategoryComponent implements OnInit {
 
-  constructor() { }
+  constructor(public modalController: ModalController) {}
 
-  ngOnInit() {}
 
+  ngOnInit() {
+    async function openModal(opts = {}) {
+      const modal = await this.modalController.create({
+        component: 'modal-content',
+        ...opts,
+      });
+      modal.present();
+
+      // currentModal = modal;
+    }
+
+  };
+
+  
+     
 }
