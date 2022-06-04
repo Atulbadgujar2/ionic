@@ -1,36 +1,28 @@
 .medium {
     color: #000;
     font-weight: 700;
-    font-size: 22px;
-    background: #eee!important;
+    font-size: 22px;    
+}
+.topsearchBarSection{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 element.style {
     margin-right: 0px;
     position: relative;
 }
-
-
 table {
     // border-collapse: separate;
     // border-spacing: 0 15px;
     border-collapse: collapse;
     width: 100%;
-  }  
-  
+  } 
   th,
   td {
     padding: 1px 16px!important;
     overflow: hidden;
   }
-
-//   th {
-//     color: var(--ion-color-primary);
-  
-//     padding: 8px 16px!important;
-//     letter-spacing: 1px;
-//     font-size: 17px;
-//     text-align: left;
-// }
   tbody {
     display: table-row-group;
     vertical-align: middle;
@@ -42,14 +34,6 @@ table {
 tr:nth-of-type(odd) {
     background: #eee;
 }
-
-// ion-select {
-//     opacity: 1!important;
-//     color: var(--ion-color-secondary);
-// }
-
-
-
 .paddingGrid{
     padding: 6px;
     background: #ffff;
@@ -58,10 +42,17 @@ tr:nth-of-type(odd) {
     box-shadow: 0 1px 4px 0 rgb(0 0 0 / 14%);
     margin: 16px;
 }
-
 .scrollRow{
     overflow: auto;
     display: flex;
     width: 100%;
     flex-wrap: nowrap;
+}
+th {
+    color: var(--ion-color-primary);
+    background: #fff;
+    padding: 8px 16px!important;
+    letter-spacing: 1px;
+    font-size: 17px;
+    text-align: left;
 }
