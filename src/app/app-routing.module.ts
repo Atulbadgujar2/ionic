@@ -123,6 +123,14 @@ const routes: Routes = [
     path: 'dashboard',
     loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardModule)
   },
+  {
+    path: 'adminproduct',
+    loadChildren: () => import('./admin-product/admin-product.module').then( m => m.AdminProductModule)
+  },
+  {
+    path: 'adminorder',
+    loadChildren: () => import('./admin-order/admin-order.module').then( m => m.AdminOrderModule)
+  },
   // {
   //   path: '',
   //   redirectTo: 'home',
