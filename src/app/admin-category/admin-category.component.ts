@@ -9,18 +9,22 @@ import { ModalController } from '@ionic/angular';
 })
 export class AdminCategoryComponent implements OnInit {
 
-  constructor(public modalController: ModalController) {}
+  constructor(public modalController: ModalController) {
+   
+  }
 
 
   ngOnInit() {
+    let currentModal = null;
     async function openModal(opts = {}) {
+      debugger;
       const modal = await this.modalController.create({
         component: 'modal-content',
         ...opts,
       });
       modal.present();
 
-      // currentModal = modal;
+      currentModal = modal;
     }
 
   };
