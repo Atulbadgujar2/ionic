@@ -1440,6 +1440,18 @@ ion-content{
   --ion-tab-bar-background :#feeae6;
 }
 
+.searchBarInput{
+  width: 25%;
+}
+
+.filterSelect{
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
 
 
 /*# sourceMappingURL=ui.css.map */
