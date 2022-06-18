@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { AdminCategoryAddComponent } from './admin-category-add/admin-category-add.component';
 
 
 @Component({
@@ -9,25 +10,32 @@ import { ModalController } from '@ionic/angular';
 })
 export class AdminCategoryComponent implements OnInit {
 
-  constructor(public modalController: ModalController) {
-   
+  constructor(public modalController: ModalController) {   
   }
 
-
+  dataReturned: any;
   ngOnInit() {
-    let currentModal = null;
-    async function openModal(opts = {}) {
-      debugger;
-      const modal = await this.modalController.create({
-        component: 'modal-content',
-        ...opts,
-      });
-      modal.present();
-
-      currentModal = modal;
-    }
-
+    
   };
+
+  async openModal() {
+    const modal = await this.modalController.create({
+      component: AdminCategoryAddComponent,
+      componentProps: {
+        "paramID": 123,
+        "paramTitle": "Test Title"
+      }
+    });
+
+    modal.onDidDismiss().then((dataReturned) => {
+      if (dataReturned !== null) {
+        this.dataReturned = dataReturned.data;
+        //alert('Modal Sent Data :'+ dataReturned);
+      }
+    });
+
+    return await modal.present();
+  }
 
   
      

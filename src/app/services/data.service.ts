@@ -95,6 +95,31 @@ export class DataService {
       url: '/tabs/home',
       icon: 'more.png'
     },
+    {
+      title: 'Dashboard',
+      url: '/dashboard',
+      icon: 'more.png'
+    },
+    {
+      title: 'Product',
+      url: '/adminproduct',
+      icon: 'more.png'
+    },
+    {
+      title: 'Order',
+      url: '/adminorder',
+      icon: 'more.png'
+    },
+    {
+      title: 'Category',
+      url: '/admincategory',
+      icon: 'more.png'
+    },
+    {
+      title: 'User',
+      url: '/adminuser',
+      icon: 'more.png'
+    },
   ];
 
   mainSlider = [
