@@ -7,6 +7,7 @@
 */
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DummyDataService } from 'src/app/services/dummy-data.service';
 
 @Component({
   selector: 'app-cart',
@@ -16,8 +17,15 @@ import { Router } from '@angular/router';
 export class CartPage implements OnInit {
   activeNum: any;
   num = 1;
-  constructor(private router: Router) {
+
+  shoppingCart : any;
+ 
+  constructor(
+    private router: Router,
+    private dummy: DummyDataService
+  ) {
     this.activeNum = '1';
+    this.shoppingCart = this.dummy.shopCart;
   }
 
   ngOnInit() {

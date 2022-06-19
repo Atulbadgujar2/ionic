@@ -292,5 +292,41 @@ export class DummyDataService {
     //   img: 'assets/header/gadgets.png'
     // },
   ];
+
+  shopCart = {
+    CartType : '1',
+    DeliveryChargeUrl : '1',
+    DeliveryCharge : '1',
+    CartItemCount : '2',
+    DeliveryLimit : '1000',
+    BagTotal : '515.00',
+    CartTotal : '515.00',
+    CartSaving : '265.00', 
+    OrderTotal :   '265.00', 
+    shopCartItem : [
+    {
+      ImageURl: 'assets/shop/home1.jpg',
+      Name: 'HOT DEALS',
+      Description: 'Flat 2 Off On Your Favorite Products',
+      MRP: 'Flat 2 Off On Your Favorite Products',
+      DiscountPrice: 'Flat 2 Off On Your Favorite Products',
+      Saving : '45.00',
+      Quantity : '1',
+      QuantityMRP :'1 x 135.00',
+      ProductId : '1'
+    },
+    {
+      ImageURl: 'assets/shop/home1.jpg',
+      Name: 'HOT DEALS 2',
+      Description: 'Flat 2 Off On Your Favorite Products',
+      MRP: 'Flat 2 Off On Your Favorite Products',
+      DiscountPrice: 'Flat 2 Off On Your Favorite Products',
+      Saving : '45.00',
+      Quantity : '1',
+      QuantityMRP :'1 x 135.00',
+      ProductId : '1'
+    }
+  ]
+};
   constructor() { }
 }
