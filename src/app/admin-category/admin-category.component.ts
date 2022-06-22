@@ -28,6 +28,7 @@ export class AdminCategoryComponent implements OnInit {
     });
 
     modal.onDidDismiss().then((dataReturned) => {
+      debugger;
       if (dataReturned !== null) {
         this.dataReturned = dataReturned.data;
         //alert('Modal Sent Data :'+ dataReturned);

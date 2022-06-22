@@ -23,7 +23,7 @@ export class AdminCategoryAddComponent implements OnInit {
   }
 
   async closeModal() {
-    const onClosedData: string = "Wrapped Up!";
+    const onClosedData: string = "Wrapped Up!";    
     await this.modalController.dismiss(onClosedData);
   }
 

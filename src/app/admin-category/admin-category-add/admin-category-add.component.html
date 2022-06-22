@@ -1,4 +1,4 @@
-<ion-modal class="sc-ion-modal-md-h sc-ion-modal-md-s md add-modal-section hydrated show-modal" id="ion-overlay-1" no-router="" aria-modal="true" tabindex="-1" style="z-index: 20001;" [isOpen]="true">
+<!-- <ion-modal class="sc-ion-modal-md-h sc-ion-modal-md-s md add-modal-section hydrated show-modal" id="ion-overlay-1" no-router="" aria-modal="true" tabindex="-1" style="z-index: 20001;" [isOpen]="true"> -->
   <!-- <ion-backdrop class="sc-ion-modal-md md hydrated" tabindex="-1"></ion-backdrop> -->
 
     <ion-header  role="banner" class="md header-md header-collapse-none hydrated">
@@ -6,7 +6,7 @@
         <ion-toolbar  color="primary" class="in-toolbar md toolbar-title-default ion-color ion-color-primary hydrated">
             <ion-title  class="titleText ion-text-uppercase md title-default hydrated">Add category</ion-title>
             <ion-buttons  slot="end" class="buttons-last-slot sc-ion-buttons-md-h sc-ion-buttons-md-s md hydrated">
-                <ion-button  transparent="" class="md button button-clear in-toolbar in-toolbar-color ion-activatable ion-focusable hydrated">
+                <ion-button  transparent="" class="md button button-clear in-toolbar in-toolbar-color ion-activatable ion-focusable hydrated" (click)="closeModal()">
                     <ion-icon  name="close" role="img" class="md hydrated" aria-label="close"></ion-icon>
                 </ion-button>
             </ion-buttons>
@@ -45,7 +45,7 @@
                     <span  slot="start">
                         <ion-icon  class="iconStart md hydrated" name="folder" role="img" aria-label="folder"></ion-icon></span>
                     <ion-input  accept=".jpeg, .png, .jpg" name="images" type="file" class="sc-ion-input-md-h sc-ion-input-md-s md hydrated">
-                        <input class="native-input sc-ion-input-md" aria-labelledby="ion-input-3-lbl" accept=".jpeg, .png, .jpg" autocapitalize="off" autocomplete="off" autocorrect="off" name="images" placeholder="" type="file" />
+                        <!-- <input class="native-input sc-ion-input-md" aria-labelledby="ion-input-3-lbl" accept=".jpeg, .png, .jpg" autocapitalize="off" autocomplete="off" autocorrect="off" name="images" placeholder="" type="file" /> -->
                     </ion-input>
                 </ion-item>
                 <!----><!----><!----><!----><!----><!---->
@@ -88,4 +88,4 @@
         </ion-list>
     </ion-content>
  
-</ion-modal>
+<!-- </ion-modal> -->
