@@ -1,3 +1,4 @@
+import { HttpRequest } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ModalController, NavParams } from '@ionic/angular';
 import { CategoryService } from 'src/app/services/category.service';
@@ -12,15 +13,25 @@ import { CategoryModel } from 'src/core/models/category.model';
 export class AdminCategoryAddComponent implements OnInit {
   modalTitle: string;
   modelId: number;
+// ...
+selectedFile: File;
+  
+  file: any;
+
    //contains tenant data
    public addCategorydataModel: CategoryModel = new CategoryModel();
 
+ 
+      // Maximum file size allowed to be uploaded = 1MB
+      // const MAX_SIZE: number = 1048576;
 
   constructor(
     private modalController: ModalController,
     private categoryService : CategoryService,
     private navParams: NavParams
-  ) { }
+  ) {
+
+   }
 
   ngOnInit() {
     console.table(this.navParams);
@@ -35,6 +46,32 @@ export class AdminCategoryAddComponent implements OnInit {
 
   // add Category
   public addCategory() {
+    debugger;
+
+    if (this.file.length === 0) {
+      return;
+    }
+
+    const formData = new FormData();
+
+    for(let file of this.file){
+      formData.append(file.name, file);
+    }
+  
+
+    const uploadReq = new HttpRequest('POST', `api/FileUpload`, formData, {
+      reportProgress: true,
+    });
+
+
+    // // uploadFile = (files) => {
+    //   if (files.length === 0) {
+    //     return;
+    //   }
+    //   let fileToUpload = <File>files[0];
+    //   const formData = new FormData();
+    //   formData.append('file', fileToUpload, fileToUpload.name);
+
     debugger;
     this.addCategorydataModel.allowCustomersToSelectPageSize = true;
    
@@ -63,7 +100,7 @@ export class AdminCategoryAddComponent implements OnInit {
     // this.onSubmit = true;
     //validation
    
-      this.categoryService.addCategory(this.addCategorydataModel).subscribe(
+      this.categoryService.addCategory(this.addCategorydataModel,formData).subscribe(
         response => {
           // this.empId = response
           // this.CategoryChargesData.id = this.empId;
@@ -72,6 +109,33 @@ export class AdminCategoryAddComponent implements OnInit {
           // this.onCloseAddCategory(true);
         });
     }
+
+  //   onFileChange(event) {
+  //     this.theFile = null;
+  //     if (event.target.files && event.target.files.length > 0) {
+  //         // Don't allow file sizes over 1MB
+  //         if (event.target.files[0].size < MAX_SIZE) {
+  //             // Set theFile property
+  //             this.theFile = event.target.files[0];
+  //         }
+  //         else {
+  //             // Display error message
+  //             // this.messages.push("File: " + event.target.files[0].name + " is too large to upload.");
+  //         }
+  //     }
+  // }
+
+
+onSelectFile($event, file) {
+  debugger;
+    this.file = file;
+  }
+
+  upload(file : any) {
+    debugger;
+    // ...
+    // this.selectedFile = files[0];
+  }
   
 
 }
