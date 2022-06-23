@@ -35,10 +35,31 @@ export class AdminCategoryAddComponent implements OnInit {
 
   // add Category
   public addCategory() {
-    // this.addCategorydataModel.allowCustomersToSelectPageSize = 
-    // this.addCategorydataModel.joB_CLASS_CODE_NUM = this.joB_CLASS.joB_CLASS_CODE_NUM
-    // this.addCategorydataModel.joB_CLASS_CODE_FK = this.joB_CLASS.id
-    // this.addCategorydataModel.description = this.joB_CLASS.description
+    debugger;
+    this.addCategorydataModel.allowCustomersToSelectPageSize = true;
+   
+    this.addCategorydataModel.name= "string";
+    this.addCategorydataModel.metaKeywords="string";
+    this.addCategorydataModel.metaTitle="string";
+    this.addCategorydataModel.pageSizeOptions="string";
+    this.addCategorydataModel.description="string";
+    this.addCategorydataModel.categoryTemplateId = 1;
+    this.addCategorydataModel.metaDescription="string";
+    this.addCategorydataModel.parentCategoryId = 1;
+    this.addCategorydataModel.pictureId = 1
+    this.addCategorydataModel.pageSize = 1;
+    this.addCategorydataModel.allowCustomersToSelectPageSize = true;
+    this.addCategorydataModel.showOnHomepage= true;
+    this.addCategorydataModel.includeInTopMenu= true;
+    this.addCategorydataModel.subjectToAcl= true;
+    this.addCategorydataModel.limitedToStores= true;
+    this.addCategorydataModel.published= true;
+    this.addCategorydataModel.displayOrder = 1;
+    this.addCategorydataModel.priceRangeFiltering= true;
+    this.addCategorydataModel.priceFrom = 0;
+    this.addCategorydataModel.priceTo= 0;
+    this.addCategorydataModel.manuallyPriceRange = true;
+    // this.addCategorydataModel.fileUpload="string";
     // this.onSubmit = true;
     //validation
    

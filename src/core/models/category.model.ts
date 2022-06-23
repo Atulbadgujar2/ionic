@@ -15,7 +15,7 @@ export class CategoryModel {
     public subjectToAcl : Boolean;
     public limitedToStores : Boolean;
     public published : Boolean;
-    public displayOrder : Boolean;
+    public displayOrder : number;
     public priceRangeFiltering : Boolean;
     public priceFrom : number;
     public priceTo : number;
