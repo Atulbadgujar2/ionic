@@ -12,12 +12,13 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { FilterPageModule } from './pages/filter/filter.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 import { SortPageModule } from './pages/sort/sort.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { OneSignal } from '@ionic-native/onesignal/ngx'
+import { HttpErrorHandlerService } from './services/http-error-handler.service';
 library.add(fas, far, fab);
 @NgModule({
   declarations: [AppComponent],
@@ -26,8 +27,9 @@ library.add(fas, far, fab);
     FilterPageModule,
     SortPageModule,
     HttpClientModule,
+    HttpClientJsonpModule,
     FontAwesomeModule],
-  providers: [  StatusBar,
+  providers: [  StatusBar,HttpErrorHandlerService,
     SplashScreen,{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },OneSignal],
   bootstrap: [AppComponent],
 })
