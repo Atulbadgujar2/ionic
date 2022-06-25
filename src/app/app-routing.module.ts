@@ -4,140 +4,140 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'home2',
-    loadChildren: () => import('./home2/home2.module').then( m => m.Home2PageModule)
+    loadChildren: () => import('./main/home2/home2.module').then( m => m.Home2PageModule)
   },
     {
     path: '',
-    loadChildren: () => import('./pages/tabs/tabs.module').then(m => m.TabsPageModule)
+    loadChildren: () => import('./main/pages/tabs/tabs.module').then(m => m.TabsPageModule)
   },
   {
     path: 'swiper',
-    loadChildren: () => import('./swiper-slides/swiper-slides.module').then( m => m.SwiperSlidesModule)
+    loadChildren: () => import('./main/swiper-slides/swiper-slides.module').then( m => m.SwiperSlidesModule)
   },
   {
     path: 'demotemplate',
-    loadChildren: () => import('./demotemplate/demotemplate.module').then( m => m.DemotemplateModule)
+    loadChildren: () => import('./main/demotemplate/demotemplate.module').then( m => m.DemotemplateModule)
   },
   {
     path: 'login2',
-    loadChildren: () => import('./login2/login2.module').then( m => m.Login2Module)
+    loadChildren: () => import('./main/login2/login2.module').then( m => m.Login2Module)
   },
 
   {
     path: 'tabs',
-    loadChildren: () => import('./pages/tabs/tabs.module').then(m => m.TabsPageModule)
+    loadChildren: () => import('./main/pages/tabs/tabs.module').then(m => m.TabsPageModule)
   },
   {
     path: 'login',
-    loadChildren: () => import('./pages/account/login/login.module').then(m => m.LoginPageModule)
+    loadChildren: () => import('./main/pages/account/login/login.module').then(m => m.LoginPageModule)
   },
   {
     path: 'signup',
-    loadChildren: () => import('./pages/account/signup/signup.module').then(m => m.SignupPageModule)
+    loadChildren: () => import('./main/pages/account/signup/signup.module').then(m => m.SignupPageModule)
   },
   {
     path: 'orders',
-    loadChildren: () => import('./pages/account/orders/orders.module').then(m => m.OrdersPageModule)
+    loadChildren: () => import('./main/pages/account/orders/orders.module').then(m => m.OrdersPageModule)
   },
   {
     path: 'wishlist',
-    loadChildren: () => import('./pages/account/wishlist/wishlist.module').then(m => m.WishlistPageModule)
+    loadChildren: () => import('./main/pages/account/wishlist/wishlist.module').then(m => m.WishlistPageModule)
   },
   {
     path: 'order-details',
-    loadChildren: () => import('./pages/account/order-details/order-details.module').then(m => m.OrderDetailsPageModule)
+    loadChildren: () => import('./main/pages/account/order-details/order-details.module').then(m => m.OrderDetailsPageModule)
   },
   {
     path: 'forgot-password',
-    loadChildren: () => import('./pages/account/forgot-password/forgot-password.module').then(m => m.ForgotPasswordPageModule)
+    loadChildren: () => import('./main/pages/account/forgot-password/forgot-password.module').then(m => m.ForgotPasswordPageModule)
   },
   {
     path: 'cart',
-    loadChildren: () => import('./pages/cart/cart.module').then(m => m.CartPageModule)
+    loadChildren: () => import('./main/pages/cart/cart.module').then(m => m.CartPageModule)
   },
   {
     path: 'checkout',
-    loadChildren: () => import('./pages/checkout/checkout.module').then(m => m.CheckoutPageModule)
+    loadChildren: () => import('./main/pages/checkout/checkout.module').then(m => m.CheckoutPageModule)
   },
   {
     path: 'home',
-    loadChildren: () => import('./pages/home/home.module').then(m => m.HomePageModule)
+    loadChildren: () => import('./main/pages/home/home.module').then(m => m.HomePageModule)
   },
   {
     path: 'filter',
-    loadChildren: () => import('./pages/filter/filter.module').then(m => m.FilterPageModule)
+    loadChildren: () => import('./main/pages/filter/filter.module').then(m => m.FilterPageModule)
   },
   {
     path: 'products',
-    loadChildren: () => import('./pages/products/products.module').then(m => m.ProductsPageModule)
+    loadChildren: () => import('./main/pages/products/products.module').then(m => m.ProductsPageModule)
   },
   {
     path: 'product',
-    loadChildren: () => import('./pages/product/product.module').then(m => m.ProductPageModule)
+    loadChildren: () => import('./main/pages/product/product.module').then(m => m.ProductPageModule)
   },
   {
     path: 'search',
-    loadChildren: () => import('./pages/search/search.module').then(m => m.SearchPageModule)
+    loadChildren: () => import('./main/pages/search/search.module').then(m => m.SearchPageModule)
   },
   {
     path: 'notifications',
-    loadChildren: () => import('./pages/notifications/notifications.module').then(m => m.NotificationsPageModule)
+    loadChildren: () => import('./main/pages/notifications/notifications.module').then(m => m.NotificationsPageModule)
   },
   {
     path: 'help',
-    loadChildren: () => import('./pages/help/help.module').then(m => m.HelpPageModule)
+    loadChildren: () => import('./main/pages/help/help.module').then(m => m.HelpPageModule)
   },
   {
     path: 'add-payment-card',
-    loadChildren: () => import('./pages/add-payment-card/add-payment-card.module').then(m => m.AddPaymentCardPageModule)
+    loadChildren: () => import('./main/pages/add-payment-card/add-payment-card.module').then(m => m.AddPaymentCardPageModule)
   },
   {
     path: 'payment-cards',
-    loadChildren: () => import('./pages/payment-cards/payment-cards.module').then(m => m.PaymentCardsPageModule)
+    loadChildren: () => import('./main/pages/payment-cards/payment-cards.module').then(m => m.PaymentCardsPageModule)
   },
   {
     path: 'account',
-    loadChildren: () => import('./pages/account/account/account.module').then(m => m.AccountPageModule)
+    loadChildren: () => import('./main/pages/account/account/account.module').then(m => m.AccountPageModule)
   },
   {
     path: 'store',
-    loadChildren: () => import('./pages/store/store.module').then(m => m.StorePageModule)
+    loadChildren: () => import('./main/pages/store/store.module').then(m => m.StorePageModule)
   },
   {
     path: 'category',
-    loadChildren: () => import('./pages/category/category.module').then(m => m.CategoryPageModule)
+    loadChildren: () => import('./main/pages/category/category.module').then(m => m.CategoryPageModule)
   },
   {
     path: 'main-category',
-    loadChildren: () => import('./pages/main-category/main-category.module').then(m => m.MainCategoryPageModule)
+    loadChildren: () => import('./main/pages/main-category/main-category.module').then(m => m.MainCategoryPageModule)
   },
   {
     path: 'sort',
-    loadChildren: () => import('./pages/sort/sort.module').then(m => m.SortPageModule)
+    loadChildren: () => import('./main/pages/sort/sort.module').then(m => m.SortPageModule)
   },
   {
     path: 'payment',
-    loadChildren: () => import('./pages/payment/payment.module').then(m => m.PaymentPageModule)
+    loadChildren: () => import('./main/pages/payment/payment.module').then(m => m.PaymentPageModule)
   },
   {
     path: 'dashboard',
-    loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardModule)
+    loadChildren: () => import('./main/dashboard/dashboard.module').then( m => m.DashboardModule)
   },
   {
     path: 'adminproduct',
-    loadChildren: () => import('./admin-product/admin-product.module').then( m => m.AdminProductModule)
+    loadChildren: () => import('./main/admin-product/admin-product.module').then( m => m.AdminProductModule)
   },
   {
     path: 'adminorder',
-    loadChildren: () => import('./admin-order/admin-order.module').then( m => m.AdminOrderModule)
+    loadChildren: () => import('./main/admin-order/admin-order.module').then( m => m.AdminOrderModule)
   },
   {
     path: 'adminuser',
-    loadChildren: () => import('./admin-user/admin-user.module').then( m => m.AdminUserModule)
+    loadChildren: () => import('./main/admin-user/admin-user.module').then( m => m.AdminUserModule)
   },
   {
     path: 'admincategory',
-    loadChildren: () => import('./admin-category/admin-category.module').then( m => m.AdminCategoryModule)
+    loadChildren: () => import('./main/admin-category/admin-category.module').then( m => m.AdminCategoryModule)
   },
   // {
   //   path: '',

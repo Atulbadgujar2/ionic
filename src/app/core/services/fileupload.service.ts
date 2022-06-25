@@ -10,7 +10,8 @@ import { Injectable } from "@angular/core";
 import { Observable } from "rxjs/internal/Observable";
 import { CategoryModel } from "src/app/core/models/category/category.model";
 import { environment } from "src/environments/environment";
-import { FileToUpload } from "../core/models/file-upload/file-to-upload";
+import { FileToUpload } from "../models/file-upload/file-to-upload";
+
 import { BaseService } from "./base.service";
 import { HttpErrorHandlerService } from "./http-error-handler.service";
 

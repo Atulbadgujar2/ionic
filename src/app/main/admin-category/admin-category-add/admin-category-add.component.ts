@@ -1,8 +1,9 @@
 import { HttpRequest } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ModalController, NavParams } from '@ionic/angular';
-import { CategoryService } from 'src/app/services/category.service';
+
 import { CategoryModel } from 'src/app/core/models/category/category.model';
+import { CategoryService } from 'src/app/core/services/category.service';
 
 
 @Component({

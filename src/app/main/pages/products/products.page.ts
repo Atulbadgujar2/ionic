@@ -10,7 +10,8 @@ import { ModalController } from '@ionic/angular';
 import { FilterPage } from '../filter/filter.page';
 import { Router } from '@angular/router';
 import { SortPage } from '../sort/sort.page';
-import { DummyDataService } from 'src/app/services/dummy-data.service';
+import { DummyDataService } from 'src/app/core/services/dummy-data.service';
+
 
 @Component({
   selector: 'app-products',

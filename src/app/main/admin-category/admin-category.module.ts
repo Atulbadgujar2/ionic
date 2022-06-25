@@ -4,7 +4,8 @@ import { CommonModule } from '@angular/common';
 import { AdminCategoryRoutingModule } from './admin-category-routing.module';
 import { AdminCategoryAddComponent } from './admin-category-add/admin-category-add.component';
 import { AdminCategoryComponent } from './admin-category.component';
-import { FileUploadComponent } from '../file-upload/file-upload.component';
+import { FileUploadComponent } from 'src/app/core/component/file-upload/file-upload.component';
+
 
 
 @NgModule({

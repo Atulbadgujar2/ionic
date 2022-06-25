@@ -8,7 +8,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonSlides } from '@ionic/angular';
 import { Router } from '@angular/router';
-import { DummyDataService } from 'src/app/services/dummy-data.service';
+import { DummyDataService } from 'src/app/core/services/dummy-data.service';
 
 @Component({
   selector: 'app-home',

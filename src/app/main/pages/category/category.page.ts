@@ -7,7 +7,7 @@
 */
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { DataService } from 'src/app/services/data.service';
+import { DataService } from 'src/app/core/services/data.service';
 import { Router } from '@angular/router';
 
 @Component({
