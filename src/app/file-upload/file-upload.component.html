@@ -1,14 +1,21 @@
-<h1>File Upload</h1>
+<!-- <h1>File Upload</h1>
 
 <label>Select a File (&lt; 1MB)</label><br/>
 <input type="file" (change)="onFileChange($event)" /><br/>
-<button (click)="uploadFile()" [disabled]="!theFile">Upload File</button><br/><br/>
+<button (click)="uploadFile()" [disabled]="!theFile">Upload File</button><br/><br/> -->
 
 <!-- ** BEGIN: INFORMATION MESSAGE AREA ** -->
-<div *ngIf="messages.length > 0">
+<!-- <div *ngIf="messages.length > 0">
     <span *ngFor="let msg of messages">
         {{msg}}
         <br />
         </span>
-    </div>
+    </div> -->
     <!-- ** END: INFORMATION MESSAGE AREA ** -->
+
+    <span  slot="start">
+     
+      <ion-icon  class="iconStart md hydrated" name="folder" role="img" aria-label="folder"></ion-icon></span>
+  <ion-input  accept=".jpeg, .png, .jpg" name="images" type="file" class="sc-ion-input-md-h sc-ion-input-md-s md hydrated" (change)="onFileChange($event)" ">
+      <!-- <input class="native-input sc-ion-input-md" aria-labelledby="ion-input-3-lbl" accept=".jpeg, .png, .jpg" autocapitalize="off" autocomplete="off" autocorrect="off" name="images" placeholder="" type="file" (change)="onFileChange($event)" /> -->
+  </ion-input>
