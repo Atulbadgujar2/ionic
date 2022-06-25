@@ -12,6 +12,7 @@ export class FileUploadComponent implements OnInit {
 
   
   @Input() GuidId: string;
+  @Input() Flag: Boolean;
 
 
   theFile: any = null;
@@ -23,7 +24,10 @@ readonly MAX_SIZE: number = 1048576;
   }
 
   ngOnInit() {
-    
+    debugger;
+   if(this.Flag){
+    this.uploadFile();
+   }
   }
 
   onFileChange(event) {

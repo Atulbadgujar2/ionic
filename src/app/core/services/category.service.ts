@@ -22,9 +22,9 @@ export class CategoryService extends BaseService {
   }
 
   // To add Category.
-  public addCategory(CategoryModel: CategoryModel,ab : FormData): Observable<string> {
+  public addCategory(CategoryModel: CategoryModel): Observable<string> {
     let url: string = environment.TKServiceUrl + 'Category/add'
-    return this.post<CategoryModel>(url, CategoryModel, ab, "addCategory");
+    return this.post<CategoryModel>(url, CategoryModel, null, "addCategory");
   }
 
 //   //get Category list 

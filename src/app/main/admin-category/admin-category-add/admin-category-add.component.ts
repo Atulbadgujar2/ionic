@@ -3,7 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController, NavParams } from '@ionic/angular';
 
 import { CategoryModel } from 'src/app/core/models/category/category.model';
+import { FileToUpload } from 'src/app/core/models/file-upload/file-to-upload';
 import { CategoryService } from 'src/app/core/services/category.service';
+import { FileUploadService } from 'src/app/core/services/fileupload.service';
 
 
 @Component({
@@ -13,14 +15,16 @@ import { CategoryService } from 'src/app/core/services/category.service';
 })
 
 export class AdminCategoryAddComponent implements OnInit {
-  readonly MAX_SIZE: number = 1048576;
+
+  theFile: any = null;
+  messages: string[] = [];
+   // Maximum file size allowed to be uploaded = 1MB
+readonly MAX_SIZE: number = 1048576;
+
   modalTitle: string;
   modelId: number;
-// ...
-selectedFile: File;
-  
-  file: any;
-
+  GuidId : string;
+ 
    //contains tenant data
    public addCategorydataModel: CategoryModel = new CategoryModel();
 
@@ -31,6 +35,7 @@ selectedFile: File;
   constructor(
     private modalController: ModalController,
     private categoryService : CategoryService,
+    private uploadService: FileUploadService,
     private navParams: NavParams
   ) {
 // Maximum file size allowed to be uploaded = 1MB
@@ -52,20 +57,22 @@ selectedFile: File;
   public addCategory() {
     debugger;
 
-    if (this.file.length === 0) {
-      return;
-    }
 
-    const formData = new FormData();
 
-    for(let file of this.file){
-      formData.append(file.name, file);
-    }
+    // if (this.file.length === 0) {
+    //   return;
+    // }
+
+    // const formData = new FormData();
+
+    // for(let file of this.file){
+    //   formData.append(file.name, file);
+    // }
   
 
-    const uploadReq = new HttpRequest('POST', `api/FileUpload`, formData, {
-      reportProgress: true,
-    });
+    // const uploadReq = new HttpRequest('POST', `api/FileUpload`, formData, {
+    //   reportProgress: true,
+    // });
 
 
     // // uploadFile = (files) => {
@@ -100,61 +107,74 @@ selectedFile: File;
     this.addCategorydataModel.priceFrom = 0;
     this.addCategorydataModel.priceTo= 0;
     this.addCategorydataModel.manuallyPriceRange = true;
-    // this.addCategorydataModel.fileUpload="string";
+    this.addCategorydataModel.fileUpload="string";
+    this.GuidId = "a6ee7c60-6efd-4b9e-b7f1-1f552eb0c163"
     // this.onSubmit = true;
     //validation
    
-      this.categoryService.addCategory(this.addCategorydataModel,formData).subscribe(
+      this.categoryService.addCategory(this.addCategorydataModel).subscribe(
         response => {
           // this.empId = response
           // this.CategoryChargesData.id = this.empId;
           // this.loaderEnabled = false;
           // this.toastNotificationService.success(NotificationAction.AddedSucessfully);
           // this.onCloseAddCategory(true);
+        }).add(() => {
+          this.uploadFile();
         });
     }
 
-  //   onFileChange(event) {
-  //     this.theFile = null;
-  //     if (event.target.files && event.target.files.length > 0) {
-  //         // Don't allow file sizes over 1MB
-  //         if (event.target.files[0].size < MAX_SIZE) {
-  //             // Set theFile property
-  //             this.theFile = event.target.files[0];
-  //         }
-  //         else {
-  //             // Display error message
-  //             // this.messages.push("File: " + event.target.files[0].name + " is too large to upload.");
-  //         }
-  //     }
-  // }
+ 
 
 
-onSelectFile($event, file) {
-  debugger;
-    this.file = file;
-  }
 
-  upload(file : any) {
-    debugger;
-    // ...
-    // this.selectedFile = files[0];
-  }
 
   onFileChange(event) {
-    debugger;
-    //  this.theFile = null;
+    this.theFile = null;
     if (event.target.files && event.target.files.length > 0) {
         // Don't allow file sizes over 1MB
         if (event.target.files[0].size < this.MAX_SIZE) {
             // Set theFile property
-            // this.theFile = event.target.files[0];
+            this.theFile = event.target.files[0];
         }
         else {
             // Display error message
-            // this.messages.push("File: " + event.target.files[0].name + " is too large to upload.");
+            this.messages.push("File: " + event.target.files[0].name + " is too large to upload.");
         }
     }
+}
+
+private readAndUploadFile(theFile: any) {
+  let file = new FileToUpload();
+  
+  // Set File Information
+  file.fileName = theFile.name;
+  file.fileSize = theFile.size;
+  file.fileType = theFile.type;
+  file.lastModifiedTime = theFile.lastModified;
+  file.lastModifiedDate = theFile.lastModifiedDate;
+  file.PictureGuidId = this.GuidId;
+  
+  // Use FileReader() object to get file to upload
+  // NOTE: FileReader only works with newer browsers
+  let reader = new FileReader();
+  
+ // Setup onload event for reader
+  reader.onload = () => {
+      // Store base64 encoded representation of file
+      file.fileAsBase64 = reader.result.toString();
+      
+      // POST to server
+      this.uploadService.uploadFile(file).subscribe(resp => { 
+          this.messages.push("Upload complete"); });
+  }
+  
+  // Read the file
+  reader.readAsDataURL(theFile);
+}
+
+uploadFile(): void {
+  this.readAndUploadFile(this.theFile);
 }
   
 
