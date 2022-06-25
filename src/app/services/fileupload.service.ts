@@ -10,22 +10,22 @@ import { Injectable } from "@angular/core";
 import { Observable } from "rxjs/internal/Observable";
 import { CategoryModel } from "src/app/core/models/category/category.model";
 import { environment } from "src/environments/environment";
+import { FileToUpload } from "../core/models/file-upload/file-to-upload";
 import { BaseService } from "./base.service";
 import { HttpErrorHandlerService } from "./http-error-handler.service";
 
 @Injectable({ providedIn: 'root' })
-export class CategoryService extends BaseService {
+export class FileUploadService extends BaseService {
 
   constructor(http: HttpClient, httpErrorHandler: HttpErrorHandlerService) {
     super(http);
     this.handleError = httpErrorHandler.createHandleError('CategoryService');
   }
 
-  // To add Category.
-  public addCategory(CategoryModel: CategoryModel,ab : FormData): Observable<string> {
-    let url: string = environment.TKServiceUrl + 'Category/add'
-    return this.post<CategoryModel>(url, CategoryModel, ab, "addCategory");
-  }
+  public uploadFile(theFile: FileToUpload) : Observable<any> {
+    let url: string = environment.TKServiceUrl + 'FileUpload/postfile'
+    return this.post<FileToUpload>(url, theFile, null,"addCategory");
+}
 
 //   //get Category list 
 //   public getCategoryList(): Observable<Array<CategoryViewModel>> {

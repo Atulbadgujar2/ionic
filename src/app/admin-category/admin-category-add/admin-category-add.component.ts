@@ -2,7 +2,7 @@ import { HttpRequest } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ModalController, NavParams } from '@ionic/angular';
 import { CategoryService } from 'src/app/services/category.service';
-import { CategoryModel } from 'src/core/models/category.model';
+import { CategoryModel } from 'src/app/core/models/category/category.model';
 
 
 @Component({
@@ -10,7 +10,9 @@ import { CategoryModel } from 'src/core/models/category.model';
   templateUrl: './admin-category-add.component.html',
   styleUrls: ['./admin-category-add.component.scss'],
 })
+
 export class AdminCategoryAddComponent implements OnInit {
+  readonly MAX_SIZE: number = 1048576;
   modalTitle: string;
   modelId: number;
 // ...
@@ -30,6 +32,7 @@ selectedFile: File;
     private categoryService : CategoryService,
     private navParams: NavParams
   ) {
+// Maximum file size allowed to be uploaded = 1MB
 
    }
 
@@ -136,6 +139,22 @@ onSelectFile($event, file) {
     // ...
     // this.selectedFile = files[0];
   }
+
+  onFileChange(event) {
+    debugger;
+    //  this.theFile = null;
+    if (event.target.files && event.target.files.length > 0) {
+        // Don't allow file sizes over 1MB
+        if (event.target.files[0].size < this.MAX_SIZE) {
+            // Set theFile property
+            // this.theFile = event.target.files[0];
+        }
+        else {
+            // Display error message
+            // this.messages.push("File: " + event.target.files[0].name + " is too large to upload.");
+        }
+    }
+}
   
 
 }
