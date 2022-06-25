@@ -5,4 +5,5 @@ export class FileToUpload {
     lastModifiedTime: number = 0;
     lastModifiedDate: Date = null;
     fileAsBase64: string = "";
+    PictureGuidId : string = "";
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FileToUpload } from '../../models/file-upload/file-to-upload';
 import { FileUploadService } from '../../services/fileupload.service';
 
@@ -9,15 +9,22 @@ import { FileUploadService } from '../../services/fileupload.service';
   styleUrls: ['./file-upload.component.scss'],
 })
 export class FileUploadComponent implements OnInit {
+
+  
+  @Input() GuidId: string;
+
+
   theFile: any = null;
   messages: string[] = [];
    // Maximum file size allowed to be uploaded = 1MB
 readonly MAX_SIZE: number = 1048576;
   constructor(private uploadService: FileUploadService) { 
-   
+   debugger;
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    
+  }
 
   onFileChange(event) {
     this.theFile = null;
@@ -43,6 +50,7 @@ private readAndUploadFile(theFile: any) {
   file.fileType = theFile.type;
   file.lastModifiedTime = theFile.lastModified;
   file.lastModifiedDate = theFile.lastModifiedDate;
+  file.PictureGuidId = this.GuidId;
   
   // Use FileReader() object to get file to upload
   // NOTE: FileReader only works with newer browsers
