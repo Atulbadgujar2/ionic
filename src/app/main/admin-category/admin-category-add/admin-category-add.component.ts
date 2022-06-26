@@ -86,18 +86,16 @@ readonly MAX_SIZE: number = 1048576;
     debugger;
     this.addCategorydataModel.allowCustomersToSelectPageSize = true;
    
-    this.addCategorydataModel.name= "string";
     this.addCategorydataModel.metaKeywords="string";
     this.addCategorydataModel.metaTitle="string";
     this.addCategorydataModel.pageSizeOptions="string";
-    this.addCategorydataModel.description="string";
+   
     this.addCategorydataModel.categoryTemplateId = 1;
     this.addCategorydataModel.metaDescription="string";
     this.addCategorydataModel.parentCategoryId = 1;
     this.addCategorydataModel.pictureId = 1
     this.addCategorydataModel.pageSize = 1;
-    this.addCategorydataModel.allowCustomersToSelectPageSize = true;
-    this.addCategorydataModel.showOnHomepage= true;
+    this.addCategorydataModel.allowCustomersToSelectPageSize = true;  
     this.addCategorydataModel.includeInTopMenu= true;
     this.addCategorydataModel.subjectToAcl= true;
     this.addCategorydataModel.limitedToStores= true;
@@ -126,7 +124,10 @@ readonly MAX_SIZE: number = 1048576;
 
  
 
-
+    radioGroupChange(event) {
+      debugger;
+      this.addCategorydataModel.showOnHomepage = event.detail.value
+    }
 
 
   onFileChange(event) {

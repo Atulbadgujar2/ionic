@@ -5,6 +5,7 @@ import { AdminCategoryRoutingModule } from './admin-category-routing.module';
 import { AdminCategoryAddComponent } from './admin-category-add/admin-category-add.component';
 import { AdminCategoryComponent } from './admin-category.component';
 import { FileUploadComponent } from 'src/app/core/component/file-upload/file-upload.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -12,7 +13,8 @@ import { FileUploadComponent } from 'src/app/core/component/file-upload/file-upl
   declarations: [AdminCategoryComponent,AdminCategoryAddComponent,FileUploadComponent],
   imports: [
     CommonModule,
-    AdminCategoryRoutingModule
+    AdminCategoryRoutingModule,
+    FormsModule
   ]
 })
 export class AdminCategoryModule { }

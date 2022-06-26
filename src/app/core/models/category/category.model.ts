@@ -19,6 +19,7 @@ export class CategoryModel {
     public priceRangeFiltering : Boolean;
     public priceFrom : number;
     public priceTo : number;
+    public discount : number;
     public manuallyPriceRange : Boolean;
     public fileUpload: string;
   }
