@@ -20,7 +20,7 @@
             <ion-card  class="childCards md hydrated">
                 <!---->
                 <ion-item  class="item-interactive item-input item-has-placeholder item md in-list ion-focusable hydrated ion-untouched ion-pristine ion-valid">
-                    <span  slot="start"><ion-icon  class="iconStart md hydrated" role="img" aria-label="basketball"></ion-icon></span>
+                    <span  slot="start"><ion-icon  class="iconStart md hydrated" name="basketball" role="img" aria-label="basketball"></ion-icon></span>
                     <ion-input  color="dark" class="ng-untouched ng-pristine ng-valid sc-ion-input-md-h sc-ion-input-md-s ion-color ion-color-dark md hydrated ion-untouched ion-pristine ion-valid" placeholder="Enter Category Name" type="text" #name ngDefaultControl  [(ngModel)]="addCategorydataModel.name" >
                         <!-- <input class="native-input sc-ion-input-md" aria-labelledby="ion-input-2-lbl" autocapitalize="off" autocomplete="off" autocorrect="off" name="ion-input-2" placeholder="Enter Category Name" type="text" /> -->
                     </ion-input>
@@ -43,9 +43,7 @@
                 <!----><!----><!---->
                 <ion-item  class="item-interactive item-input item md in-list ion-focusable hydrated">
                     <!-- <app-file-upload [GuidId]="GuidId" [Flag]="Flag" ></app-file-upload> -->
-                    <span  slot="start">
-                     
-                        <ion-icon  class="iconStart md hydrated" name="folder" role="img" aria-label="folder"></ion-icon></span>
+                    <span  slot="start"> <ion-icon  class="iconStart md hydrated" name="folder" role="img" aria-label="folder"></ion-icon></span>
                     <ion-input  accept=".jpeg, .png, .jpg" name="images" type="file" class="sc-ion-input-md-h sc-ion-input-md-s md hydrated" (change)="onFileChange($event)">
                         <!-- <input class="native-input sc-ion-input-md" aria-labelledby="ion-input-3-lbl" accept=".jpeg, .png, .jpg" autocapitalize="off" autocomplete="off" autocorrect="off" name="images" placeholder="" type="file" (change)="onFileChange($event)" /> -->
                     </ion-input>
@@ -55,7 +53,7 @@
             <ion-card  class="childCards md hydrated">
                 <!---->
                 <ion-item  class="item-interactive item-input item-has-placeholder item md in-list ion-focusable hydrated ion-untouched ion-pristine ion-valid">
-                    <span  slot="start"><ion-icon  class="iconStart md hydrated" role="img" aria-label="journal"></ion-icon></span>
+                    <span  slot="start"><ion-icon  class="iconStart md hydrated" name="journal" role="img" aria-label="journal"></ion-icon></span>
                     <ion-input  color="dark" class="ng-untouched ng-pristine ng-valid sc-ion-input-md-h sc-ion-input-md-s ion-color ion-color-dark md hydrated ion-untouched ion-pristine ion-valid" ngDefaultControl   placeholder="Category Discount" type="text"  #discount [(ngModel)]="addCategorydataModel.discount">
                         <!-- <input class="native-input sc-ion-input-md" aria-labelledby="ion-input-4-lbl" autocapitalize="off" autocomplete="off" autocorrect="off" name="ion-input-4" placeholder="Category Discount" type="text" /> -->
                     </ion-input>

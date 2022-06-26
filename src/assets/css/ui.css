@@ -1433,12 +1433,12 @@ a[class*=card]:hover .title {
   position: absolute;
 }
 
-ion-content{
+/* ion-content{
   --ion-background-color:#fff5ee; 
   --ion-item-background :#faebd7;
   --ion-text-color :#000;
   --ion-tab-bar-background :#feeae6;
-}
+} */
 
 .searchBarInput{
   width: 25%;
