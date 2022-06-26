@@ -1,3 +1,93 @@
-<p>
-  admin-category-edit works!
-</p>
+<!-- <ion-modal class="sc-ion-modal-md-h sc-ion-modal-md-s md add-modal-section hydrated show-modal" id="ion-overlay-1" no-router="" aria-modal="true" tabindex="-1" style="z-index: 20001;" [isOpen]="true"> -->
+  <!-- <ion-backdrop class="sc-ion-modal-md md hydrated" tabindex="-1"></ion-backdrop> -->
+
+  <ion-header  role="banner" class="md header-md header-collapse-none hydrated">
+    <!---->
+    <ion-toolbar  color="primary" class="in-toolbar md toolbar-title-default ion-color ion-color-primary hydrated">
+        <ion-title  class="titleText ion-text-uppercase md title-default hydrated">Add category</ion-title>
+        <ion-buttons  slot="end" class="buttons-last-slot sc-ion-buttons-md-h sc-ion-buttons-md-s md hydrated">
+            <ion-button  transparent="" class="md button button-clear in-toolbar in-toolbar-color ion-activatable ion-focusable hydrated" (click)="closeModal()">
+                <ion-icon  name="close" role="img" class="md hydrated" aria-label="close"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content  class="md hydrated" style="--offset-top: 0px; --offset-bottom: 0px;">
+    <!-- <main class="inner-scroll scroll-y" part="scroll"><slot></slot></main>
+    <slot name="fixed"></slot> -->
+    <ion-list  class="md list-md hydrated">
+        <!----><!---->
+        <ion-card  class="childCards md hydrated">
+            <!---->
+            <ion-item  class="item-interactive item-input item-has-placeholder item md in-list ion-focusable hydrated ion-untouched ion-pristine ion-valid">
+                <span  slot="start"><ion-icon  class="iconStart md hydrated" role="img" aria-label="basketball"></ion-icon></span>
+                <ion-input  color="dark" class="ng-untouched ng-pristine ng-valid sc-ion-input-md-h sc-ion-input-md-s ion-color ion-color-dark md hydrated ion-untouched ion-pristine ion-valid" placeholder="Enter Category Name" type="text" #name ngDefaultControl  [(ngModel)]="addCategorydataModel.name" >
+                    <!-- <input class="native-input sc-ion-input-md" aria-labelledby="ion-input-2-lbl" autocapitalize="off" autocomplete="off" autocorrect="off" name="ion-input-2" placeholder="Enter Category Name" type="text" /> -->
+                </ion-input>
+            </ion-item>
+            <!----><!----><!----><!----><!----><!----><!----><!---->
+        </ion-card>
+        <ion-card  class="childCards md hydrated">
+            <!----><!---->
+            <ion-item  class="item md in-list ion-focusable ion-untouched ion-pristine ion-valid hydrated item-label item-label-floating item-interactive item-textarea item-input" >
+                <ion-label  position="floating" class="sc-ion-label-md-h sc-ion-label-md-s md label-floating hydrated" id="ion-input-0-lbl">Enter category Description</ion-label>
+                <ion-textarea  rows="3" class="ng-untouched ng-pristine ng-valid ion-untouched ion-pristine ion-valid sc-ion-textarea-md-h sc-ion-textarea-md-s md hydrated" ngDefaultControl  [(ngModel)]="addCategorydataModel.description"  #description placeholder="" rows="3">
+                    <!-- <div class="textarea-wrapper sc-ion-textarea-md">
+                        <textarea class="native-textarea sc-ion-textarea-md" aria-labelledby="ion-input-0-lbl" autocapitalize="none" name="ion-input-0" placeholder="" rows="3"></textarea>
+                    </div> -->
+                </ion-textarea>
+            </ion-item>
+            <!----><!----><!----><!----><!----><!----><!---->
+        </ion-card>
+        <ion-card  class="childCards md hydrated">
+            <!----><!----><!---->
+            <ion-item  class="item-interactive item-input item md in-list ion-focusable hydrated">
+                <!-- <app-file-upload [GuidId]="GuidId" [Flag]="Flag" ></app-file-upload> -->
+                <span  slot="start">
+                 
+                    <ion-icon  class="iconStart md hydrated" name="folder" role="img" aria-label="folder"></ion-icon></span>
+                <ion-input  accept=".jpeg, .png, .jpg" name="images" type="file" class="sc-ion-input-md-h sc-ion-input-md-s md hydrated" (change)="onFileChange($event)">
+                    <!-- <input class="native-input sc-ion-input-md" aria-labelledby="ion-input-3-lbl" accept=".jpeg, .png, .jpg" autocapitalize="off" autocomplete="off" autocorrect="off" name="images" placeholder="" type="file" (change)="onFileChange($event)" /> -->
+                </ion-input>
+            </ion-item>
+            <!----><!----><!----><!----><!----><!---->
+        </ion-card>
+        <ion-card  class="childCards md hydrated">
+            <!---->
+            <ion-item  class="item-interactive item-input item-has-placeholder item md in-list ion-focusable hydrated ion-untouched ion-pristine ion-valid">
+                <span  slot="start"><ion-icon  class="iconStart md hydrated" role="img" aria-label="journal"></ion-icon></span>
+                <ion-input  color="dark" class="ng-untouched ng-pristine ng-valid sc-ion-input-md-h sc-ion-input-md-s ion-color ion-color-dark md hydrated ion-untouched ion-pristine ion-valid" ngDefaultControl   placeholder="Category Discount" type="text"  #discount [(ngModel)]="addCategorydataModel.discount">
+                    <!-- <input class="native-input sc-ion-input-md" aria-labelledby="ion-input-4-lbl" autocapitalize="off" autocomplete="off" autocorrect="off" name="ion-input-4" placeholder="Category Discount" type="text" /> -->
+                </ion-input>
+            </ion-item>
+            <!----><!----><!----><!----><!----><!----><!----><!---->
+        </ion-card>
+        <ion-card  class="childCards md hydrated">
+            <!----><!----><!----><!----><!----><!----><!---->
+            <ion-list  class="md list-md hydrated">
+                <ion-radio-group  class="ng-untouched ng-pristine ng-valid ion-untouched ion-pristine ion-valid md hydrated" role="radiogroup" (ionChange)="radioGroupChange($event)"  aria-labelledby="ion-rg-0-lbl"  >
+                    <ion-list-header  class="md hydrated"> Show on Home Page </ion-list-header>
+                    <ion-item  class="item md in-list ion-activatable ion-focusable hydrated item-label">
+                        <ion-label  class="sc-ion-label-md-h sc-ion-label-md-s md hydrated" id="ion-rb-0-lbl">Yes</ion-label>
+                        <ion-radio  role="radio" [checked] aria-labelledby="ion-rb-0-lbl" class="md in-item interactive hydrated"  value="true" ></ion-radio>
+                    </ion-item>
+                    <ion-item  class="item md in-list ion-activatable ion-focusable hydrated item-label">
+                        <ion-label  class="sc-ion-label-md-h sc-ion-label-md-s md hydrated" id="ion-rb-1-lbl">No</ion-label>
+                        <ion-radio  role="radio"  aria-labelledby="ion-rb-1-lbl" class="md in-item interactive hydrated"  value="false" ></ion-radio>
+                    </ion-item>
+                </ion-radio-group>
+            </ion-list>
+            <!----><!---->
+        </ion-card>
+        <div >
+            <!---->
+            <div  class="footerItems">
+                <ion-button  color="danger" text-capitalize="" class="ion-color ion-color-danger md button button-solid ion-activatable ion-focusable hydrated"  >Cancel</ion-button>
+                <ion-button (click)="addCategory()" class="saveButton md button button-solid ion-activatable ion-focusable hydrated" text-capitalize=""> Save </ion-button>
+            </div>
+            <!---->
+        </div>
+    </ion-list>
+</ion-content>
+
+<!-- </ion-modal> -->
