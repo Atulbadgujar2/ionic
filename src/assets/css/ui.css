@@ -1452,6 +1452,12 @@ a[class*=card]:hover .title {
 }
 
 
+.iconStart {
+  color: #f53d3d;
+  font-size: 26px;
+}
+
+
 
 
 /*# sourceMappingURL=ui.css.map */

@@ -26,8 +26,9 @@
           <ion-card class="childCards md hydrated">
               <!---->
               <ion-item class="item-interactive item-input item-has-placeholder item md in-list ion-focusable hydrated ion-untouched ion-pristine ion-valid">
-                  <span slot="start"><ion-icon class="iconStart md hydrated" name="filing" role="img" aria-label="filing"></ion-icon></span>
-                  <ion-input color="dark" class="ng-untouched ng-pristine ng-valid sc-ion-input-md-h sc-ion-input-md-s ion-color ion-color-dark md hydrated ion-untouched ion-pristine ion-valid" placeholder="Enter Product regularPrice" type="text" >
+                  <!-- <span slot="start"><ion-icon class="iconStart md hydrated" name="filing" role="img" aria-label="filing"></ion-icon></span> -->
+                  <span slot="start"><ion-icon class="iconStart md hydrated" name="keypad" role="img" aria-label="keypad"></ion-icon></span>
+                  <ion-input color="dark" class="ng-untouched ng-pristine ng-valid sc-ion-input-md-h sc-ion-input-md-s ion-color ion-color-dark md hydrated ion-untouched ion-pristine ion-valid" placeholder="Enter Product RegularPrice" type="text" >
                       <!-- <input class="native-input sc-ion-input-md" aria-labelledby="ion-input-3-lbl" autocapitalize="off" autocomplete="off" autocorrect="off" name="ion-input-3" placeholder="Enter Product regularPrice" type="text" /> -->
                   </ion-input>
               </ion-item>
@@ -74,7 +75,7 @@
           <ion-card class="childCards md hydrated">
               <!---->
               <ion-item class="item-interactive item-input item-has-placeholder item md in-list ion-focusable hydrated ion-untouched ion-pristine ion-valid">
-                  <!-- <span slot="start"><ion-icon class="iconStart md hydrated" role="img" aria-label="list"></ion-icon></span> -->
+                  <span slot="start"><ion-icon class="iconStart md hydrated" role="img" name="list" aria-label="list"></ion-icon></span>
                   <ion-input color="dark" class="ng-untouched ng-pristine ng-valid sc-ion-input-md-h sc-ion-input-md-s ion-color ion-color-dark md hydrated ion-untouched ion-pristine ion-valid"   placeholder="Enter Product Delivery Instructions"
                   type="text">
                       <!-- <input
@@ -189,15 +190,15 @@
           <ion-card class="childCards md hydrated">
               <!----><!----><!----><!----><!----><!----><!---->
               <ion-list class="md list-md hydrated">
-                  <ion-radio-group class="ng-untouched ng-pristine ng-valid ion-untouched ion-pristine ion-valid md hydrated" role="radiogroup" aria-labelledby="ion-rg-1-lbl">
+                  <ion-radio-group class="ng-untouched ng-pristine ng-valid ion-untouched ion-pristine ion-valid md hydrated" role="radiogroup" value="true"  aria-labelledby="ion-rg-1-lbl">
                       <ion-list-header class="md hydrated"> Free Shipping </ion-list-header>
                       <ion-item class="item md in-list ion-activatable ion-focusable hydrated item-label">
                           <ion-label class="sc-ion-label-md-h sc-ion-label-md-s md hydrated" id="ion-rb-2-lbl">Yes</ion-label>
-                          <ion-radio role="radio" aria-checked="false" aria-labelledby="ion-rb-2-lbl" class="md in-item interactive hydrated"></ion-radio>
+                          <ion-radio role="radio" aria-checked="false" aria-labelledby="ion-rb-2-lbl" value="true"  class="md in-item interactive hydrated"></ion-radio>
                       </ion-item>
                       <ion-item class="item md in-list ion-activatable ion-focusable hydrated item-label">
                           <ion-label class="sc-ion-label-md-h sc-ion-label-md-s md hydrated" id="ion-rb-3-lbl">No</ion-label>
-                          <ion-radio role="radio" aria-checked="false" aria-labelledby="ion-rb-3-lbl" class="md in-item interactive hydrated"></ion-radio>
+                          <ion-radio role="radio" aria-checked="false" aria-labelledby="ion-rb-3-lbl" value="false"  class="md in-item interactive hydrated"></ion-radio>
                       </ion-item>
                   </ion-radio-group>
               </ion-list>
@@ -216,15 +217,15 @@
           <ion-card class="childCards md hydrated">
               <!----><!----><!----><!----><!----><!----><!---->
               <ion-list class="md list-md hydrated">
-                  <ion-radio-group class="ng-untouched ng-pristine ng-valid ion-untouched ion-pristine ion-valid md hydrated" role="radiogroup" aria-labelledby="ion-rg-2-lbl">
+                  <ion-radio-group class="ng-untouched ng-pristine ng-valid ion-untouched ion-pristine ion-valid md hydrated" value="true"  role="radiogroup" aria-labelledby="ion-rg-2-lbl">
                       <ion-list-header class="md hydrated"> Cash on Delivery </ion-list-header>
                       <ion-item class="item md in-list ion-activatable ion-focusable hydrated item-label">
                           <ion-label class="sc-ion-label-md-h sc-ion-label-md-s md hydrated" id="ion-rb-4-lbl">Yes</ion-label>
-                          <ion-radio role="radio" aria-checked="false" aria-labelledby="ion-rb-4-lbl" class="md in-item interactive hydrated"></ion-radio>
+                          <ion-radio role="radio" aria-checked="false" aria-labelledby="ion-rb-4-lbl" value="true"  class="md in-item interactive hydrated"></ion-radio>
                       </ion-item>
                       <ion-item class="item md in-list ion-activatable ion-focusable hydrated item-label">
                           <ion-label class="sc-ion-label-md-h sc-ion-label-md-s md hydrated" id="ion-rb-5-lbl">No</ion-label>
-                          <ion-radio role="radio" aria-checked="false" aria-labelledby="ion-rb-5-lbl" class="md in-item interactive hydrated"></ion-radio>
+                          <ion-radio role="radio" aria-checked="false" aria-labelledby="ion-rb-5-lbl" value="false"  class="md in-item interactive hydrated"></ion-radio>
                       </ion-item>
                   </ion-radio-group>
               </ion-list>
