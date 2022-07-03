@@ -56,34 +56,6 @@ readonly MAX_SIZE: number = 1048576;
   // add Category
   public addCategory() {
     debugger;
-
-
-
-    // if (this.file.length === 0) {
-    //   return;
-    // }
-
-    // const formData = new FormData();
-
-    // for(let file of this.file){
-    //   formData.append(file.name, file);
-    // }
-  
-
-    // const uploadReq = new HttpRequest('POST', `api/FileUpload`, formData, {
-    //   reportProgress: true,
-    // });
-
-
-    // // uploadFile = (files) => {
-    //   if (files.length === 0) {
-    //     return;
-    //   }
-    //   let fileToUpload = <File>files[0];
-    //   const formData = new FormData();
-    //   formData.append('file', fileToUpload, fileToUpload.name);
-
-    debugger;
     this.addCategorydataModel.allowCustomersToSelectPageSize = true;
    
     this.addCategorydataModel.metaKeywords="string";
@@ -111,12 +83,7 @@ readonly MAX_SIZE: number = 1048576;
     //validation
    
       this.categoryService.addCategory(this.addCategorydataModel).subscribe(
-        response => {
-          // this.empId = response
-          // this.CategoryChargesData.id = this.empId;
-          // this.loaderEnabled = false;
-          // this.toastNotificationService.success(NotificationAction.AddedSucessfully);
-          // this.onCloseAddCategory(true);
+        response => {     
         }).add(() => {
           this.uploadFile();
         });
