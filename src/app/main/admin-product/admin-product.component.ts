@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { ProductService } from 'src/app/core/services/product.service';
 import { AdminProductAddComponent } from './admin-product-add/admin-product-add.component';
 
 @Component({
@@ -9,11 +10,14 @@ import { AdminProductAddComponent } from './admin-product-add/admin-product-add.
 })
 export class AdminProductComponent implements OnInit {
 
-  constructor(public modalController: ModalController) { }
+  constructor(public modalController: ModalController,
+    private productService : ProductService,) { }
 
   dataReturned: any;
 
-  ngOnInit() {}
+  ngOnInit() : void {
+    this.getDataList();
+  }
 
   async openModal() {
     const modal = await this.modalController.create({
@@ -33,6 +37,21 @@ export class AdminProductComponent implements OnInit {
     });
 
     return await modal.present();
+  }
+  
+   /*
+     * Get grid data from server
+     */
+  // Get Client Entry  data
+  public getDataList(): void {
+    this.productService.getProductList()
+      .subscribe(
+        response => {
+          // this.gridDataList = response;
+          // this.getGridViewList(this.screenId);
+        }).add(() => {
+          // this.loadingEnabled = false;
+        });
   }
 
 }

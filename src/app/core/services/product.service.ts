@@ -27,11 +27,11 @@ export class ProductService extends BaseService {
     return this.post<ProductModel>(url, ProductModel, null, "addProduct");
   }
 
-//   //get Product list 
-//   public getProductList(): Observable<Array<ProductViewModel>> {
-//     const url: string = environment.FBCOServiceUrl + 'Product/ProductList';
-//     return this.get<Array<ProductViewModel>>(url, null, 'getProductList');
-//   }
+  //get Product list 
+  public getProductList(): Observable<Array<ProductModel>> {
+    const url: string = environment.TKServiceUrl + 'Product/list';
+    return this.get<Array<ProductModel>>(url, null, 'getProductList');
+  }
 
 //   //get Product detail by Product id 
 //   public getProductDetail(id: number): Observable<ProductViewModel> {
