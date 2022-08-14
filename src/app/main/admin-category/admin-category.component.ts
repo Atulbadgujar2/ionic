@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, ToastController } from '@ionic/angular';
 import { IdentificationModel } from 'src/app/core/models/identification.model';
 import { CategoryService } from 'src/app/core/services/category.service';
 import { AdminCategoryAddComponent } from './admin-category-add/admin-category-add.component';
@@ -14,10 +14,11 @@ import { AdminCategoryEditComponent } from './admin-category-edit/admin-category
 export class AdminCategoryComponent implements OnInit {
 
   gridData : any;
-  identificationModel : IdentificationModel
+  identificationModel : IdentificationModel = new IdentificationModel();
 
   constructor(public modalController: ModalController,
-    private categoryService : CategoryService) {   
+    private categoryService : CategoryService,
+    public toastController: ToastController) {   
   }
 
   dataReturned: any;
@@ -87,8 +88,20 @@ export class AdminCategoryComponent implements OnInit {
       response => {     
        
       }).add(() => {        
-        
+        this.handleButtonClick();
       });
+  }
+
+
+  async handleButtonClick() {
+    const toast = await this.toastController.create({
+      color: 'dark',
+      duration: 2000,
+      message: 'Category Deleted SuccessFully',
+     
+    });
+
+    await toast.present();
   }
 
   

@@ -22,5 +22,8 @@ export class CategoryModel {
     public discount : number;
     public manuallyPriceRange : Boolean;
     public fileUpload: string;
+    public imageUrl : string;
+    public isNewGuid : Boolean;
+
   }
   

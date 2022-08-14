@@ -16,6 +16,8 @@ import { FileUploadService } from 'src/app/core/services/fileupload.service';
 
 export class AdminCategoryAddComponent implements OnInit {
 
+ url : any ;
+
   theFile: any = null;
   messages: string[] = [];
    // Maximum file size allowed to be uploaded = 1MB
@@ -83,7 +85,7 @@ readonly MAX_SIZE: number = 1048576;
     //validation
    
       this.categoryService.addCategory(this.addCategorydataModel).subscribe(
-        response => {     
+        response => {    
           this.GuidId = response.guidId;
         }).add(() => {        
           this.uploadFile();
@@ -99,18 +101,29 @@ readonly MAX_SIZE: number = 1048576;
 
 
   onFileChange(event) {
+    debugger;
     this.theFile = null;
     if (event.target.files && event.target.files.length > 0) {
         // Don't allow file sizes over 1MB
         if (event.target.files[0].size < this.MAX_SIZE) {
             // Set theFile property
             this.theFile = event.target.files[0];
+            let reader = new FileReader();
+
+             // Read the file
+  reader.readAsDataURL(this.theFile);
+  reader.onload = (_event) => { 
+    this.url = reader.result; 
+}
+          
         }
         else {
             // Display error message
             this.messages.push("File: " + event.target.files[0].name + " is too large to upload.");
         }
     }
+
+
 }
 
 private readAndUploadFile(theFile: any) {
@@ -132,6 +145,8 @@ private readAndUploadFile(theFile: any) {
   reader.onload = () => {
       // Store base64 encoded representation of file
       file.fileAsBase64 = reader.result.toString();
+
+      this.url = reader.result; 
       
       // POST to server
       this.uploadService.uploadFile(file).subscribe(resp => { 
@@ -140,9 +155,13 @@ private readAndUploadFile(theFile: any) {
   
   // Read the file
   reader.readAsDataURL(theFile);
+//   reader.onload = (_event) => { 
+//     this.url = reader.result; 
+// }
 }
 
 uploadFile(): void {
+  debugger;
   this.readAndUploadFile(this.theFile);
 }
   

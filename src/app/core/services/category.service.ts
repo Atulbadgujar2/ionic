@@ -48,8 +48,8 @@ export class CategoryService extends BaseService {
   }
 
   // Update Category Details
-  public updateCategoryDetail(CategoryModel: CategoryModel): Observable<string> {
-    let url: string = environment.TKServiceUrl + 'Category/updateCategory'
+  public updateCategoryDetail(CategoryModel: CategoryModel): Observable<any> {
+    let url: string = environment.TKServiceUrl + 'Category/update'
     return this.put(url, CategoryModel, null, "updateCategoryDetail");
   }
 

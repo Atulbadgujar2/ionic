@@ -21,7 +21,7 @@
             <!---->
             <ion-item  class="item-interactive item-input item-has-placeholder item md in-list ion-focusable hydrated ion-untouched ion-pristine ion-valid">
                 <span  slot="start"><ion-icon  class="iconStart md hydrated" role="img" aria-label="basketball"></ion-icon></span>
-                <ion-input  color="dark" class="ng-untouched ng-pristine ng-valid sc-ion-input-md-h sc-ion-input-md-s ion-color ion-color-dark md hydrated ion-untouched ion-pristine ion-valid" placeholder="Enter Category Name" type="text" #name ngDefaultControl  [(ngModel)]="addCategorydataModel.name" >
+                <ion-input  color="dark" class="ng-untouched ng-pristine ng-valid sc-ion-input-md-h sc-ion-input-md-s ion-color ion-color-dark md hydrated ion-untouched ion-pristine ion-valid" placeholder="Enter Category Name" type="text" #name ngDefaultControl  [(ngModel)]="editCategorydataModel.name" >
                     <!-- <input class="native-input sc-ion-input-md" aria-labelledby="ion-input-2-lbl" autocapitalize="off" autocomplete="off" autocorrect="off" name="ion-input-2" placeholder="Enter Category Name" type="text" /> -->
                 </ion-input>
             </ion-item>
@@ -31,7 +31,7 @@
             <!----><!---->
             <ion-item  class="item md in-list ion-focusable ion-untouched ion-pristine ion-valid hydrated item-label item-label-floating item-interactive item-textarea item-input" >
                 <ion-label  position="floating" class="sc-ion-label-md-h sc-ion-label-md-s md label-floating hydrated" id="ion-input-0-lbl">Enter category Description</ion-label>
-                <ion-textarea  rows="3" class="ng-untouched ng-pristine ng-valid ion-untouched ion-pristine ion-valid sc-ion-textarea-md-h sc-ion-textarea-md-s md hydrated" ngDefaultControl  [(ngModel)]="addCategorydataModel.description"  #description placeholder="" rows="3">
+                <ion-textarea  rows="3" class="ng-untouched ng-pristine ng-valid ion-untouched ion-pristine ion-valid sc-ion-textarea-md-h sc-ion-textarea-md-s md hydrated" ngDefaultControl  [(ngModel)]="editCategorydataModel.description"  #description placeholder="" rows="3">
                     <!-- <div class="textarea-wrapper sc-ion-textarea-md">
                         <textarea class="native-textarea sc-ion-textarea-md" aria-labelledby="ion-input-0-lbl" autocapitalize="none" name="ion-input-0" placeholder="" rows="3"></textarea>
                     </div> -->
@@ -42,6 +42,7 @@
         <ion-card  class="childCards md hydrated">
             <!----><!----><!---->
             <ion-item  class="item-interactive item-input item md in-list ion-focusable hydrated">
+                <img  class="image-table" src="{{url}}" />
                 <!-- <app-file-upload [GuidId]="GuidId" [Flag]="Flag" ></app-file-upload> -->
                 <span  slot="start">
                  
@@ -56,7 +57,7 @@
             <!---->
             <ion-item  class="item-interactive item-input item-has-placeholder item md in-list ion-focusable hydrated ion-untouched ion-pristine ion-valid">
                 <span  slot="start"><ion-icon  class="iconStart md hydrated" role="img" aria-label="journal"></ion-icon></span>
-                <ion-input  color="dark" class="ng-untouched ng-pristine ng-valid sc-ion-input-md-h sc-ion-input-md-s ion-color ion-color-dark md hydrated ion-untouched ion-pristine ion-valid" ngDefaultControl   placeholder="Category Discount" type="text"  #discount [(ngModel)]="addCategorydataModel.discount">
+                <ion-input  color="dark" class="ng-untouched ng-pristine ng-valid sc-ion-input-md-h sc-ion-input-md-s ion-color ion-color-dark md hydrated ion-untouched ion-pristine ion-valid" ngDefaultControl   placeholder="Category Discount" type="text"  #discount [(ngModel)]="editCategorydataModel.discount">
                     <!-- <input class="native-input sc-ion-input-md" aria-labelledby="ion-input-4-lbl" autocapitalize="off" autocomplete="off" autocorrect="off" name="ion-input-4" placeholder="Category Discount" type="text" /> -->
                 </ion-input>
             </ion-item>
@@ -65,7 +66,7 @@
         <ion-card  class="childCards md hydrated">
             <!----><!----><!----><!----><!----><!----><!---->
             <ion-list  class="md list-md hydrated">
-                <ion-radio-group  class="ng-untouched ng-pristine ng-valid ion-untouched ion-pristine ion-valid md hydrated" role="radiogroup" (ionChange)="radioGroupChange($event)"  aria-labelledby="ion-rg-0-lbl"  >
+                <ion-radio-group  class="ng-untouched ng-pristine ng-valid ion-untouched ion-pristine ion-valid md hydrated" radio-group  #showOnHomepage ngDefaultControl  [(ngModel)]="editCategorydataModel.showOnHomepage" role="radiogroup" (ionChange)="radioGroupChange($event)"  aria-labelledby="ion-rg-0-lbl"  >
                     <ion-list-header  class="md hydrated"> Show on Home Page </ion-list-header>
                     <ion-item  class="item md in-list ion-activatable ion-focusable hydrated item-label">
                         <ion-label  class="sc-ion-label-md-h sc-ion-label-md-s md hydrated" id="ion-rb-0-lbl">Yes</ion-label>
@@ -83,7 +84,7 @@
             <!---->
             <div  class="footerItems">
                 <ion-button  color="danger" text-capitalize="" class="ion-color ion-color-danger md button button-solid ion-activatable ion-focusable hydrated"  >Cancel</ion-button>
-                <ion-button (click)="addCategory()" class="saveButton md button button-solid ion-activatable ion-focusable hydrated" text-capitalize=""> Save </ion-button>
+                <ion-button (click)="editCategory()" class="saveButton md button button-solid ion-activatable ion-focusable hydrated" text-capitalize=""> Save </ion-button>
             </div>
             <!---->
         </div>
