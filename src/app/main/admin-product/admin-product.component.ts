@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { ProductService } from 'src/app/core/services/product.service';
 import { AdminProductAddComponent } from './admin-product-add/admin-product-add.component';
+import { AdminProductEditComponent } from './admin-product-edit/admin-product-edit.component';
 
 @Component({
   selector: 'app-admin-product',
@@ -39,6 +40,27 @@ export class AdminProductComponent implements OnInit {
     return await modal.present();
   }
   
+  async openEditModal() {
+    debugger;
+    const modal = await this.modalController.create({
+      component: AdminProductEditComponent,
+      componentProps: {
+        "paramID": 123,
+        "paramTitle": "Test Title"
+      }
+    });
+
+    modal.onDidDismiss().then((dataReturned) => {
+      debugger;
+      if (dataReturned !== null) {
+        this.dataReturned = dataReturned.data;
+        //alert('Modal Sent Data :'+ dataReturned);
+      }
+    });
+
+    return await modal.present();
+  }
+
    /*
      * Get grid data from server
      */

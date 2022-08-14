@@ -18,6 +18,11 @@ export class AdminProductEditComponent implements OnInit {
      //contains tenant data
      public editProductdataModel: ProductModel = new ProductModel();
 
+     async closeModal() {
+      const onClosedData: string = "Wrapped Up!";    
+      await this.modalController.dismiss(onClosedData);
+    }
+  
   // add Product
   public addProduct() {
     debugger;
