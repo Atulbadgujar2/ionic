@@ -55,7 +55,7 @@
                 <!---->
                 <ion-item  class="item-interactive item-input item-has-placeholder item md in-list ion-focusable hydrated ion-untouched ion-pristine ion-valid">
                     <span  slot="start"><ion-icon  class="iconStart md hydrated" name="journal" role="img" aria-label="journal"></ion-icon></span>
-                    <ion-input  color="dark" class="ng-untouched ng-pristine ng-valid sc-ion-input-md-h sc-ion-input-md-s ion-color ion-color-dark md hydrated ion-untouched ion-pristine ion-valid" ngDefaultControl   placeholder="Category Discount" type="numberks"  #discount [(ngModel)]="addCategorydataModel.discount">
+                    <ion-input  color="dark" class="ng-untouched ng-pristine ng-valid sc-ion-input-md-h sc-ion-input-md-s ion-color ion-color-dark md hydrated ion-untouched ion-pristine ion-valid"    placeholder="Category Discount" type="numberks" ngDefaultControl #discount [(ngModel)]="addCategorydataModel.discount">
                         <!-- <input class="native-input sc-ion-input-md" aria-labelledby="ion-input-4-lbl" autocapitalize="off" autocomplete="off" autocorrect="off" name="ion-input-4" placeholder="Category Discount" type="text" /> -->
                     </ion-input>
                 </ion-item>
@@ -81,7 +81,7 @@
             <div >
                 <!---->
                 <div  class="footerItems">
-                    <ion-button  color="danger" text-capitalize="" class="ion-color ion-color-danger md button button-solid ion-activatable ion-focusable hydrated"  >Cancel</ion-button>
+                    <ion-button (click)="closeModal()" color="danger" text-capitalize="" class="ion-color ion-color-danger md button button-solid ion-activatable ion-focusable hydrated"  >Cancel</ion-button>
                     <ion-button (click)="addCategory()" class="saveButton md button button-solid ion-activatable ion-focusable hydrated" text-capitalize=""> Save </ion-button>
                 </div>
                 <!---->

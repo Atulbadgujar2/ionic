@@ -21,6 +21,9 @@ readonly MAX_SIZE: number = 1048576;
 modalTitle: string;
 modelId: number;
 GuidId : string;
+
+  //contains tenant data
+  public editProductdataModel: ProductModel = new ProductModel();
   constructor(private modalController: ModalController,   
     private productService : ProductService,
     public toastController: ToastController,
@@ -32,8 +35,7 @@ GuidId : string;
     this.getProductData(this.navParams.data.paramID);
   }
 
-     //contains tenant data
-     public editProductdataModel: ProductModel = new ProductModel();
+   
 
      async closeModal() {
       const onClosedData: string = "Wrapped Up!";    
@@ -153,11 +155,22 @@ async showToasterOnButtonClick(message) {
   await toast.present();
 }
 
-  radioGroupChange(event) {
-    debugger;
-    this.editProductdataModel.showOnHomepage = event.detail.value
-  }
+radioGroupChange(event,caseCondition) {
+  debugger;
+  switch(caseCondition){
+    case 1:
+      this.editProductdataModel.isInStock = event.detail.value
+      break;
+      case 2:
+      this.editProductdataModel.isFreeShipping = event.detail.value
+      break;
+      case 3:
+      this.editProductdataModel.isCODAvailable = event.detail.value
+      break;
 
+  }
+  
+}
   /*
      * Get grid data from server
      */

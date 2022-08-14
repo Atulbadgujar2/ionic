@@ -201,10 +201,10 @@
                               <div  class="actionSection">
                                   <!---->
                                   <span >
-                                      <ion-button  color="secondary"  class="ion-color ion-color-secondary md button button-solid  ion-activatable ion-focusable hydrated"  (click)="openEditModal()">
+                                      <ion-button  color="secondary"  class="ion-color ion-color-secondary md button button-solid  ion-activatable ion-focusable hydrated" (click)="openEditModal(item.id)" >
                                           Edit
                                       </ion-button>
-                                      <ion-button  color="danger" class="ion-color ion-color-danger md button button-solid  ion-activatable ion-focusable hydrated">
+                                      <ion-button  color="danger" class="ion-color ion-color-danger md button button-solid  ion-activatable ion-focusable hydrated" (click)="deleteProduct(item.id)">
                                           Delete
                                       </ion-button>
                                   </span>

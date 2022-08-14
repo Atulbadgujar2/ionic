@@ -17,7 +17,7 @@
               <!---->
               <ion-item class="item-interactive item-input item-has-placeholder item md in-list ion-focusable hydrated ion-untouched ion-pristine ion-valid">
                   <span slot="start"><ion-icon class="iconStart md hydrated" role="img" name="basketball"  aria-label="basketball"></ion-icon></span>
-                  <ion-input color="dark" class="ng-untouched ng-pristine ng-valid sc-ion-input-md-h sc-ion-input-md-s ion-color ion-color-dark md hydrated ion-untouched ion-pristine ion-valid" placeholder="Enter Product Name" type="text" >
+                  <ion-input color="dark" class="ng-untouched ng-pristine ng-valid sc-ion-input-md-h sc-ion-input-md-s ion-color ion-color-dark md hydrated ion-untouched ion-pristine ion-valid" placeholder="Enter Product Name" type="text" ngDefaultControl #name [(ngModel)]="addProductdataModel.name" >
                       <!-- <input class="native-input sc-ion-input-md" aria-labelledby="ion-input-2-lbl" autocapitalize="off" autocomplete="off" autocorrect="off" name="ion-input-2" placeholder="Enter Product Name" type="text" /> -->
                   </ion-input>
               </ion-item>
@@ -28,7 +28,7 @@
               <ion-item class="item-interactive item-input item-has-placeholder item md in-list ion-focusable hydrated ion-untouched ion-pristine ion-valid">
                   <!-- <span slot="start"><ion-icon class="iconStart md hydrated" name="filing" role="img" aria-label="filing"></ion-icon></span> -->
                   <span slot="start"><ion-icon class="iconStart md hydrated" name="keypad" role="img" aria-label="keypad"></ion-icon></span>
-                  <ion-input color="dark" class="ng-untouched ng-pristine ng-valid sc-ion-input-md-h sc-ion-input-md-s ion-color ion-color-dark md hydrated ion-untouched ion-pristine ion-valid" placeholder="Enter Product RegularPrice" type="text" >
+                  <ion-input color="dark" class="ng-untouched ng-pristine ng-valid sc-ion-input-md-h sc-ion-input-md-s ion-color ion-color-dark md hydrated ion-untouched ion-pristine ion-valid" placeholder="Enter Product RegularPrice" type="number" ngDefaultControl #price [(ngModel)]="addProductdataModel.price" >
                       <!-- <input class="native-input sc-ion-input-md" aria-labelledby="ion-input-3-lbl" autocapitalize="off" autocomplete="off" autocorrect="off" name="ion-input-3" placeholder="Enter Product regularPrice" type="text" /> -->
                   </ion-input>
               </ion-item>
@@ -38,7 +38,7 @@
               <!---->
               <ion-item class="item-interactive item-input item-has-placeholder item md in-list ion-focusable hydrated ion-untouched ion-pristine ion-valid">
                   <span slot="start"><ion-icon class="iconStart md hydrated" name="keypad" role="img" aria-label="keypad"></ion-icon></span>
-                  <ion-input color="dark" class="ng-untouched ng-pristine ng-valid sc-ion-input-md-h sc-ion-input-md-s ion-color ion-color-dark md hydrated ion-untouched ion-pristine ion-valid" placeholder="Price per Quanity" type="text" >
+                  <ion-input color="dark" class="ng-untouched ng-pristine ng-valid sc-ion-input-md-h sc-ion-input-md-s ion-color ion-color-dark md hydrated ion-untouched ion-pristine ion-valid" placeholder="Price per Quanity" type="text" ngDefaultControl #pricePerQuantity [(ngModel)]="addProductdataModel.pricePerQuantity"  >
                       <!-- <input class="native-input sc-ion-input-md" aria-labelledby="ion-input-4-lbl" autocapitalize="off" autocomplete="off" autocorrect="off" name="ion-input-4" placeholder="Price per Quanity" type="text" /> -->
                   </ion-input>
               </ion-item>
@@ -52,7 +52,7 @@
               <!---->
               <ion-item class="item-interactive item-input item-has-placeholder item md in-list ion-focusable hydrated ion-untouched ion-pristine ion-valid">
                   <span slot="start"><ion-icon class="iconStart md hydrated" name="medical" role="img" aria-label="medical"></ion-icon></span>
-                  <ion-input color="dark" class="ng-untouched ng-pristine ng-valid sc-ion-input-md-h sc-ion-input-md-s ion-color ion-color-dark md hydrated ion-untouched ion-pristine ion-valid" placeholder="Enter Product Offer" type="number">
+                  <ion-input color="dark" class="ng-untouched ng-pristine ng-valid sc-ion-input-md-h sc-ion-input-md-s ion-color ion-color-dark md hydrated ion-untouched ion-pristine ion-valid" placeholder="Enter Product Offer" type="number" ngDefaultControl #offer [(ngModel)]="addProductdataModel.offer">
                       <!-- <input class="native-input sc-ion-input-md" aria-labelledby="ion-input-5-lbl" autocapitalize="off" autocomplete="off" autocorrect="off" name="ion-input-5" placeholder="Enter Product Offer" type="number" /> -->
                   </ion-input>
               </ion-item>
@@ -64,7 +64,7 @@
               <!----><!---->
               <ion-item class="item md in-list ion-focusable ion-untouched ion-pristine ion-valid hydrated item-label item-label-floating item-interactive item-textarea item-input">
                   <ion-label position="floating" class="sc-ion-label-md-h sc-ion-label-md-s md label-floating hydrated" id="ion-input-0-lbl">Enter Product Description</ion-label>
-                  <ion-textarea rows="3" class="ng-untouched ng-pristine ng-valid ion-untouched ion-pristine ion-valid sc-ion-textarea-md-h sc-ion-textarea-md-s md hydrated" placeholder="" rows="3">
+                  <ion-textarea rows="3" class="ng-untouched ng-pristine ng-valid ion-untouched ion-pristine ion-valid sc-ion-textarea-md-h sc-ion-textarea-md-s md hydrated" placeholder="" ngDefaultControl #fullDescription [(ngModel)]="addProductdataModel.fullDescription" rows="3">
                       <!-- <div class="textarea-wrapper sc-ion-textarea-md">
                           <textarea class="native-textarea sc-ion-textarea-md" aria-labelledby="ion-input-0-lbl" autocapitalize="none" name="ion-input-0" placeholder="" rows="3"></textarea>
                       </div> -->
@@ -77,7 +77,7 @@
               <ion-item class="item-interactive item-input item-has-placeholder item md in-list ion-focusable hydrated ion-untouched ion-pristine ion-valid">
                   <span slot="start"><ion-icon class="iconStart md hydrated" role="img" name="list" aria-label="list"></ion-icon></span>
                   <ion-input color="dark" class="ng-untouched ng-pristine ng-valid sc-ion-input-md-h sc-ion-input-md-s ion-color ion-color-dark md hydrated ion-untouched ion-pristine ion-valid"   placeholder="Enter Product Delivery Instructions"
-                  type="text">
+                  type="text" ngDefaultControl #deliveryInstruction [(ngModel)]="addProductdataModel.deliveryInstruction">
                       <!-- <input
                           class="native-input sc-ion-input-md"
                           aria-labelledby="ion-input-6-lbl"
@@ -98,7 +98,7 @@
                   <form novalidate="" class="ng-untouched ng-pristine ng-valid">
                       <ion-item class="item-interactive item-input item md in-list ion-focusable hydrated item-label ion-untouched ion-pristine ion-valid">
                           <ion-label class="sc-ion-label-md-h sc-ion-label-md-s md hydrated" id="ion-input-7-lbl">Enter Pin code</ion-label>
-                          <ion-input name="skillValue" class="ng-untouched ng-pristine ng-valid sc-ion-input-md-h sc-ion-input-md-s md hydrated ion-untouched ion-pristine ion-valid" name="skillValue" placeholder="" type="text" >
+                          <ion-input name="skillValue" class="ng-untouched ng-pristine ng-valid sc-ion-input-md-h sc-ion-input-md-s md hydrated ion-untouched ion-pristine ion-valid" name="skillValue" placeholder="" type="number" ngDefaultControl #onlySupportedPincode [(ngModel)]="addProductdataModel.onlySupportedPincode" >
                               <!-- <input class="native-input sc-ion-input-md" aria-labelledby="ion-input-7-lbl" autocapitalize="off" autocomplete="off" autocorrect="off" name="skillValue" placeholder="" type="text" /> -->
                           </ion-input>
                           <button icon-only="" ion-button="" item-right="" type="submit"><ion-icon name="checkmark" role="img" class="md hydrated" aria-label="checkmark"></ion-icon></button>
@@ -174,7 +174,7 @@
           <ion-card class="childCards md hydrated">
               <!----><!----><!----><!----><!----><!----><!---->
               <ion-list class="md list-md hydrated">
-                  <ion-radio-group class="ng-untouched ng-pristine ng-valid ion-untouched ion-pristine ion-valid md hydrated" role="radiogroup" value="true" aria-labelledby="ion-rg-0-lbl">
+                  <ion-radio-group class="ng-untouched ng-pristine ng-valid ion-untouched ion-pristine ion-valid md hydrated" role="radiogroup" value="true" aria-labelledby="ion-rg-0-lbl" (ionChange)="radioGroupChange($event,1)" >
                       <ion-list-header class="md hydrated"> In Stock </ion-list-header>
                       <ion-item class="item md in-list ion-activatable ion-focusable hydrated item-label">
                           <ion-label class="sc-ion-label-md-h sc-ion-label-md-s md hydrated" id="ion-rb-0-lbl">Yes</ion-label>
@@ -191,7 +191,7 @@
           <ion-card class="childCards md hydrated">
               <!----><!----><!----><!----><!----><!----><!---->
               <ion-list class="md list-md hydrated">
-                  <ion-radio-group class="ng-untouched ng-pristine ng-valid ion-untouched ion-pristine ion-valid md hydrated" role="radiogroup" value="true"  aria-labelledby="ion-rg-1-lbl">
+                  <ion-radio-group class="ng-untouched ng-pristine ng-valid ion-untouched ion-pristine ion-valid md hydrated" role="radiogroup" value="true"  aria-labelledby="ion-rg-1-lbl" (ionChange)="radioGroupChange($event,2)" >
                       <ion-list-header class="md hydrated"> Free Shipping </ion-list-header>
                       <ion-item class="item md in-list ion-activatable ion-focusable hydrated item-label">
                           <ion-label class="sc-ion-label-md-h sc-ion-label-md-s md hydrated" id="ion-rb-2-lbl">Yes</ion-label>
@@ -210,7 +210,7 @@
               <ion-item class="item-interactive item-input item-has-placeholder item md in-list ion-focusable hydrated ion-untouched ion-pristine ion-valid">
                   <span slot="start"><ion-icon class="iconStart md hydrated" name="keypad" role="img" aria-label="keypad"></ion-icon></span>
                   <ion-input color="dark" class="ng-untouched ng-pristine ng-valid sc-ion-input-md-h sc-ion-input-md-s ion-color ion-color-dark md hydrated ion-untouched ion-pristine ion-valid">
-                      <input class="native-input sc-ion-input-md" aria-labelledby="ion-input-12-lbl" autocapitalize="off" autocomplete="off" autocorrect="off" name="ion-input-12" placeholder="Product Delivery In" type="text" />
+                      <input class="native-input sc-ion-input-md" aria-labelledby="ion-input-12-lbl" autocapitalize="off" autocomplete="off" autocorrect="off" name="ion-input-12" placeholder="Product Delivery In" type="text"  />
                   </ion-input>
               </ion-item>
               <!----><!----><!----><!----><!----><!----><!----><!---->
@@ -218,7 +218,7 @@
           <ion-card class="childCards md hydrated">
               <!----><!----><!----><!----><!----><!----><!---->
               <ion-list class="md list-md hydrated">
-                  <ion-radio-group class="ng-untouched ng-pristine ng-valid ion-untouched ion-pristine ion-valid md hydrated" value="true"  role="radiogroup" aria-labelledby="ion-rg-2-lbl">
+                  <ion-radio-group class="ng-untouched ng-pristine ng-valid ion-untouched ion-pristine ion-valid md hydrated" value="true"  role="radiogroup" aria-labelledby="ion-rg-2-lbl" (ionChange)="radioGroupChange($event,3)" >
                       <ion-list-header class="md hydrated"> Cash on Delivery </ion-list-header>
                       <ion-item class="item md in-list ion-activatable ion-focusable hydrated item-label">
                           <ion-label class="sc-ion-label-md-h sc-ion-label-md-s md hydrated" id="ion-rb-4-lbl">Yes</ion-label>
@@ -235,7 +235,7 @@
           <div >
               <!---->
               <div class="footerItems">
-                  <ion-button color="danger" text-capitalize="" class="ion-color ion-color-danger md button button-solid ion-activatable ion-focusable hydrated">Cancel</ion-button>
+                  <ion-button (click)="closeModal()" color="danger" text-capitalize="" class="ion-color ion-color-danger md button button-solid ion-activatable ion-focusable hydrated">Cancel</ion-button>
                   <ion-button (click)="addProduct()" class="saveButton md button button-solid ion-activatable ion-focusable hydrated" text-capitalize=""> Save </ion-button>
               </div>
               <!---->

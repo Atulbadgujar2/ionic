@@ -42,32 +42,6 @@ url : any ;
 
   // add Product
   public addProduct() {
-    debugger;
-    this.addProductdataModel.isCODAvailable = true;
-   
-    this.addProductdataModel.metaKeywords="string";
-    this.addProductdataModel.metaTitle="string";
-    this.addProductdataModel.deliveryInstruction="string";
-    this.addProductdataModel.name="string";
-    this.addProductdataModel.categoryId = 1;
-    this.addProductdataModel.fullDescription="string";
-    this.addProductdataModel.stockQuantity = 1;
-    this.addProductdataModel.minStockQuantity = 1
-    this.addProductdataModel.displayStockQuantity = true;
-    this.addProductdataModel.isFreeShipping = true;  
-    this.addProductdataModel.isInStock= true;
-    this.addProductdataModel.isNewGuid= true;
-
-    this.addProductdataModel.showOnHomepage=true;
-    this.addProductdataModel.offer=5;
-    this.addProductdataModel.price=5;
-    this.addProductdataModel.pricePerQuantity=5;
-
-    this.addProductdataModel.onlySupportedPincode=5;
-
- 
-    this.addProductdataModel.fileUpload="string";
-    
     // this.onSubmit = true;
     //validation
    
@@ -78,12 +52,22 @@ url : any ;
           this.uploadFile();
         });
     }
-
- 
-
-    radioGroupChange(event) {
+    
+    radioGroupChange(event,caseCondition) {
       debugger;
-      this.addProductdataModel.showOnHomepage = event.detail.value
+      switch(caseCondition){
+        case 1:
+          this.addProductdataModel.isInStock = event.detail.value
+          break;
+          case 2:
+          this.addProductdataModel.isFreeShipping = event.detail.value
+          break;
+          case 3:
+          this.addProductdataModel.isCODAvailable = event.detail.value
+          break;
+
+      }
+      
     }
 
 
@@ -160,6 +144,8 @@ async showToasterOnButtonClick(message) {
 
   await toast.present();
 }
+
+
 
 
 }
