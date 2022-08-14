@@ -36,9 +36,11 @@ export class AdminCategoryComponent implements OnInit {
     });
 
     modal.onDidDismiss().then((dataReturned) => {
-      debugger;
+     
       if (dataReturned !== null) {
         this.dataReturned = dataReturned.data;
+      
+        this.getDataList();
         //alert('Modal Sent Data :'+ dataReturned);
       }
     });
@@ -89,6 +91,7 @@ export class AdminCategoryComponent implements OnInit {
        
       }).add(() => {        
         this.handleButtonClick();
+        this.getDataList();
       });
   }
 

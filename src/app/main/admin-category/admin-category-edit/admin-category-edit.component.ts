@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController, NavParams } from '@ionic/angular';
+import { ModalController, NavParams, ToastController } from '@ionic/angular';
 import { CategoryModel } from 'src/app/core/models/category/category.model';
 import { FileToUpload } from 'src/app/core/models/file-upload/file-to-upload';
 import { CategoryService } from 'src/app/core/services/category.service';
@@ -29,7 +29,8 @@ readonly MAX_SIZE: number = 1048576;
     private modalController: ModalController,
     private categoryService : CategoryService,
     private uploadService: FileUploadService,
-    private navParams: NavParams
+    private navParams: NavParams,
+    public toastController: ToastController
   ) { }
 
   ngOnInit() {
@@ -74,6 +75,7 @@ readonly MAX_SIZE: number = 1048576;
           this.GuidId = response.guidId;
         }).add(() => {        
           this.uploadFile();
+          this.closeModal();        
         });
       
 
@@ -135,12 +137,23 @@ private readAndUploadFile(theFile: any) {
       // POST to server
       this.uploadService.uploadFile(file).subscribe(resp => { 
           this.messages.push("Upload complete"); }).add(() => {        
-           
+            this.showToasterOnButtonClick('Category Updated Successfully');
           });
   }
   
   // Read the file
   reader.readAsDataURL(theFile);
+}
+
+async showToasterOnButtonClick(message) {
+  const toast = await this.toastController.create({
+    color: 'dark',
+    duration: 2000,
+    message: message,
+   
+  });
+
+  await toast.present();
 }
 
   radioGroupChange(event) {

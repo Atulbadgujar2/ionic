@@ -1,6 +1,6 @@
 import { HttpRequest } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ModalController, NavParams } from '@ionic/angular';
+import { ModalController, NavParams, ToastController } from '@ionic/angular';
 
 import { CategoryModel } from 'src/app/core/models/category/category.model';
 import { FileToUpload } from 'src/app/core/models/file-upload/file-to-upload';
@@ -38,7 +38,8 @@ readonly MAX_SIZE: number = 1048576;
     private modalController: ModalController,
     private categoryService : CategoryService,
     private uploadService: FileUploadService,
-    private navParams: NavParams
+    private navParams: NavParams,
+    public toastController: ToastController
   ) {
 // Maximum file size allowed to be uploaded = 1MB
 
@@ -89,6 +90,7 @@ readonly MAX_SIZE: number = 1048576;
           this.GuidId = response.guidId;
         }).add(() => {        
           this.uploadFile();
+         
         });
     }
 
@@ -150,7 +152,10 @@ private readAndUploadFile(theFile: any) {
       
       // POST to server
       this.uploadService.uploadFile(file).subscribe(resp => { 
-          this.messages.push("Upload complete"); });
+          this.messages.push("Upload complete"); }).add(() => {        
+           this.closeModal();
+           this.showToasterOnButtonClick('Category Saved Successfully');
+          });
   }
   
   // Read the file
@@ -163,6 +168,17 @@ private readAndUploadFile(theFile: any) {
 uploadFile(): void {
   debugger;
   this.readAndUploadFile(this.theFile);
+}
+
+async showToasterOnButtonClick(message) {
+  const toast = await this.toastController.create({
+    color: 'dark',
+    duration: 2000,
+    message: message,
+   
+  });
+
+  await toast.present();
 }
   
 
