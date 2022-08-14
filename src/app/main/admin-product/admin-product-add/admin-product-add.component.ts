@@ -42,6 +42,7 @@ url : any ;
 
   // add Product
   public addProduct() {
+    debugger;
     // this.onSubmit = true;
     //validation
    
@@ -120,7 +121,7 @@ private readAndUploadFile(theFile: any) {
       // POST to server
       this.uploadService.uploadFile(file).subscribe(resp => { 
           this.messages.push("Upload complete"); }).add(() => {        
-            this.closeModal();
+            // this.closeModal();
             this.showToasterOnButtonClick('Product Saved Successfully');
            });
   }
