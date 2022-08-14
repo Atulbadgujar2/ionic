@@ -22,16 +22,16 @@ export class CategoryService extends BaseService {
   }
 
   // To add Category.
-  public addCategory(CategoryModel: CategoryModel): Observable<string> {
+  public addCategory(CategoryModel: CategoryModel): Observable<any> {
     let url: string = environment.TKServiceUrl + 'Category/add'
     return this.post<CategoryModel>(url, CategoryModel, null, "addCategory");
   }
 
-//   //get Category list 
-//   public getCategoryList(): Observable<Array<CategoryViewModel>> {
-//     const url: string = environment.FBCOServiceUrl + 'Category/CategoryList';
-//     return this.get<Array<CategoryViewModel>>(url, null, 'getCategoryList');
-//   }
+  //get Category list 
+  public getCategoryList(): Observable<Array<CategoryModel>> {
+    const url: string = environment.TKServiceUrl + 'Category/list';
+    return this.get<Array<CategoryModel>>(url, null, 'getCategoryList');
+  }
 
 //   //get Category detail by Category id 
 //   public getCategoryDetail(id: number): Observable<CategoryViewModel> {

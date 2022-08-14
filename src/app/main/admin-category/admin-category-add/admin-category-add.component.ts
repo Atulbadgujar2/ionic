@@ -78,13 +78,14 @@ readonly MAX_SIZE: number = 1048576;
     this.addCategorydataModel.priceTo= 0;
     this.addCategorydataModel.manuallyPriceRange = true;
     this.addCategorydataModel.fileUpload="string";
-    this.GuidId = "a6ee7c60-6efd-4b9e-b7f1-1f552eb0c163"
+    
     // this.onSubmit = true;
     //validation
    
       this.categoryService.addCategory(this.addCategorydataModel).subscribe(
         response => {     
-        }).add(() => {
+          this.GuidId = response.guidId;
+        }).add(() => {        
           this.uploadFile();
         });
     }

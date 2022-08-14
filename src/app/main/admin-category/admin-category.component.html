@@ -79,133 +79,53 @@
             </thead>
             <tbody >
                 <!---->
-                <tr >
+                <tr *ngFor="let item of gridData">
                     <!---->
                     <td >
                         <!----><!---->
-                        <span >1</span>
+                        <span >{{item.id}}</span>
                         <!----><!----><!---->
                     </td>
                     <td >
                         <!---->
                         <span >
                             <!---->
-                            <img  class="image-table" src="https://firebasestorage.googleapis.com/v0/b/grocerydashboard.appspot.com/o/myupload%2F1586969118508?alt=media&amp;token=32e54ea8-b20b-4ee4-8993-e82283cb4318" />
+                            <!-- <img  class="image-table" src="https://firebasestorage.googleapis.com/v0/b/grocerydashboard.appspot.com/o/myupload%2F1586969118508?alt=media&amp;token=32e54ea8-b20b-4ee4-8993-e82283cb4318" /> -->
+                             <img  class="image-table" src="{{item.imageUrl}}" />
                         </span>
                         <!----><!----><!----><!---->
                     </td>
                     <td >
                         <!----><!----><!---->
-                        <span >Breakfast Items</span>
+                        <span >{{item.name}}</span>
                         <!----><!---->
                     </td>
                     <td >
                         <!----><!----><!---->
-                        <span >Healthy breakfast is what makes the day great</span>
+                        <span >{{item.description}}</span>
                         <!----><!---->
                     </td>
                     <td >
                         <!----><!----><!---->
-                        <span >10</span>
+                        <span >{{item.discount}}</span>
                         <!----><!---->
                     </td>
                     <td >
                         <!----><!----><!---->
-                        <span >true</span>
+                        <span >{{item.showOnHomepage}}</span>
                         <!----><!---->
                     </td>
                     <td >
                         <!----><!----><!----><!---->
                         <span >
-                            <ion-button  color="secondary" aria-disabled="true" class="ion-color ion-color-secondary md button button-solid button-disabled ion-activatable ion-focusable hydrated" disabled=""> Edit </ion-button>
-                            <ion-button  color="danger" aria-disabled="true" class="ion-color ion-color-danger md button button-solid button-disabled ion-activatable ion-focusable hydrated" disabled=""> Delete </ion-button>
+                            <ion-button  color="secondary" class="ion-color ion-color-secondary md button button-solid  ion-activatable ion-focusable hydrated" (click)="openEditModal()"> Edit </ion-button>
+                            <ion-button  color="danger" class="ion-color ion-color-danger md button button-solid ion-activatable ion-focusable hydrated" > Delete </ion-button>
                         </span>
                         <!---->
-                        <div  class="demo-item-text">Demo items cannot be edited or deleted</div>
+                        <!-- <div  class="demo-item-text">Demo items cannot be edited or deleted</div> -->
                     </td>
                 </tr>
-                <tr >
-                    <!---->
-                    <td >
-                        <!----><!---->
-                        <span >2</span>
-                        <!----><!----><!---->
-                    </td>
-                    <td >
-                        <!---->
-                        <span >
-                            <!---->
-                            <img  class="image-table" src="https://firebasestorage.googleapis.com/v0/b/grocerydashboard.appspot.com/o/myupload%2F1586969013425?alt=media&amp;token=7174c607-9894-4945-aa69-343bf283f16f" />
-                        </span>
-                        <!----><!----><!----><!---->
-                    </td>
-                    <td >
-                        <!----><!----><!---->
-                        <span >Fruits</span>
-                        <!----><!---->
-                    </td>
-                    <td >
-                        <!----><!----><!---->
-                        <span >Fresh fruits for your daily vitamin and mineral needs</span>
-                        <!----><!---->
-                    </td>
-                    <td ><!----><!----><!----><!----><!----></td>
-                    <td >
-                        <!----><!----><!---->
-                        <span >true</span>
-                        <!----><!---->
-                    </td>
-                    <td >
-                        <!----><!----><!----><!---->
-                        <span >
-                            <ion-button  color="secondary" aria-disabled="true" class="ion-color ion-color-secondary md button button-solid button-disabled ion-activatable ion-focusable hydrated" disabled=""> Edit </ion-button>
-                            <ion-button  color="danger" aria-disabled="true" class="ion-color ion-color-danger md button button-solid button-disabled ion-activatable ion-focusable hydrated" disabled=""> Delete </ion-button>
-                        </span>
-                        <!---->
-                        <div  class="demo-item-text">Demo items cannot be edited or deleted</div>
-                    </td>
-                </tr>
-                <tr >
-                    <!---->
-                    <td >
-                        <!----><!---->
-                        <span >3</span>
-                        <!----><!----><!---->
-                    </td>
-                    <td >
-                        <!---->
-                        <span >
-                            <!---->
-                            <img  class="image-table" src="https://firebasestorage.googleapis.com/v0/b/grocerydashboard.appspot.com/o/myupload%2F1586969078530?alt=media&amp;token=fdf58103-8799-4b1e-b11d-d35720fcab72" />
-                        </span>
-                        <!----><!----><!----><!---->
-                    </td>
-                    <td >
-                        <!----><!----><!---->
-                        <span >Ready to Eat</span>
-                        <!----><!---->
-                    </td>
-                    <td >
-                        <!----><!----><!---->
-                        <span >Ready to eat food for those hungry times</span>
-                        <!----><!---->
-                    </td>
-                    <td ><!----><!----><!----><!----><!----></td>
-                    <td >
-                        <!----><!----><!---->
-                        <span >true</span>
-                        <!----><!---->
-                    </td>
-                    <td >
-                        <!----><!----><!----><!---->
-                        <span >
-                            <ion-button  color="secondary" aria-disabled="true" class="ion-color ion-color-secondary md button button-solid button-disabled ion-activatable ion-focusable hydrated" disabled=""> Edit </ion-button>
-                            <ion-button  color="danger" aria-disabled="true" class="ion-color ion-color-danger md button button-solid button-disabled ion-activatable ion-focusable hydrated" disabled=""> Delete </ion-button>
-                        </span>
-                        <!---->
-                        <div  class="demo-item-text">Demo items cannot be edited or deleted</div>
-                    </td>
-                </tr>               
+                         
             </tbody>
         </table>
         
