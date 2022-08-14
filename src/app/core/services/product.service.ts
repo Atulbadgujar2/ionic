@@ -12,6 +12,7 @@ import { environment } from "src/environments/environment";
 import { BaseService } from "./base.service";
 import { HttpErrorHandlerService } from "./http-error-handler.service";
 import { ProductModel } from "src/app/core/models/product/product.model";
+import { IdentificationModel } from "../models/identification.model";
 
 @Injectable({ providedIn: 'root' })
 export class ProductService extends BaseService {
@@ -22,7 +23,7 @@ export class ProductService extends BaseService {
   }
 
   // To add Product.
-  public addProduct(ProductModel: ProductModel): Observable<string> {
+  public addProduct(ProductModel: ProductModel): Observable<any> {
     let url: string = environment.TKServiceUrl + 'Product/add'
     return this.post<ProductModel>(url, ProductModel, null, "addProduct");
   }
@@ -33,24 +34,24 @@ export class ProductService extends BaseService {
     return this.get<Array<ProductModel>>(url, null, 'getProductList');
   }
 
-//   //get Product detail by Product id 
-//   public getProductDetail(id: number): Observable<ProductViewModel> {
-//     const url: string = environment.FBCOServiceUrl + 'Product/ProductDetail/' + id;
-//     return this.get<ProductViewModel>(url, null, 'getProductList');
-//   }
+  //get Product detail by Product id 
+  public getProductDetail(id: number): Observable<ProductModel> {
+    const url: string = environment.TKServiceUrl + 'Product/details/' + id;
+    return this.get<ProductModel>(url, null, 'getProductDetail');
+  }
 
-//   // Update Product Details
-//   public updateProductDetail(ProductModel: ProductViewModel): Observable<string> {
-//     let url: string = environment.FBCOServiceUrl + 'Product/updateProduct'
-//     return this.put(url, ProductModel, null, "updateProductDetail");
-//   }
+  // Update Product Details
+  public updateProductDetail(ProductModel: ProductModel): Observable<string> {
+    let url: string = environment.TKServiceUrl + 'Product/update'
+    return this.put(url, ProductModel, null, "updateProductDetail");
+  }
 
-//   // Delete Product.
-//   public deleteProduct(identificationModel: IdentificationModel): Observable<string> {
+  // Delete Product.
+  public deleteProduct(identificationModel: IdentificationModel): Observable<string> {
 
-//     let url: string = environment.FBCOServiceUrl + 'Product/deleteProduct'
-//     return this.put<IdentificationModel>(url, identificationModel, null, "deleted platfrom user");
-//   }
+    let url: string = environment.TKServiceUrl + 'Product/delete'
+    return this.put<IdentificationModel>(url, identificationModel, null, "deleted");
+  }
 
 //   //get Product lookup 
 //   public getProductLookup(id): Observable<EmpTabModel> {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController, NavParams } from '@ionic/angular';
+import { ModalController, NavParams, ToastController } from '@ionic/angular';
 import { FileToUpload } from 'src/app/core/models/file-upload/file-to-upload';
 import { ProductModel } from 'src/app/core/models/product/product.model';
 import { FileUploadService } from 'src/app/core/services/fileupload.service';
@@ -16,6 +16,7 @@ export class AdminProductAddComponent implements OnInit {
   messages: string[] = [];
    // Maximum file size allowed to be uploaded = 1MB
 readonly MAX_SIZE: number = 1048576;
+url : any ;
 
   modalTitle: string;
   modelId: number;
@@ -27,7 +28,8 @@ readonly MAX_SIZE: number = 1048576;
   constructor(private modalController: ModalController,   
     private productService : ProductService,
     private uploadService: FileUploadService,
-    private navParams: NavParams) { }
+    private navParams: NavParams,
+    public toastController: ToastController) { }
 
   
   ngOnInit() {}
@@ -65,12 +67,13 @@ readonly MAX_SIZE: number = 1048576;
 
  
     this.addProductdataModel.fileUpload="string";
-    this.GuidId = "a6ee7c60-6efd-4b9e-b7f1-1f552eb0c163"
+    
     // this.onSubmit = true;
     //validation
    
       this.productService.addProduct(this.addProductdataModel).subscribe(
-        response => {     
+        response => { 
+          this.GuidId = response.guidId;    
         }).add(() => {
           this.uploadFile();
         });
@@ -92,6 +95,12 @@ readonly MAX_SIZE: number = 1048576;
         if (event.target.files[0].size < this.MAX_SIZE) {
             // Set theFile property
             this.theFile = event.target.files[0];
+                  // Read the file
+                  let reader = new FileReader();
+                  reader.readAsDataURL(this.theFile);
+                  reader.onload = (_event) => { 
+                    this.url = reader.result; 
+                }
         }
         else {
             // Display error message
@@ -119,10 +128,17 @@ private readAndUploadFile(theFile: any) {
   reader.onload = () => {
       // Store base64 encoded representation of file
       file.fileAsBase64 = reader.result.toString();
+
+      
+      this.url = reader.result; 
+      
       
       // POST to server
       this.uploadService.uploadFile(file).subscribe(resp => { 
-          this.messages.push("Upload complete"); });
+          this.messages.push("Upload complete"); }).add(() => {        
+            this.closeModal();
+            this.showToasterOnButtonClick('Product Saved Successfully');
+           });
   }
   
   // Read the file
@@ -133,5 +149,17 @@ uploadFile(): void {
   debugger;
   this.readAndUploadFile(this.theFile);
 }
+
+async showToasterOnButtonClick(message) {
+  const toast = await this.toastController.create({
+    color: 'dark',
+    duration: 2000,
+    message: message,
+   
+  });
+
+  await toast.present();
+}
+
 
 }

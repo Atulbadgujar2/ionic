@@ -87,12 +87,12 @@
                   </thead>
                   <tbody  color="drak">
                       <!---->
-                      <tr  style="position: relative;">
+                      <tr  *ngFor="let item of gridData" style="position: relative;">
                           <!---->
                           <td  class="no-wrap" style="position: relative;">
                               <div >
                                   <!----><!---->
-                                  <span >1</span>
+                                  <span >{{item.id}}</span>
                                   <!---->
                               </div>
                               <div  class="actionSection"><!----><!----></div>
@@ -105,7 +105,7 @@
                                       <img
                                           
                                           class="image-table"
-                                          src="https://firebasestorage.googleapis.com/v0/b/grocerydashboard.appspot.com/o/myupload%2F1586969257657?alt=media&amp;token=e8d4f628-62ff-428e-bf4e-08dcac255f17"
+                                          src="{{item.imageUrl}}"
                                       />
                                   </span>
                                   <!----><!---->
@@ -115,84 +115,84 @@
                           <td  class="no-wrap" style="position: relative;">
                               <div >
                                   <!----><!----><!---->
-                                  <span  class="tdSection" id="tdSection">Apple</span>
+                                  <span  class="tdSection" id="tdSection">{{item.name}}</span>
                               </div>
                               <div  class="actionSection"><!----><!----></div>
                           </td>
                           <td  class="no-wrap" style="position: relative;">
                               <div >
                                   <!----><!----><!---->
-                                  <span  class="tdSection" id="tdSection">false</span>
+                                  <span  class="tdSection" id="tdSection">{{item.isCODAvailable}}</span>
                               </div>
                               <div  class="actionSection"><!----><!----></div>
                           </td>
                           <td  class="no-wrap" style="position: relative;">
                               <div >
                                   <!----><!----><!---->
-                                  <span  class="tdSection" id="tdSection">20</span>
+                                  <span  class="tdSection" id="tdSection">{{item.isFreeShipping}}</span>
                               </div>
                               <div  class="actionSection"><!----><!----></div>
                           </td>
                           <td  class="no-wrap" style="position: relative;">
                               <div >
                                   <!----><!----><!---->
-                                  <span  class="tdSection" id="tdSection">true</span>
+                                  <span  class="tdSection" id="tdSection">{{item.isFreeShipping}}</span>
                               </div>
                               <div  class="actionSection"><!----><!----></div>
                           </td>
                           <td  class="no-wrap" style="position: relative;">
                               <div >
                                   <!----><!----><!---->
-                                  <span  class="tdSection" id="tdSection">5</span>
+                                  <span  class="tdSection" id="tdSection">{{item.stockQuantity}}</span>
                               </div>
                               <div  class="actionSection"><!----><!----></div>
                           </td>
                           <td  class="no-wrap" style="position: relative;">
                               <div >
                                   <!----><!----><!---->
-                                  <span  class="tdSection" id="tdSection">10</span>
+                                  <span  class="tdSection" id="tdSection">{{item.price}}</span>
                               </div>
                               <div  class="actionSection"><!----><!----></div>
                           </td>
                           <td  class="no-wrap" style="position: relative;">
                               <div >
                                   <!----><!----><!---->
-                                  <span  class="tdSection" id="tdSection">0</span>
+                                  <span  class="tdSection" id="tdSection">{{item.offer}}</span>
                               </div>
                               <div  class="actionSection"><!----><!----></div>
                           </td>
                           <td  class="no-wrap" style="position: relative;">
                               <div >
                                   <!----><!----><!---->
-                                  <span  class="tdSection" id="tdSection">Apples from limpopo</span>
+                                  <span  class="tdSection" id="tdSection">{{item.fullDescription}}</span>
                               </div>
                               <div  class="actionSection"><!----><!----></div>
                           </td>
                           <td  class="no-wrap" style="position: relative;">
                               <div >
                                   <!----><!----><!---->
-                                  <span  class="tdSection" id="tdSection"></span>
+                                  <span  class="tdSection" id="tdSection">{{item.deliveryInstruction}}</span>
                               </div>
                               <div  class="actionSection"><!----><!----></div>
                           </td>
                           <td  class="no-wrap" style="position: relative;">
                               <div >
                                   <!----><!----><!---->
-                                  <span  class="tdSection" id="tdSection">20 days after pay</span>
+                                  <span  class="tdSection" id="tdSection">{{item.deliveryInstruction}}</span>
                               </div>
                               <div  class="actionSection"><!----><!----></div>
                           </td>
                           <td  class="no-wrap" style="position: relative;">
                               <div >
                                   <!----><!----><!---->
-                                  <span  class="tdSection" id="tdSection">KSUpmChpSXtWGS5lTwz5,aI02pc9eI757Txe13NYm</span>
+                                  <span  class="tdSection" id="tdSection">{{item.categoryName}}</span>
                               </div>
                               <div  class="actionSection"><!----><!----></div>
                           </td>
                           <td  class="no-wrap" style="position: relative;">
                               <div >
                                   <!----><!----><!---->
-                                  <span  class="tdSection" id="tdSection"></span>
+                                  <span  class="tdSection" id="tdSection">{{item.tag}}</span>
                               </div>
                               <div  class="actionSection"><!----><!----></div>
                           </td>
@@ -201,266 +201,19 @@
                               <div  class="actionSection">
                                   <!---->
                                   <span >
-                                      <ion-button  color="secondary" aria-disabled="true" class="ion-color ion-color-secondary md button button-solid button-disabled ion-activatable ion-focusable hydrated" disabled=""  (click)="openEditModal()">
+                                      <ion-button  color="secondary"  class="ion-color ion-color-secondary md button button-solid  ion-activatable ion-focusable hydrated"  (click)="openEditModal()">
                                           Edit
                                       </ion-button>
-                                      <ion-button  color="danger" aria-disabled="true" class="ion-color ion-color-danger md button button-solid button-disabled ion-activatable ion-focusable hydrated" disabled="">
+                                      <ion-button  color="danger" class="ion-color ion-color-danger md button button-solid  ion-activatable ion-focusable hydrated">
                                           Delete
                                       </ion-button>
                                   </span>
                                   <!---->
-                                  <div  class="demo-item-text">Demo items cannot be edited or deleted</div>
+                                  <div  class="demo-item-text"></div>
                               </div>
                           </td>
                       </tr>
-                      <tr  style="position: relative;">
-                          <!---->
-                          <td  class="no-wrap" style="position: relative;">
-                              <div >
-                                  <!----><!---->
-                                  <span >2</span>
-                                  <!---->
-                              </div>
-                              <div  class="actionSection"><!----><!----></div>
-                          </td>
-                          <td  class="no-wrap" style="position: relative;">
-                              <div >
-                                  <!---->
-                                  <span >
-                                      <!---->
-                                      <img
-                                          
-                                          class="image-table"
-                                          src="https://firebasestorage.googleapis.com/v0/b/grocerydashboard.appspot.com/o/myupload%2F1586969537349?alt=media&amp;token=26bd8c81-67de-4821-b66a-cd6297506d8d"
-                                      />
-                                  </span>
-                                  <!----><!---->
-                              </div>
-                              <div  class="actionSection"><!----><!----></div>
-                          </td>
-                          <td  class="no-wrap" style="position: relative;">
-                              <div >
-                                  <!----><!----><!---->
-                                  <span  class="tdSection" id="tdSection">Corn Flakes</span>
-                              </div>
-                              <div  class="actionSection"><!----><!----></div>
-                          </td>
-                          <td  class="no-wrap" style="position: relative;">
-                              <div >
-                                  <!----><!----><!---->
-                                  <span  class="tdSection" id="tdSection">true</span>
-                              </div>
-                              <div  class="actionSection"><!----><!----></div>
-                          </td>
-                          <td  class="no-wrap" style="position: relative;">
-                              <div >
-                                  <!----><!----><!---->
-                                  <span  class="tdSection" id="tdSection">1</span>
-                              </div>
-                              <div  class="actionSection"><!----><!----></div>
-                          </td>
-                          <td  class="no-wrap" style="position: relative;">
-                              <div >
-                                  <!----><!----><!---->
-                                  <span  class="tdSection" id="tdSection">false</span>
-                              </div>
-                              <div  class="actionSection"><!----><!----></div>
-                          </td>
-                          <td  class="no-wrap" style="position: relative;">
-                              <div >
-                                  <!----><!----><!---->
-                                  <span  class="tdSection" id="tdSection">250g</span>
-                              </div>
-                              <div  class="actionSection"><!----><!----></div>
-                          </td>
-                          <td  class="no-wrap" style="position: relative;">
-                              <div >
-                                  <!----><!----><!---->
-                                  <span  class="tdSection" id="tdSection">10</span>
-                              </div>
-                              <div  class="actionSection"><!----><!----></div>
-                          </td>
-                          <td  class="no-wrap" style="position: relative;">
-                              <div >
-                                  <!----><!----><!---->
-                                  <span  class="tdSection" id="tdSection">0</span>
-                              </div>
-                              <div  class="actionSection"><!----><!----></div>
-                          </td>
-                          <td  class="no-wrap" style="position: relative;">
-                              <div >
-                                  <!----><!----><!---->
-                                  <span  class="tdSection" id="tdSection">Kellogs Corn Flakes for a healthy power breakfast</span>
-                              </div>
-                              <div  class="actionSection"><!----><!----></div>
-                          </td>
-                          <td  class="no-wrap" style="position: relative;">
-                              <div >
-                                  <!----><!----><!---->
-                                  <span  class="tdSection" id="tdSection"></span>
-                              </div>
-                              <div  class="actionSection"><!----><!----></div>
-                          </td>
-                          <td  class="no-wrap" style="position: relative;">
-                              <div >
-                                  <!----><!----><!---->
-                                  <span  class="tdSection" id="tdSection">Same Day</span>
-                              </div>
-                              <div  class="actionSection"><!----><!----></div>
-                          </td>
-                          <td  class="no-wrap" style="position: relative;">
-                              <div >
-                                  <!----><!----><!---->
-                                  <span  class="tdSection" id="tdSection">KSUpmChpSXtWGS5lTwz5,QNLpPTX3Fl0Z3o5dz9z1</span>
-                              </div>
-                              <div  class="actionSection"><!----><!----></div>
-                          </td>
-                          <td  class="no-wrap" style="position: relative;">
-                              <div >
-                                  <!----><!----><!---->
-                                  <span  class="tdSection" id="tdSection">Top Savers Today</span>
-                              </div>
-                              <div  class="actionSection"><!----><!----></div>
-                          </td>
-                          <td  class="no-wrap" style="position: relative;">
-                              <div ><!----><!----><!----></div>
-                              <div  class="actionSection">
-                                  <!---->
-                                  <span >
-                                      <ion-button  color="secondary" aria-disabled="true" class="ion-color ion-color-secondary md button button-solid button-disabled ion-activatable ion-focusable hydrated" disabled="">
-                                          Edit
-                                      </ion-button>
-                                      <ion-button  color="danger" aria-disabled="true" class="ion-color ion-color-danger md button button-solid button-disabled ion-activatable ion-focusable hydrated" disabled="">
-                                          Delete
-                                      </ion-button>
-                                  </span>
-                                  <!---->
-                                  <div  class="demo-item-text">Demo items cannot be edited or deleted</div>
-                              </div>
-                          </td>
-                      </tr>
-                      
-                      <tr  style="position: relative;">
-                          <!---->
-                          <td  class="no-wrap" style="position: relative;">
-                              <div >
-                                  <!----><!---->
-                                  <span >24</span>
-                                  <!---->
-                              </div>
-                              <div  class="actionSection"><!----><!----></div>
-                          </td>
-                          <td  class="no-wrap" style="position: relative;">
-                              <div >
-                                  <!---->
-                                  <span >
-                                      <!---->
-                                      <img
-                                          
-                                          class="image-table"
-                                          src="https://firebasestorage.googleapis.com/v0/b/grocerydashboard.appspot.com/o/myupload%2F1641897030661?alt=media&amp;token=489393e7-a1dd-42d5-a477-95e9264a1f27"
-                                      />
-                                  </span>
-                                  <!----><!---->
-                              </div>
-                              <div  class="actionSection"><!----><!----></div>
-                          </td>
-                          <td  class="no-wrap" style="position: relative;">
-                              <div >
-                                  <!----><!----><!---->
-                                  <span  class="tdSection" id="tdSection">testing</span>
-                              </div>
-                              <div  class="actionSection"><!----><!----></div>
-                          </td>
-                          <td  class="no-wrap" style="position: relative;">
-                              <div >
-                                  <!----><!----><!---->
-                                  <span  class="tdSection" id="tdSection">true</span>
-                              </div>
-                              <div  class="actionSection"><!----><!----></div>
-                          </td>
-                          <td  class="no-wrap" style="position: relative;">
-                              <div >
-                                  <!----><!----><!---->
-                                  <span  class="tdSection" id="tdSection">bhopal</span>
-                              </div>
-                              <div  class="actionSection"><!----><!----></div>
-                          </td>
-                          <td  class="no-wrap" style="position: relative;">
-                              <div >
-                                  <!----><!----><!---->
-                                  <span  class="tdSection" id="tdSection">true</span>
-                              </div>
-                              <div  class="actionSection"><!----><!----></div>
-                          </td>
-                          <td  class="no-wrap" style="position: relative;">
-                              <div >
-                                  <!----><!----><!---->
-                                  <span  class="tdSection" id="tdSection">20</span>
-                              </div>
-                              <div  class="actionSection"><!----><!----></div>
-                          </td>
-                          <td  class="no-wrap" style="position: relative;">
-                              <div >
-                                  <!----><!----><!---->
-                                  <span  class="tdSection" id="tdSection">10</span>
-                              </div>
-                              <div  class="actionSection"><!----><!----></div>
-                          </td>
-                          <td  class="no-wrap" style="position: relative;">
-                              <div >
-                                  <!----><!----><!---->
-                                  <span  class="tdSection" id="tdSection">1</span>
-                              </div>
-                              <div  class="actionSection"><!----><!----></div>
-                          </td>
-                          <td  class="no-wrap" style="position: relative;">
-                              <div >
-                                  <!----><!----><!---->
-                                  <span  class="tdSection" id="tdSection">best product</span>
-                              </div>
-                              <div  class="actionSection"><!----><!----></div>
-                          </td>
-                          <td  class="no-wrap" style="position: relative;">
-                              <div >
-                                  <!----><!----><!---->
-                                  <span  class="tdSection" id="tdSection">462026,462016</span>
-                              </div>
-                              <div  class="actionSection"><!----><!----></div>
-                          </td>
-                          <td  class="no-wrap" style="position: relative;">
-                              <div >
-                                  <!----><!----><!---->
-                                  <span  class="tdSection" id="tdSection">dsasd</span>
-                              </div>
-                              <div  class="actionSection"><!----><!----></div>
-                          </td>
-                          <td  class="no-wrap" style="position: relative;">
-                              <div >
-                                  <!----><!----><!---->
-                                  <span  class="tdSection" id="tdSection">KSUpmChpSXtWGS5lTwz5,aI02pc9eI757Txe13NYm,QNLpPTX3Fl0Z3o5dz9z1,ORjTZoxmfewyGagDEf1o</span>
-                              </div>
-                              <div  class="actionSection"><!----><!----></div>
-                          </td>
-                          <td  class="no-wrap" style="position: relative;">
-                              <div >
-                                  <!----><!----><!---->
-                                  <span  class="tdSection" id="tdSection">Short Time Offers</span>
-                              </div>
-                              <div  class="actionSection"><!----><!----></div>
-                          </td>
-                          <td  class="no-wrap" style="position: relative;">
-                              <div ><!----><!----><!----></div>
-                              <div  class="actionSection">
-                                  <!---->
-                                  <span >
-                                      <ion-button  color="secondary" class="ion-color ion-color-secondary md button button-solid ion-activatable ion-focusable hydrated" (click)="openEditModal()"> Edit </ion-button>
-                                      <ion-button  color="danger" class="ion-color ion-color-danger md button button-solid ion-activatable ion-focusable hydrated"> Delete </ion-button>
-                                  </span>
-                                  <!---->
-                              </div>
-                          </td>
-                      </tr>
+                  
                   </tbody>
               </table>
           </ion-col>

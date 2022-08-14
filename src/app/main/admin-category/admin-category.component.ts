@@ -61,6 +61,7 @@ export class AdminCategoryComponent implements OnInit {
       debugger;
       if (dataReturned !== null) {
         this.dataReturned = dataReturned.data;
+        this.getDataList();
         //alert('Modal Sent Data :'+ dataReturned);
       }
     });

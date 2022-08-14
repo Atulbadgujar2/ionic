@@ -109,10 +109,10 @@ readonly MAX_SIZE: number = 1048576;
         // Don't allow file sizes over 1MB
         if (event.target.files[0].size < this.MAX_SIZE) {
             // Set theFile property
-            this.theFile = event.target.files[0];
-            let reader = new FileReader();
+            this.theFile = event.target.files[0];          
 
              // Read the file
+             let reader = new FileReader();
   reader.readAsDataURL(this.theFile);
   reader.onload = (_event) => { 
     this.url = reader.result; 

@@ -21,6 +21,9 @@ export class ProductModel {
     public displayStockAvailability : Boolean;
     public displayStockQuantity : Boolean;
     public minStockQuantity : number;
+    public imageUrl : string;   
+    public categoryName : string;
+    
 
   }
   
