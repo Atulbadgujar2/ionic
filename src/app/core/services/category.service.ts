@@ -10,6 +10,7 @@ import { Injectable } from "@angular/core";
 import { Observable } from "rxjs/internal/Observable";
 import { CategoryModel } from "src/app/core/models/category/category.model";
 import { environment } from "src/environments/environment";
+import { IdentificationModel } from "../models/identification.model";
 import { BaseService } from "./base.service";
 import { HttpErrorHandlerService } from "./http-error-handler.service";
 
@@ -33,17 +34,24 @@ export class CategoryService extends BaseService {
     return this.get<Array<CategoryModel>>(url, null, 'getCategoryList');
   }
 
-//   //get Category detail by Category id 
-//   public getCategoryDetail(id: number): Observable<CategoryViewModel> {
-//     const url: string = environment.FBCOServiceUrl + 'Category/CategoryDetail/' + id;
-//     return this.get<CategoryViewModel>(url, null, 'getCategoryList');
-//   }
+    // Delete Category.
+  public deleteCategory(identificationModel: IdentificationModel): Observable<string> {
 
-//   // Update Category Details
-//   public updateCategoryDetail(CategoryModel: CategoryViewModel): Observable<string> {
-//     let url: string = environment.FBCOServiceUrl + 'Category/updateCategory'
-//     return this.put(url, CategoryModel, null, "updateCategoryDetail");
-//   }
+    let url: string = environment.TKServiceUrl + 'Category/delete'
+    return this.put<IdentificationModel>(url, identificationModel, null, "deleted category");
+  }
+
+  //get Category detail by Category id 
+  public getCategoryDetail(id: number): Observable<CategoryModel> {
+    const url: string = environment.TKServiceUrl + 'Category/details/' + id;
+    return this.get<CategoryModel>(url, null, 'getCategoryDetail');
+  }
+
+  // Update Category Details
+  public updateCategoryDetail(CategoryModel: CategoryModel): Observable<string> {
+    let url: string = environment.TKServiceUrl + 'Category/updateCategory'
+    return this.put(url, CategoryModel, null, "updateCategoryDetail");
+  }
 
 //   // Delete Category.
 //   public deleteCategory(identificationModel: IdentificationModel): Observable<string> {

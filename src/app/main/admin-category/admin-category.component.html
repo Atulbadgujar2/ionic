@@ -118,8 +118,8 @@
                     <td >
                         <!----><!----><!----><!---->
                         <span >
-                            <ion-button  color="secondary" class="ion-color ion-color-secondary md button button-solid  ion-activatable ion-focusable hydrated" (click)="openEditModal()"> Edit </ion-button>
-                            <ion-button  color="danger" class="ion-color ion-color-danger md button button-solid ion-activatable ion-focusable hydrated" > Delete </ion-button>
+                            <ion-button  color="secondary" class="ion-color ion-color-secondary md button button-solid  ion-activatable ion-focusable hydrated" (click)="openEditModal(item.id)"> Edit </ion-button>
+                            <ion-button  color="danger" class="ion-color ion-color-danger md button button-solid ion-activatable ion-focusable hydrated" (click)="deleteCategory(item.id)"> Delete </ion-button>
                         </span>
                         <!---->
                         <!-- <div  class="demo-item-text">Demo items cannot be edited or deleted</div> -->

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { IdentificationModel } from 'src/app/core/models/identification.model';
 import { CategoryService } from 'src/app/core/services/category.service';
 import { AdminCategoryAddComponent } from './admin-category-add/admin-category-add.component';
 import { AdminCategoryEditComponent } from './admin-category-edit/admin-category-edit.component';
@@ -13,6 +14,7 @@ import { AdminCategoryEditComponent } from './admin-category-edit/admin-category
 export class AdminCategoryComponent implements OnInit {
 
   gridData : any;
+  identificationModel : IdentificationModel
 
   constructor(public modalController: ModalController,
     private categoryService : CategoryService) {   
@@ -43,11 +45,11 @@ export class AdminCategoryComponent implements OnInit {
     return await modal.present();
   }
 
-  async openEditModal() {
+  async openEditModal(id) { 
     const modal = await this.modalController.create({
       component: AdminCategoryEditComponent,
       componentProps: {
-        "paramID": 123,
+        "paramID": id,
         "paramTitle": "Test Title"
       }
     });
@@ -76,6 +78,17 @@ export class AdminCategoryComponent implements OnInit {
         }).add(() => {
           // this.loadingEnabled = false;
         });
+  }
+
+  public deleteCategory(id) : void {
+    this.identificationModel.uniquE_ID = id;
+    this.identificationModel.tenanT_ID = '1';
+    this.categoryService.deleteCategory(this.identificationModel).subscribe(
+      response => {     
+       
+      }).add(() => {        
+        
+      });
   }
 
   
