@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController, NavParams, ToastController } from '@ionic/angular';
 import { FileToUpload } from 'src/app/core/models/file-upload/file-to-upload';
 import { ProductModel } from 'src/app/core/models/product/product.model';
+import { CategoryService } from 'src/app/core/services/category.service';
 import { FileUploadService } from 'src/app/core/services/fileupload.service';
 import { ProductService } from 'src/app/core/services/product.service';
 
@@ -12,8 +13,10 @@ import { ProductService } from 'src/app/core/services/product.service';
 })
 export class AdminProductEditComponent implements OnInit {
 
-  url : any;
+  gridData : any;
+  url : any = null;
   theFile: any = null;
+  isFileThere: Boolean = false;
   messages: string[] = [];
   // Maximum file size allowed to be uploaded = 1MB
 readonly MAX_SIZE: number = 1048576;
@@ -28,11 +31,14 @@ GuidId : string;
     private productService : ProductService,
     public toastController: ToastController,
     private uploadService: FileUploadService,
-    private navParams: NavParams) { }
+    private navParams: NavParams,
+    private categoryService : CategoryService) { }
 
   ngOnInit() {
     if(this.navParams.data.paramID != undefined && this.navParams.data.paramID != null)
     this.getProductData(this.navParams.data.paramID);
+    this.getDataList();
+    
   }
 
    
@@ -156,6 +162,8 @@ async showToasterOnButtonClick(message) {
 }
 
 radioGroupChange(event,caseCondition) {
+  if(event.detail.value === '')
+  return;
   debugger;
   switch(caseCondition){
     case 1:
@@ -184,9 +192,34 @@ radioGroupChange(event,caseCondition) {
           // this.getGridViewList(this.screenId);
         }).add(() => {
           this.url = this.editProductdataModel.imageUrl
-          // this.loadingEnabled = false;
-          console.log(this.editProductdataModel);
+          if(this.url === null)
+          {
+            this.isFileThere = false;
+          }
         });
   }
+
+  
+/*
+     * Get grid data from server
+     */
+  // Get Client Entry  data
+  public getDataList(): void {
+    this.categoryService.getCategoryList()
+      .subscribe(
+        response => {
+          this.gridData = response;
+          // this.getGridViewList(this.screenId);
+        }).add(() => {
+          // this.loadingEnabled = false;
+        });
+  }
+
+   //change listner
+onSelectChange(selectedValue) {
+  debugger;
+this.editProductdataModel.categoryId = selectedValue.detail.value;
+}
+
 
 }

@@ -66,11 +66,11 @@
         <ion-card  class="childCards md hydrated">
             <!----><!----><!----><!----><!----><!----><!---->
             <ion-list  class="md list-md hydrated">
-                <ion-radio-group  class="ng-untouched ng-pristine ng-valid ion-untouched ion-pristine ion-valid md hydrated" radio-group  #showOnHomepage ngDefaultControl  [(ngModel)]="editCategorydataModel.showOnHomepage" role="radiogroup" (ionChange)="radioGroupChange($event)"  aria-labelledby="ion-rg-0-lbl"  >
+                <ion-radio-group  value="{{editCategorydataModel.showOnHomepage}}" role="radiogroup" (ionChange)="radioGroupChange($event)"  aria-labelledby="ion-rg-0-lbl" >
                     <ion-list-header  class="md hydrated"> Show on Home Page </ion-list-header>
                     <ion-item  class="item md in-list ion-activatable ion-focusable hydrated item-label">
                         <ion-label  class="sc-ion-label-md-h sc-ion-label-md-s md hydrated" id="ion-rb-0-lbl">Yes</ion-label>
-                        <ion-radio  role="radio" [checked] aria-labelledby="ion-rb-0-lbl" class="md in-item interactive hydrated"  value="true" ></ion-radio>
+                        <ion-radio  role="radio"  aria-labelledby="ion-rb-0-lbl" class="md in-item interactive hydrated"  value="true" ></ion-radio>
                     </ion-item>
                     <ion-item  class="item md in-list ion-activatable ion-focusable hydrated item-label">
                         <ion-label  class="sc-ion-label-md-h sc-ion-label-md-s md hydrated" id="ion-rb-1-lbl">No</ion-label>

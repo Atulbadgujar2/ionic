@@ -12,7 +12,9 @@ import { FileUploadService } from 'src/app/core/services/fileupload.service';
 })
 export class AdminCategoryEditComponent implements OnInit {
 
-  url : any;
+  isFileThere: Boolean = false;
+  
+  url : any = null;
   theFile: any = null;
   messages: string[] = [];
   // Maximum file size allowed to be uploaded = 1MB
@@ -39,6 +41,8 @@ readonly MAX_SIZE: number = 1048576;
     this.modalTitle = this.navParams.data.paramTitle;
     if(this.navParams.data.paramID != undefined && this.navParams.data.paramID != null)
     this.getCategoryData(this.navParams.data.paramID);
+
+   
   }
 
   async closeModal() {
@@ -60,7 +64,10 @@ readonly MAX_SIZE: number = 1048576;
         }).add(() => {
           this.url = this.editCategorydataModel.imageUrl
           // this.loadingEnabled = false;
-          console.log(this.editCategorydataModel);
+          if(this.url === null)
+          {
+            this.isFileThere = false;
+          }
         });
   }
 
@@ -94,7 +101,7 @@ readonly MAX_SIZE: number = 1048576;
         if (event.target.files[0].size < this.MAX_SIZE) {
             // Set theFile property
             this.theFile = event.target.files[0];
-
+            this.isFileThere = true; 
             let reader = new FileReader();
 
             // Read the file

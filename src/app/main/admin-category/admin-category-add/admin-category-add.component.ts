@@ -16,6 +16,7 @@ import { FileUploadService } from 'src/app/core/services/fileupload.service';
 
 export class AdminCategoryAddComponent implements OnInit {
 
+  isFileThere: Boolean = false;
  url : any ;
 
   theFile: any = null;
@@ -49,6 +50,7 @@ readonly MAX_SIZE: number = 1048576;
     console.table(this.navParams);
     this.modelId = this.navParams.data.paramID;
     this.modalTitle = this.navParams.data.paramTitle;
+    this.addCategorydataModel.showOnHomepage = true;
   }
 
   async closeModal() {
@@ -59,28 +61,30 @@ readonly MAX_SIZE: number = 1048576;
   // add Category
   public addCategory() {
     debugger;
-    this.addCategorydataModel.allowCustomersToSelectPageSize = true;
+    console.log('true',this.addCategorydataModel.showOnHomepage)
+    this.addCategorydataModel.showOnHomepage
+    // this.addCategorydataModel.allowCustomersToSelectPageSize = true;
    
-    this.addCategorydataModel.metaKeywords="string";
-    this.addCategorydataModel.metaTitle="string";
-    this.addCategorydataModel.pageSizeOptions="string";
+    // this.addCategorydataModel.metaKeywords="string";
+    // this.addCategorydataModel.metaTitle="string";
+    // this.addCategorydataModel.pageSizeOptions="string";
    
-    this.addCategorydataModel.categoryTemplateId = 1;
-    this.addCategorydataModel.metaDescription="string";
-    this.addCategorydataModel.parentCategoryId = 1;
-    this.addCategorydataModel.pictureId = 1
-    this.addCategorydataModel.pageSize = 1;
-    this.addCategorydataModel.allowCustomersToSelectPageSize = true;  
-    this.addCategorydataModel.includeInTopMenu= true;
-    this.addCategorydataModel.subjectToAcl= true;
-    this.addCategorydataModel.limitedToStores= true;
-    this.addCategorydataModel.published= true;
-    this.addCategorydataModel.displayOrder = 1;
-    this.addCategorydataModel.priceRangeFiltering= true;
-    this.addCategorydataModel.priceFrom = 0;
-    this.addCategorydataModel.priceTo= 0;
-    this.addCategorydataModel.manuallyPriceRange = true;
-    this.addCategorydataModel.fileUpload="string";
+    // this.addCategorydataModel.categoryTemplateId = 1;
+    // this.addCategorydataModel.metaDescription="string";
+    // this.addCategorydataModel.parentCategoryId = 1;
+    // this.addCategorydataModel.pictureId = 1
+    // this.addCategorydataModel.pageSize = 1;
+    // this.addCategorydataModel.allowCustomersToSelectPageSize = true;  
+    // this.addCategorydataModel.includeInTopMenu= true;
+    // this.addCategorydataModel.subjectToAcl= true;
+    // this.addCategorydataModel.limitedToStores= true;
+    // this.addCategorydataModel.published= true;
+    // this.addCategorydataModel.displayOrder = 1;
+    // this.addCategorydataModel.priceRangeFiltering= true;
+    // this.addCategorydataModel.priceFrom = 0;
+    // this.addCategorydataModel.priceTo= 0;
+    // this.addCategorydataModel.manuallyPriceRange = true;
+    // this.addCategorydataModel.fileUpload="string";
     
     // this.onSubmit = true;
     //validation
@@ -116,6 +120,7 @@ readonly MAX_SIZE: number = 1048576;
   reader.readAsDataURL(this.theFile);
   reader.onload = (_event) => { 
     this.url = reader.result; 
+    this.isFileThere = true;
 }
           
         }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController, NavParams, ToastController } from '@ionic/angular';
 import { FileToUpload } from 'src/app/core/models/file-upload/file-to-upload';
 import { ProductModel } from 'src/app/core/models/product/product.model';
+import { CategoryService } from 'src/app/core/services/category.service';
 import { FileUploadService } from 'src/app/core/services/fileupload.service';
 import { ProductService } from 'src/app/core/services/product.service';
 
@@ -12,6 +13,8 @@ import { ProductService } from 'src/app/core/services/product.service';
 })
 export class AdminProductAddComponent implements OnInit {
 
+  gridData : any;
+  isFileThere: Boolean = false;
   theFile: any = null;
   messages: string[] = [];
    // Maximum file size allowed to be uploaded = 1MB
@@ -29,10 +32,17 @@ url : any ;
     private productService : ProductService,
     private uploadService: FileUploadService,
     private navParams: NavParams,
+    private categoryService : CategoryService,
     public toastController: ToastController) { }
 
   
-  ngOnInit() {}
+  ngOnInit() {
+    this.addProductdataModel.isInStock = true;
+    this.addProductdataModel.isFreeShipping = true;   
+    this.addProductdataModel.isCODAvailable = true;
+    this.addProductdataModel.showOnHomepage = true;
+    this.getDataList();
+  }
 
   
   async closeModal() {
@@ -80,6 +90,7 @@ url : any ;
         if (event.target.files[0].size < this.MAX_SIZE) {
             // Set theFile property
             this.theFile = event.target.files[0];
+            this.isFileThere = true;
                   // Read the file
                   let reader = new FileReader();
                   reader.readAsDataURL(this.theFile);
@@ -121,7 +132,7 @@ private readAndUploadFile(theFile: any) {
       // POST to server
       this.uploadService.uploadFile(file).subscribe(resp => { 
           this.messages.push("Upload complete"); }).add(() => {        
-            // this.closeModal();
+           this.closeModal();
             this.showToasterOnButtonClick('Product Saved Successfully');
            });
   }
@@ -146,6 +157,27 @@ async showToasterOnButtonClick(message) {
   await toast.present();
 }
 
+
+/*
+     * Get grid data from server
+     */
+  // Get Client Entry  data
+  public getDataList(): void {
+    this.categoryService.getCategoryList()
+      .subscribe(
+        response => {
+          this.gridData = response;
+          // this.getGridViewList(this.screenId);
+        }).add(() => {
+          // this.loadingEnabled = false;
+        });
+  }
+
+  //change listner
+onSelectChange(selectedValue) {
+  debugger;
+this.addProductdataModel.categoryId = selectedValue.detail.value;
+}
 
 
 
