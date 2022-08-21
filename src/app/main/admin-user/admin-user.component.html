@@ -77,46 +77,34 @@
             </thead>
             <tbody >
                 <!---->
-                <tr >
+                <tr *ngFor="let item of gridData" >
                     <!---->
                     <td >
                         <!----><!---->
-                        <span >1</span>
+                        <span >{{item.id}}</span>
                         <!----><!---->
                     </td>
                     <td >
                         <!----><!----><!---->
-                        <span >Romone183 </span>
+                        <span >{{item.username}} </span>
                         <!---->
                     </td>
-                    <td ><!----><!----><!----><!----></td>
                     <td >
                         <!----><!----><!---->
-                        <span >rovincent@yahoo.fr</span>
+                        <span >{{item.gender}} </span>
+                        
+                    <td >
+                        <!----><!----><!---->
+                        <span >{{item.email}} </span>
                         <!---->
                     </td>
-                    <td ><!----><!----><!----><!----></td>
+                    <td >
+                        <!----><!----><!---->
+                        <span >{{item.phoneNumber}} </span>
+                       
+                    </td>
                 </tr>
-                <tr >
-                    <!---->
-                    <td >
-                        <!----><!---->
-                        <span >2</span>
-                        <!----><!---->
-                    </td>
-                    <td >
-                        <!----><!----><!---->
-                        <span >2000nayankhokhar@gmail.com</span>
-                        <!---->
-                    </td>
-                    <td ><!----><!----><!----><!----></td>
-                    <td >
-                        <!----><!----><!---->
-                        <span >2000nayankhokhar@gmail.com</span>
-                        <!---->
-                    </td>
-                    <td ><!----><!----><!----><!----></td>
-                </tr>                              
+                                       
             </tbody>
         </table>
         

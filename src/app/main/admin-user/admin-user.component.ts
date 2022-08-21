@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CustomerService } from 'src/app/core/services/customer.service';
 
 @Component({
   selector: 'app-admin-user',
@@ -7,8 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminUserComponent implements OnInit {
 
-  constructor() { }
+  gridData : any;
+  constructor(private customerService : CustomerService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getDataList();
+  }
+
+   /*
+     * Get grid data from server
+     */
+  // Get Client Entry  data
+  public getDataList(): void {
+    this.customerService.getCustomerList()
+      .subscribe(
+        response => {
+          this.gridData = response;
+          // this.getGridViewList(this.screenId);
+        }).add(() => {
+          // this.loadingEnabled = false;
+        });
+  }
 
 }
