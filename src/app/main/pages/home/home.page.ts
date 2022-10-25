@@ -61,6 +61,7 @@ export class HomePage implements OnInit {
 
   onCategorySelect(item) {
     console.log('item', item);
-    this.router.navigate(['main-category']);
+    this.router.navigate(['products']);
+    // this.router.navigate(['main-category']);
   }
 }

@@ -20,13 +20,23 @@
         <div class="pro_image" [style.backgroundImage]="'url(' + item.img + ')'"></div>
         <ion-grid fixed class="ion-no-padding ion-no-margin">
           <ion-row class="ion-no-padding ion-no-margin">
-            <ion-col size="10" class="ion-no-padding ion-no-margin">
+            <ion-col size="10" class="ion-no-padding ion-no-margin" >
               <p class="prod_title">{{item.name}}</p>
-              <p class="prod_orgin">${{item.price}} </p>&nbsp; <span class="prod_sell">${{item.sale}}</span>
+              <p class="prod_orgin">${{item.price}} </p>&nbsp; <span class="prod_sell">${{item.sale}}</span>              
             </ion-col>
-            <ion-col size="2" class="ion-no-padding ion-no-margin">
+            <!-- <ion-col size="2" class="ion-no-padding ion-no-margin">
               <ion-icon class="heart" name="heart-outline"></ion-icon>
-            </ion-col>
+            </ion-col> -->
+              <!-- <ion-col size="2" class="ion-no-padding ion-no-margin">
+                <ion-button   color="primary" slot="end" text-capitalize="">
+                  <ion-icon  name="add" slot="start" role="img" class="md hydrated" aria-label="add"></ion-icon> Add
+              </ion-button>
+            </ion-col> -->
+            <!-- <ion-col size="2">
+              <ion-button fill="clear" size="small">
+                <ion-icon slot="icon-only" name="Add"></ion-icon>Add
+              </ion-button>
+            </ion-col> -->
           </ion-row>
         </ion-grid>
       </ion-col>
